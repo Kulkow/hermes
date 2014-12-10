@@ -1,0 +1,1 @@
+<? echo View::factory('user/money/top')->bind('menu_user',$menu_user); ?>

@@ -1,0 +1,1 @@
+Карта <?php echo $user->login ?> отключена.

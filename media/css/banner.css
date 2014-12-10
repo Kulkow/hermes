@@ -1,0 +1,11 @@
+/**
+* BANNER
+-----------------------------------*/
+
+#banners {position: relative; overflow: hidden;}
+#banners .it-row {position: relative; overflow: hidden; margin-bottom: 20px; padding: 0;}
+#banners .banner {position: relative; overflow: hidden; float: left;}
+#banners .banner.odd{margin-right: 20px;}
+#banners .banner.even{float: right;}
+#banners .banner A {display: block; width: 485px; position: relative;}
+#banners .banner IMG {display: block; width: 485px; position: relative;}

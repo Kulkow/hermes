@@ -1,0 +1,71 @@
+/* common styles
+-------------------------------------------------------------------*/
+FIELDSET { padding: 5px 10px 0; margin: 0 0 10px; border: 1px solid #bbb; }
+LEGEND { font: 14px Arial; color: #555; padding: 0 5px; margin-left: -5px; }
+.it-row { clear: both; padding: 0 0 1px; margin: 0 0 9px; position: relative; overflow: hidden; zoom: 1; }
+.it-row.last { margin: 0; }
+LABEL { font: 13px/16px Arial; color: #222; display: inline-block; position: relative; }
+LABEL SUP { color: #c30; }
+.it-notice { font: 11px/12px Arial; color: #777; clear: both; }
+.it-notice A { text-decoration: none ! important; }
+.it-error { font: 11px/12px Arial; color: #c30; clear: both; }
+/* for input-checkbox and input-radio
+-------------------------------------------------------------------*/
+LABEL INPUT { float: left; padding: 0!important; margin: 2px 3px 0 0; vertical-align: middle; cursor: pointer; }
+.right LABEL INPUT { float: right; margin: 2px 0 0 3px; }
+LABEL INPUT {
+//	margin: 0;
+//	position: relative;
+//	top: -4px;
+}
+/* button
+-------------------------------------------------------------------*/
+.it-button.it { white-space: nowrap; padding: 0 1px 1px 0; background: none; border: none; }
+.it-button * { font: 14px/27px 'Myriad Pro'; color: #fff; height: 28px; display: inline-block; vertical-align: top; background: url(../images/button.gif) repeat-x; }
+.it-button B { width: 5px; background-position: 0 -30px; }
+.it-button I { width: 5px; background-position: -10px -30px; }
+.it-button SPAN { padding: 0 10px; }
+.it-button EM { width: 15px; height: 9px; overflow: hidden; position: absolute; right: 35px; top: 26px; background-position: -30px -60px; }
+A.it-button.it { text-decoration: none; position: relative; }
+A.it-button.click { left: 1px; top: 1px; }
+A.it-button.focus SPAN { color: #fff; }
+
+/* input-text, textarea
+-------------------------------------------------------------------*/
+.it-text, .it-area { background: #fff; border: 1px solid #bbb; }
+.it-text { height: 18px; padding: 3px 5px; }
+.it-area { padding: 5px 0 5px 5px; }
+.it-text INPUT, .it-area TEXTAREA { font: 14px/18px Arial; color: #000; width: 100%; padding: 0; margin: 0; display: block; vertical-align: top; background: none; border: none; }
+.it-text INPUT { height: 18px; }
+.it-area TEXTAREA { overflow: auto !important; resize: none; zoom: 1; }
+.it-area.tinymce { padding: 0; border: none; }
+.mceLayout { width: 100% !important; }
+/* input-file
+-------------------------------------------------------------------*/
+.it-text.it-file { position: relative; overflow: hidden; }
+.it-text.it-file INPUT { font-size: 1000px; height: 26px; position: absolute; top: -1px; right: 0; opacity: 0; filter: alpha(opacity=0); outline: none; cursor: default; z-index: 2; }
+.it-file P { font: 14px/18px Arial; color: #000; width: 100% !important; height: 18px; position: relative; background: url(../images/file.gif) 100% 4px no-repeat; z-index: 1; }
+/* select
+-------------------------------------------------------------------*/
+.it-select { position: relative; }
+.it-select SELECT { width: 100%; position: relative; z-index: 1; }
+.it-select P { font: 14px/18px Arial; color: #000; position: absolute; top: 3px; left: 5px; z-index: 1; }
+.it-select P.focus { color: #fff; background: highlight; }
+.it-text.ls-select { padding: 3px; background: #fff url(../images/select.gif) 100% 10px no-repeat; }
+.it-text.ls-select SELECT { opacity: 0; filter: alpha(opacity=0); height: 24px; top: -3px; }
+/* addons styles
+-------------------------------------------------------------------*/
+.it-w200 { float: left; width: 200px; }
+.it-w200.it-select { width: 204px; }
+
+
+.w200 { float: left; width: 200px; margin-right: 20px; }
+/*
+.w600 { float: left; width: 600px; padding-left: 20px; margin: 0 0 30px; overflow: hidden; }
+.w200.it-select { width: 204px; }
+.form LABEL { display: block;  }
+.form .it-notice { line-height: 26px; float: left; width: 340px; clear: none; margin-left: 80px; background: #e7e7e7; }
+.form .it-notice B { float: left; width: 15px; height: 26px; background: url(../images/notice.png) 0 0 no-repeat; }
+.form .it-notice I { float: right; width: 5px; height: 26px; background: url(../images/notice.png) -15px 0 no-repeat; }
+.captcha IMG { clear: both; width: 198px; height: 60px; padding: 7px; background: url(../images/captcha.gif); }
+*/

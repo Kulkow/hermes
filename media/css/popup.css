@@ -1,0 +1,10 @@
+#popup {position: absolute;min-width: 100px; min-height: 100px; z-index: 150; background: #fff; top:50%;left: 50%;}
+#popup_layout {width: 100%;height: 100%; position: fixed; background: #DDD; z-index: 149; left: 0; top:0}
+#popup_layout {filter:progid:DXImageTransform.Microsoft.Alpha(opacity=30);opacity: 0.3;}
+/*#popup .close {width: 32px; height: 32px; background: url(/media/images/popup/close.png) 0 0 no-repeat scroll ;display: block; position: absolute; right: 10px; top:10px;}*/
+#popup A.close {padding-left: 20px; height: 20px;background: url(/media/images/actions.png) no-repeat scroll 0 -40px;display: block; position: absolute; right: 15px; top:15px; color:#D20301; text-decoration: none;}
+#popup {background: #000; border-color: #777; box-shadow: inset 0 0 15px #777; border-radius: 15px;}
+/* #popup A.close:hover {box-shadow: 0 0 15px #777;}*/ 
+#popup .title {height: 25px; margin-top: 15px; position: relative; overflow: hidden; border-bottom: 1px solid #92959E;}
+#popup .title {color: #FFFFFF; padding: 0 20px; text-align: left;font:bold 16px/22px 'PT Sans';}
+#popup .content {position: relative; margin: 0 20px;}

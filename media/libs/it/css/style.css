@@ -1,0 +1,19 @@
+/* widget
+-------------------------------------------------------------------*/
+.it-widget { padding: 2px; background: #eee; border: 1px solid #666; }
+.it-title-bar {
+	font: bold 14px/24px Verdana;
+	color: #eee;
+	height: 24px;
+	padding: 0 4px;
+	position: relative;
+	background: #444 url(../images/grain.png);
+}
+/* dialog
+-------------------------------------------------------------------*/
+.it-dialog { position: absolute; z-index: 1001; box-shadow: 3px 3px 5px #999; }
+.it-dialog .it-btn-close { position: absolute; top: 4px; right: 4px; }
+.it-dialog .it-content { padding: 14px 14px 10px; position: relative; }
+.it-dialog .it-btn-resize { position: absolute; right: 2px; bottom: 2px; }
+.it-dialog .it-title-bar .it-ico { float: left; margin: 0 4px 0 0; vertical-align: top; top: 4px; }
+

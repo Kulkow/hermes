@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>{#ws_dlg.image_title}</title>
+	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="../../utils/form_utils.js"></script>
+	<script type="text/javascript" src="js/image.js"></script>
+</head>
+<body id="image"  role="application" aria-labelledby="app_title">
+	<div class="title" id="app_title">{#ws_dlg.image_title}</div>
+	<form action="#" onsubmit="ImageDialog.update();return false">
+		<table role="presentation">
+			<tr>
+				<td class="nowrap"><label for="src">{#ws_dlg.image_src}</label></td>
+				<td>
+					<table class="browse">
+						<tr>
+							<td><input id="src" name="src" type="text" class="mceFocus ws-text" value="" onchange="ImageDialog.getImageData();" /></td>
+							<td id="srcbrowsercontainer" class="browsercontainer">&nbsp;</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="nowrap"><label for="alt">{#ws_dlg.image_alt}</label></td>
+				<td><input id="alt" name="alt" type="text" value="" class="ws-text" /></td>
+				</tr>
+				<tr>
+				<td class="nowrap"><label for="align">{#ws_dlg.image_align}</label></td>
+				<td>
+					<select id="align" name="align" class="ws-text">
+						<option value="">{#not_set}</option>
+						<option value="middle">{#ws_dlg.image_align_middle}</option>
+						<option value="left">{#ws_dlg.image_align_left}</option>
+						<option value="right">{#ws_dlg.image_align_right}</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="nowrap"><label for="width">{#ws_dlg.image_dimensions}</label></td>
+				<td>
+					<input id="width" name="width" type="text" value="" size="3" maxlength="5" class="ws-text" style="width:50px" />
+					 x
+					<input id="height" name="height" type="text" value="" size="3" maxlength="5" class="ws-text" style="width:50px" />
+				</td>
+			</tr>
+			<tr>
+				<td class="nowrap"><label for="class_list">{#class_name}</label></td>
+				<td><select id="class_list" name="class_list" class="ws-text"></select></td>
+			</tr>
+		</table>
+		<div class="mceActionPanel">
+			<button type="submit" id="insert" name="insert">{#insert}</button>
+			<button type="button" id="cancel" name="cancel" onclick="tinyMCEPopup.close()">{#cancel}</button>
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* Reset */
+.moraySkin * { font-weight: 400;text-decoration: none; white-space: nowrap; padding: 0; margin: 0; cursor: default; }
+/* Containers */
+.moraySkin { position: relative; }
+.moraySkin .mceLayout {
+	-moz-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.moraySkin .mceLayout { width: 100% ! important; overflow: hidden; background: #none; border: 1px solid #444; border-radius: 2px; }
+.moraySkin .mceLayout.focus { background: #000; border-color: #777; box-shadow: 0 0 10px #777 inset; }
+.moraySkin IFRAME { display: block; }
+.moraySkin .mceToolbar { height: 32px; margin: 0 0 1px; }
+
+/* Button */
+.moraySkin .mceButton { display: block; width: 30px; height: 30px; padding: 1px; margin-right: 1px; background: #0d588e url(./img/button.png); border-radius: 2px; }
+.moraySkin .mceButtonEnabled:hover, .moraySkin A.mceButtonActive { background-position: 0 -32px; }
+.moraySkin .mceIcon { display: block; width: 30px; height: 30px; background: url(./img/icons.png); }
+.moraySkin .mceButtonDisabled .mceIcon { opacity: .3; filter: alpha(opacity=30); }
+
+/* ListBox */
+.moraySkin .mceOpen { display: block; width: 16px; height: 32px; margin-right: 1px; background: #0d588e url(./img/button.png) 0 -64px; border-radius: 2px; }
+.moraySkin .mceOpen:hover { background-position: -16px -64px; }
+.moraySkin .mceOpen SPAN { display: block; width: 16px; height: 32px; background: url(./img/icons.png) -750px 0; }
+
+/* Separator */
+.moraySkin .mceSeparator { display: block; width: 3px; height: 32px; }
+
+/* Theme */
+.moraySkin .mceButton .mce_bold { background-position: 0 0; }
+.moraySkin .mceButtonEnabled:hover .mce_bold, .moraySkin .mceButtonActive .mce_bold { background-position: 0 -30px; }
+.moraySkin .mceButton .mce_italic { background-position: -30px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_italic, .moraySkin .mceButtonActive .mce_italic { background-position: -30px -30px; }
+.moraySkin .mceButton .mce_underline { background-position: -60px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_underline, .moraySkin .mceButtonActive .mce_underline { background-position: -60px -30px; }
+.moraySkin .mceButton .mce_strikethrough { background-position: -90px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_strikethrough, .moraySkin .mceButtonActive .mce_strikethrough { background-position: -90px -30px; }
+.moraySkin .mceButton .mce_p { background-position: -120px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_p { background-position: -120px -30px; }
+.moraySkin .mceButton .mce_formatblock { background-position: -120px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_formatblock { background-position: -120px -30px; }
+.moraySkin .mceButton .mce_h4 { background-position: -150px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_h4 { background-position: -150px -30px; }
+.moraySkin .mceButton .mce_h5 { background-position: -180px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_h5 { background-position: -180px -30px; }
+.moraySkin .mceButton .mce_h6 { background-position: -210px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_h6 { background-position: -210px -30px; }
+.moraySkin .mceButton .mce_div { background-position: -240px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_div { background-position: -240px -30px; }
+.moraySkin .mceButton .mce_bullist { background-position: -270px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_bullist, .moraySkin .mceButtonActive .mce_bullist { background-position: -270px -30px; }
+.moraySkin .mceButton .mce_numlist { background-position: -300px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_numlist, .moraySkin .mceButtonActive .mce_numlist { background-position: -300px -30px; }
+.moraySkin .mceButton .mce_blockquote { background-position: -330px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_blockquote, .moraySkin .mceButtonActive .mce_blockquote { background-position: -330px -30px; }
+.moraySkin .mceButton .mce_link { background-position: -360px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_link, .moraySkin .mceButtonActive .mce_link { background-position: -360px -30px; }
+.moraySkin .mceButton .mce_unlink { background-position: -390px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_unlink, .moraySkin .mceButtonActive .mce_unlink { background-position: -390px -30px; }
+.moraySkin .mceButton .mce_anchor { background-position: -420px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_anchor, .moraySkin .mceButtonActive .mce_anchor { background-position: -420px -30px; }
+.moraySkin .mceButton .mce_image { background-position: -450px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_image, .moraySkin .mceButtonActive .mce_image { background-position: -450px -30px; }
+.moraySkin .mceButton .mce_media { background-position: -480px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_media, .moraySkin .mceButtonActive .mce_media { background-position: -480px -30px; }
+.moraySkin .mceButton .mce_hr { background-position: -510px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_hr, .moraySkin .mceButtonActive .mce_hr { background-position: -510px -30px; }
+.moraySkin .mceButton .mce_sup { background-position: -540px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_sup, .moraySkin .mceButtonActive .mce_sup { background-position: -540px -30px; }
+.moraySkin .mceButton .mce_sub { background-position: -570px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_sub, .moraySkin .mceButtonActive .mce_sub { background-position: -570px -30px; }
+.moraySkin .mceButton .mce_emotions { background-position: -600px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_emotions { background-position: -600px -30px; }
+.moraySkin .mceButton .mce_charmap { background-position: -630px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_charmap { background-position: -630px -30px; }
+.moraySkin .mceButton .mce_clean { background-position: -660px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_clean { background-position: -660px -30px; }
+.moraySkin .mceButton .mce_spellchecker { background-position: -690px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_spellchecker { background-position: -690px -30px; }
+.moraySkin .mceButton .mce_pagebreak { background-position: -720px 0; }
+.moraySkin .mceButtonEnabled:hover .mce_pagebreak { background-position: -720px -30px; }
+
+
+/* Menu */
+.mceListBox .mceButton { margin: 0; }
+
+.mceMenu .mceMenuItem.mceFirst, .mceMenu .mceIcon { display: none; }
+.mceMenu A { font: 14px/30px Tahoma; color: #fff; display: block; padding: 0 10px; background: #0d588e url(./img/menu.png) 0 0 repeat-x; border: 1px #064a79; border-style: none solid; }
+.mceMenu A:hover, .mceMenu .mceMenuItemSelected A { color: #66a507; background-position: 0 -32px; }
+
+#mce_fullscreen_container { background: #000; }

@@ -1,0 +1,1 @@
+С вашей карты <?php echo $user->login ?> списано <?php echo (! empty($ball) ? $ball : ''); ?>  баллов.

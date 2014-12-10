@@ -1,0 +1,86 @@
+LABEL INPUT { float: left; padding: 0!important; margin: 2px 3px 0 0; vertical-align: middle; cursor: pointer; }
+/*LABEL {font: 14px/16px Arial; color: #000; display: inline-block; position: relative; padding: 3px 10px;}*/
+
+LABEL SUP { color: #c30; }
+
+.it-note {padding: 5px 0 0 210px; font:italic 14px/18px Arial;  clear: both;}
+.it-notice A { text-decoration: none ! important; }
+.it-error { font: 12px/14px Arial; color: #c30; clear: both; padding: 5px 10px; margin: 6px 0; background: #FFF;}
+
+.it-row.it-error {padding-left: 210px; font:bold 16px/20px Arial;}
+.it-row .it-error {padding-left: 210px;}
+
+.links A {
+    float: right;
+    font: 13px/16px Arial;
+    padding-left: 20px;
+}
+
+.it-row { clear: both; padding: 0 0px 5px; margin: 0 0 9px; position: relative; overflow: hidden; zoom: 1; }
+.it-row LABEL {padding: 3px 10px; color:#1E1E1E; font:14px/16px Arial; display: inline-block; position: relative;}
+.it-row LABEL {width: 180px;}
+.it-row.last { margin: 0; padding-left: 210px;}
+.it-row.last.right { float: right;}
+.it-button {border:none; color:#363636;padding: 3px 25px; border-radius:20px; height: 35px; font:20px/24px MyriadPro; }
+
+.it-check LABEL {width:auto;}
+FORM.wide .it-row .it-text {width:300px;}
+.it-button {
+    background: linear-gradient(top, #ffffff 0%, #cccccd 100%);
+	background: -o-linear-gradient(top, #ffffff 0%, #cccccd 100%);
+	background: -moz-linear-gradient(top, #ffffff 0%, #cccccd 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%, #cccccd 100%);
+	background: -webkit-linear-gradient(top,  #ffffff 0%, #cccccd 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr=#ffffff, endColorstr=#cccccd, GradientType=0);
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+}
+.it-button.a {
+    background: linear-gradient(top, #fffbfb 0%,#f8e1db 45%, #bbc580 55%, #56ef32 100%);
+	background: -o-linear-gradient(top, #fffbfb 0%,#f8e1db 45%, #bbc580 55%, #56ef32 100%);
+	background: -moz-linear-gradient(top, #fffbfb 0%,#f8e1db 45%, #bbc580 55%, #56ef32 100%);
+    background: -ms-linear-gradient(top, #fffbfb 0%,#f8e1db 45%, #bbc580 55%, #56ef32 100%);
+	background: -webkit-linear-gradient(top,  #fffbfb 0%,#f8e1db 45%, #bbc580 55%, #56ef32 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr=#fffbfb, endColorstr=#56ef32, GradientType=0);
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+}
+
+A.it-button{display: inline-block; text-decoration: none; line-height: 32px;}
+
+/* input-text, textarea
+-------------------------------------------------------------------*/
+.it-text { height: 29px; padding: 3px 10px; min-width:300px;}
+.it-area { padding: 5px 0 5px 5px; }
+.it-text INPUT { height: 29px; }
+.it-area TEXTAREA { overflow: auto !important; resize: none; zoom: 1; }
+
+.it-text, .it-area {background: #fff; border: 1px solid #b5bac0; border-radius: 5px; box-shadow: inset 0px 1px 2px rgba(0,0,0,0.5);}
+.it-text INPUT, .it-area TEXTAREA { font: 16px/18px Arial; color: #000; width: 100%; padding: 0; margin: 0; display: block; vertical-align: top; background: none; border: none; }
+
+/* input-file
+-------------------------------------------------------------------*/
+.it-text.it-file { position: relative; overflow: hidden; }
+.it-text.it-file INPUT { font-size: 1000px; height: 26px; position: absolute; top: -1px; right: 0; opacity: 0; filter: alpha(opacity=0); outline: none; cursor: default; z-index: 2; }
+.it-file P { font: 14px/18px Arial; color: #000; width: 100% !important; height: 18px; position: relative; background: url(../images/file.gif) 100% 4px no-repeat; z-index: 1; }
+
+/* select
+-------------------------------------------------------------------*/
+.it-select { position: relative; }
+.it-select SELECT { width: 100%; position: relative; z-index: 2; border: 1px solid #b5bac0; border-radius: 10px; padding: 3px 10px;}
+
+.it-assess, .messages.notices {/*color:#18EA09;*/ border: 1px solid #18EA09; font:14px/16px Arial; padding: 5px;}
+
+.it-text INPUT:focus,.it-area TEXTAREA {border:none; outline: none;}
+INPUT.it-text:focus {outline: none; }
+
+/* captcha
+-------------------------------------------------------------------*/
+#captcha IMG { float: left; width: 150px; height: 50px; }
+#captcha A { float: left; width: 32px; height: 32px; margin:5px 10px 0 10px; background: url(../images/update.png) 0 center no-repeat; }
+#captcha .it-text { width: 138px; margin: 0 0 10px; }
+
+
+LABEL.inline {width: auto; display: inline-block;}
+#captcha .it-note {padding: 0;}
+
+#password-show {padding: 5px 0 0 220px; height: 25px; font:bold 16px/18px Arial;}
+         

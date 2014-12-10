@@ -1,0 +1,60 @@
+/* General */
+.ws-moray { position: absolute; background: #054573 url(./img/bg.png) 0 0 repeat-x; border: 1px solid #064a79; border-radius: 10px 10px 2px 2px; }
+.ws-moray .mceWrapper { position: static; }
+.ws-moray_modalBlocker { display: none; left: 0; top: 0; width: 100%; height: 100%; position: fixed; background: rgba(26,26,26,.6); }
+.ws-moray .mcePlaceHolder { top: 0; left: 0; position: absolute; background: rgba(5,69,115,.3); border-radius: 10px 10px 2px 2px; }
+.mceEventBlocker { left: 0; top: 0; width: 100%; height: 100%; position: fixed; background: none; }
+/* Top */
+.ws-moray .mceTop { font: 16px/29px Tahoma; color: #fff; height: 30px; padding-left: 10px; }
+/* Middle */
+.ws-moray .mceMiddle { padding: 0 5px 5px; }
+.ws-moray .mceMiddle SPAN, .ws-moray .mceMiddle IFRAME { width: 100%; display: block; padding: 0; margin: 0; background: #000; }
+.ws-moray .mceLeft, .ws-moray .mceRight { width: 5px; }
+
+/* Bottom */
+.ws-moray .mceBottom { height: 6px; position: absolute; left: -10000px; top: -10000px; }
+
+/* Actions */
+.ws-moray A { position: absolute; }
+.ws-moray .mceClose { width: 20px; height: 20px; top: 5px; right: 5px; background:url(./img/close.png) center no-repeat; border-radius: 3px; }
+.ws-moray .mceMin {display:none;}
+.ws-moray .mceMed {display:none;}
+.ws-moray .mceMax {display:none;}
+.ws-moray .mceMove { display: none; width: 100%; height: 32px; top: 0; cursor: move; }
+.ws-moray .mceMovable .mceMove { display: block; }
+
+/* Resize */
+.ws-moray .mceResize {top:auto; left:auto; display:none; width:5px; height:5px; }
+.ws-moray .mceResizable .mceResize {display:block}
+.ws-moray .mceResizable .mceMin, .ws-moray .mceMax {display:none}
+.ws-moray .mceMinimizable .mceMin {display:block}
+.ws-moray .mceMaximizable .mceMax {display:block}
+.ws-moray .mceMaximized .mceMed {display:block}
+.ws-moray .mceMaximized .mceMax {display:none}
+.ws-moray a.mceResizeN {top:0; left:0; width:100%; cursor:n-resize}
+.ws-moray a.mceResizeNW {top:0; left:0; cursor:nw-resize}
+.ws-moray a.mceResizeNE {top:0; right:0; cursor:ne-resize}
+.ws-moray a.mceResizeW {top:0; left:0; height:100%; cursor:w-resize;}
+.ws-moray a.mceResizeE {top:0; right:0; height:100%; cursor:e-resize}
+.ws-moray a.mceResizeS {bottom:0; left:0; width:100%; cursor:s-resize}
+.ws-moray a.mceResizeSW {bottom:0; left:0; cursor:sw-resize}
+.ws-moray a.mceResizeSE {bottom:0; right:0; cursor:se-resize}
+
+/* Alert/Confirm */
+.ws-moray .mceButton {
+	font: 12px/20px Arial; color: #fff; white-space: nowrap; width: 80px; height: 20px; padding: 0; margin: 0;
+	text-transform: uppercase; text-align: center; text-decoration: none;
+	background: linear-gradient(top, #424242, #2c2c2c);
+	background: -o-linear-gradient(#424242, #2c2c2c);
+	background: -moz-linear-gradient(top, #424242, #2c2c2c);
+	background: -webkit-gradient(linear, left top, left bottom, from(#424242), to(#2c2c2c));
+	text-shadow: 0 0 1em #fff, .05em 0 .15em #333, -.05em 0 .15em #333, 0 .05em .15em #333, 0 -.05em .15em #333;
+	border: none; border-radius: 2px; outline: 0;
+}
+.ws-moray .mceMiddle .mceIcon { width: 32px; height: 32px; position: absolute; left: 15px; top: 50px; }
+.ws-moray .mceAlert .mceMiddle SPAN, .ws-moray .mceConfirm .mceMiddle SPAN { font-weight: bold; line-height: 1; displaty: block; width: auto; height: 70px; padding: 25px 0 0 60px; overflow: auto; }
+.ws-moray .mceAlert .mceOk { left: 50%; top: 96px; margin-left: -40px; }
+.ws-moray .mceAlert .mceIcon { background: url(img/alert.png); }
+.ws-moray .mceConfirm .mceOk { left: 50%; top: 96px; margin-left: -90px; }
+.ws-moray .mceConfirm .mceCancel { left: 50%; top: 96px; }
+.ws-moray .mceConfirm .mceIcon { background:url(img/confirm.png); }
