@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 4.0.10
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost
--- Время создания: Дек 10 2014 г., 12:50
--- Версия сервера: 5.5.35-33.0
--- Версия PHP: 5.3.28
+-- Host: 127.0.0.1:3306
+-- Generation Time: Dec 11, 2014 at 01:48 PM
+-- Server version: 5.6.19-log
+-- PHP Version: 5.4.29
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- База данных: `u0034415_hermes`
+-- Database: `hermes`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `banners`
+-- Table structure for table `banners`
 --
 
 CREATE TABLE IF NOT EXISTS `banners` (
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `banners` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
--- Дамп данных таблицы `banners`
+-- Dumping data for table `banners`
 --
 
 INSERT INTO `banners` (`id`, `group`, `class`, `url`, `title`, `hide`, `description`, `image_id`) VALUES
@@ -51,7 +51,7 @@ INSERT INTO `banners` (`id`, `group`, `class`, `url`, `title`, `hide`, `descript
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `bills`
+-- Table structure for table `bills`
 --
 
 CREATE TABLE IF NOT EXISTS `bills` (
@@ -67,10 +67,10 @@ CREATE TABLE IF NOT EXISTS `bills` (
   `summa` float NOT NULL,
   `currency_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=110 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=109 ;
 
 --
--- Дамп данных таблицы `bills`
+-- Dumping data for table `bills`
 --
 
 INSERT INTO `bills` (`id`, `card_id`, `akkaunt`, `phone`, `type`, `created`, `status`, `email`, `comment`, `summa`, `currency_id`) VALUES
@@ -140,7 +140,7 @@ INSERT INTO `bills` (`id`, `card_id`, `akkaunt`, `phone`, `type`, `created`, `st
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `black_list`
+-- Table structure for table `black_list`
 --
 
 CREATE TABLE IF NOT EXISTS `black_list` (
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `black_list` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `cards`
+-- Table structure for table `cards`
 --
 
 CREATE TABLE IF NOT EXISTS `cards` (
@@ -173,45 +173,19 @@ CREATE TABLE IF NOT EXISTS `cards` (
   `user_id` int(12) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uniq_code` (`code`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=78 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=75 ;
 
 --
--- Дамп данных таблицы `cards`
+-- Dumping data for table `cards`
 --
 
 INSERT INTO `cards` (`id`, `code`, `ball`, `income`, `currency_id`, `percent`, `tarif_id`, `last_event`, `created`, `active`, `active_time`, `start_time`, `user_id`) VALUES
-(3, 'admin', 1123.45, 0, 2, 1.25, 2, 580, 1413489226, 0, 1417552062, 1417381201, 3),
-(10, '123bod321', 5793.69, 0, 2, 1.5, 3, 622, 1414849245, 0, 1417779087, 1417381202, 16),
-(21, 'Erohin', 0, 0, 0, 0, 0, 0, 1414858711, 0, 0, 0, 28),
-(23, 'test', 0, 0, 0, 0, 0, 0, 1414860060, 0, 0, 0, 29),
-(29, 'master', 0, 0, 0, 0, 0, 0, 1414925505, 0, 0, 0, 35),
-(42, 'maxbaks', 0, 0, 0, 0, 0, 0, 1415464580, 0, 0, 0, 49),
-(45, 'artemtzelishev93', 0, 0, 0, 0, 0, 0, 1415605728, 0, 0, 0, 52),
-(47, 'BitKonan', 0, 0, 0, 0, 0, 0, 1415610098, 0, 0, 0, 54),
-(48, 'HYIPru', 0, 0, 0, 0, 0, 0, 1415612912, 0, 0, 0, 55),
-(53, 'torrek', 0, 0, 0, 0, 0, 0, 1415629133, 0, 0, 0, 62),
-(55, 'payrating', 0, 0, 0, 0, 0, 0, 1415638141, 0, 0, 0, 65),
-(57, 'HYIPexplorerBiz', 0, 0, 0, 0, 0, 0, 1415647298, 0, 0, 0, 67),
-(58, 'rsdb', 0, 0, 0, 0, 0, 0, 1415651898, 0, 0, 0, 68),
-(60, 'samrav', 0, 0, 0, 0, 0, 0, 1415803848, 0, 0, 0, 70),
-(61, 'newbie', 0, 0, 0, 0, 0, 0, 1415832515, 0, 0, 0, 71),
-(62, 'demoninvest', 0, 0, 0, 0, 0, 0, 1415834563, 0, 0, 0, 72),
-(63, 'Malcasto', 0, 0, 0, 0, 0, 0, 1415889368, 0, 0, 0, 74),
-(64, 'miroha', 0, 0, 0, 0, 0, 0, 1415891768, 0, 0, 0, 75),
-(65, 'poyasopt', 0, 0, 0, 0, 0, 0, 1415913620, 0, 0, 0, 76),
-(66, 'yurze', 0, 0, 0, 0, 0, 0, 1415959390, 0, 0, 0, 77),
-(68, 'grex34314007', 0, 0, 0, 0, 0, 0, 1416689263, 0, 0, 0, 80),
-(69, 'DENIS1986', 0, 0, 0, 0, 0, 0, 1416735759, 0, 0, 0, 81),
-(70, 'biryuc', 0, 0, 0, 0, 0, 0, 1416744104, 0, 0, 0, 82),
-(71, 'sahka777', 0, 0, 0, 0, 0, 0, 1416745286, 0, 0, 0, 83),
-(72, 'Rishat', 0, 0, 0, 0, 0, 0, 1416768608, 0, 0, 0, 84),
-(73, 'Artabzv', 0, 0, 0, 0, 0, 0, 1416778698, 0, 0, 0, 85),
-(74, 'sakhno2272', 0, 0, 0, 0, 0, 0, 1416810548, 0, 0, 0, 86);
+(3, 'admin', 1123.45, 0, 2, 1.25, 2, 580, 1413489226, 0, 1417552062, 1417381201, 3);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `cards_users`
+-- Table structure for table `cards_users`
 --
 
 CREATE TABLE IF NOT EXISTS `cards_users` (
@@ -224,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `cards_users` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `checks`
+-- Table structure for table `checks`
 --
 
 CREATE TABLE IF NOT EXISTS `checks` (
@@ -239,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `checks` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `currency`
+-- Table structure for table `currency`
 --
 
 CREATE TABLE IF NOT EXISTS `currency` (
@@ -251,7 +225,7 @@ CREATE TABLE IF NOT EXISTS `currency` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Дамп данных таблицы `currency`
+-- Dumping data for table `currency`
 --
 
 INSERT INTO `currency` (`id`, `code`, `description`) VALUES
@@ -261,7 +235,7 @@ INSERT INTO `currency` (`id`, `code`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `currency_curs`
+-- Table structure for table `currency_curs`
 --
 
 CREATE TABLE IF NOT EXISTS `currency_curs` (
@@ -273,7 +247,7 @@ CREATE TABLE IF NOT EXISTS `currency_curs` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Дамп данных таблицы `currency_curs`
+-- Dumping data for table `currency_curs`
 --
 
 INSERT INTO `currency_curs` (`id`, `currency_id`, `currency_eq_id`, `value`) VALUES
@@ -282,7 +256,7 @@ INSERT INTO `currency_curs` (`id`, `currency_id`, `currency_eq_id`, `value`) VAL
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `deferred`
+-- Table structure for table `deferred`
 --
 
 CREATE TABLE IF NOT EXISTS `deferred` (
@@ -300,7 +274,7 @@ CREATE TABLE IF NOT EXISTS `deferred` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `events`
+-- Table structure for table `events`
 --
 
 CREATE TABLE IF NOT EXISTS `events` (
@@ -316,7 +290,7 @@ CREATE TABLE IF NOT EXISTS `events` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=669 ;
 
 --
--- Дамп данных таблицы `events`
+-- Dumping data for table `events`
 --
 
 INSERT INTO `events` (`id`, `type_id`, `card_id`, `created`, `user_id`, `ball`, `percent`, `ip`) VALUES
@@ -884,7 +858,7 @@ INSERT INTO `events` (`id`, `type_id`, `card_id`, `created`, `user_id`, `ball`, 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `events_types`
+-- Table structure for table `events_types`
 --
 
 CREATE TABLE IF NOT EXISTS `events_types` (
@@ -897,7 +871,7 @@ CREATE TABLE IF NOT EXISTS `events_types` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
--- Дамп данных таблицы `events_types`
+-- Dumping data for table `events_types`
 --
 
 INSERT INTO `events_types` (`id`, `code`, `title`, `description`) VALUES
@@ -913,7 +887,7 @@ INSERT INTO `events_types` (`id`, `code`, `title`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `images`
+-- Table structure for table `images`
 --
 
 CREATE TABLE IF NOT EXISTS `images` (
@@ -928,7 +902,7 @@ CREATE TABLE IF NOT EXISTS `images` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
 
 --
--- Дамп данных таблицы `images`
+-- Dumping data for table `images`
 --
 
 INSERT INTO `images` (`id`, `target_id`, `type`, `path`, `alt`, `hide`, `timestamp`) VALUES
@@ -971,7 +945,7 @@ INSERT INTO `images` (`id`, `target_id`, `type`, `path`, `alt`, `hide`, `timesta
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `logs`
+-- Table structure for table `logs`
 --
 
 CREATE TABLE IF NOT EXISTS `logs` (
@@ -987,7 +961,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=80 ;
 
 --
--- Дамп данных таблицы `logs`
+-- Dumping data for table `logs`
 --
 
 INSERT INTO `logs` (`id`, `ip`, `user_id`, `target`, `action`, `content`, `created`, `robot`) VALUES
@@ -1074,7 +1048,7 @@ INSERT INTO `logs` (`id`, `ip`, `user_id`, `target`, `action`, `content`, `creat
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `menu`
+-- Table structure for table `menu`
 --
 
 CREATE TABLE IF NOT EXISTS `menu` (
@@ -1090,7 +1064,7 @@ CREATE TABLE IF NOT EXISTS `menu` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
--- Дамп данных таблицы `menu`
+-- Dumping data for table `menu`
 --
 
 INSERT INTO `menu` (`id`, `group`, `url`, `title`, `class`, `hide`, `auth`, `order`) VALUES
@@ -1103,7 +1077,7 @@ INSERT INTO `menu` (`id`, `group`, `url`, `title`, `class`, `hide`, `auth`, `ord
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `news`
+-- Table structure for table `news`
 --
 
 CREATE TABLE IF NOT EXISTS `news` (
@@ -1123,20 +1097,19 @@ CREATE TABLE IF NOT EXISTS `news` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
--- Дамп данных таблицы `news`
+-- Dumping data for table `news`
 --
 
 INSERT INTO `news` (`id`, `name`, `teaser`, `content`, `h1`, `keywords`, `description`, `title`, `image_id`, `alias`, `created`, `hide`) VALUES
 (5, 'START! Наш Фонд наконец-то запустил сайт', '<p>Сегодня 1 Ноября 2014 года начал функционировать сайт ранее работающего Фонда Доверительного Управления Hermes!&nbsp;<br />Все вклады перенеслись в Ваш личный кабинет.&nbsp;<br />Желаем удачи всем. Завтра выплаты!:)</p>', '<p>Сегодня 1 Ноября 2014 года начал функционировать сайт ранее работающего Фонда Доверительного Управления Hermes!&nbsp;<br />Все вклады перенеслись в Ваш личный кабинет.&nbsp;<br />Желаем удачи всем. Завтра выплаты!:)</p>', 'START! Наш Фонд наконец-то запустил сайт', '', '', 'START! Наш Фонд наконец-то запустил сайт', 39, 'start_nash_fond_nakonec-to_zapustil_sayt', 1414867795, 0),
 (6, 'Пополнение личного счета', '<p style="text-align: left;">Уважаемые инвесторы!<br />По многочисленным просьбам мы открываем для вас пополнение личного кабинета вне зависимости от того, активирован ли у вас тариф, или нет.<br />Теперь пополнить личный кабинет вы можете в любое время. После пополнения депозита, проценты по тарифу будут начисляться уже на новый баланс.<br />Напоминаем, что обработка заявок на пополнение через кошелек QIWI происходит в ручном режиме до 6 часов. Пополнение Perfect Money - автоматическое.</p>', '<p style="text-align: left;">Уважаемые инвесторы!<br />По многочисленным просьбам мы открываем для вас пополнение личного кабинета вне зависимости от того, активирован ли у вас тариф, или нет.<br />Теперь пополнить личный кабинет вы можете в любое время. После пополнения депозита, проценты по тарифу будут начисляться уже на новый баланс.<br />Напоминаем, что обработка заявок на пополнение через кошелек QIWI происходит в ручном режиме до 6 часов. Пополнение Perfect Money - автоматическое, с мгновенным зачислением на счет.<br />Всем удачного дня!</p>', 'Пополнение депозита', '', '', 'Пополнение депозита', 40, 'popolnenie_depozita', 1415185661, 0),
 (7, 'Вывод средств', '<p>Доброго времени суток, Уважаемые Инвесторы!<br />Спешим порадовать вас очередным нововведением, связанным с выводом средств.<br />За 5 дней работы нашего сайта мы получили много просьб добавить возможность вывода средств не только в воскресенье, но и субботу.<br />Мы прислушиваемся к вашим пожеланиям, и поэтому вывод теперь доступен с 00:00 часов субботы до 23:59 воскресенья по московскому времени, при условии, что у вас не активирован тарифный план.&nbsp;<br />Впереди нас ждет ещё много работы, поэтому в ближайшее время нам будет чем ещё вас порадовать! =)<br />Всем удачи и отличного настроения!</p>', '<p>Доброго времени суток, Уважаемые Инвесторы!<br />Спешим порадовать вас очередным нововведением, связанным с выводом средств.<br />За 5 дней работы нашего сайта мы получили много просьб добавить возможность вывода средств не только в воскресенье, но и субботу.<br />Мы прислушиваемся к вашим пожеланиям, и поэтому вывод теперь доступен с 00:00 часов субботы до 23:59 воскресенья по московскому времени, при условии, что у вас не активирован тарифный план.&nbsp;<br />Впереди нас ждет ещё много работы, поэтому в ближайшее время нам будет чем ещё вас порадовать! =)<br />Всем удачи и отличного настроения!</p>', 'Вывод средств', '', '', 'Вывод средств', 42, 'vyvod_sredstv', 1415295920, 0),
-(8, 'Вывод процентов', '<p>Уважаемые инвесторы, спешим поделиться ближайшими нововведениями в работе сайта:<br />На грядущей неделе планируем реализовать возможность вывода процентов во время работы тарифного плана.<br />Минимальная сумма на вывод процентов будет составлять 30$. Это значит, что если ваш депозит находится в работе (активирован тарифный план), то в субботу и воскресенье вы сможете выводить свою прибыль от 30$.&nbsp;<br />В понедельник, также как и сейчас, прибыль будет плюсоваться к депозиту, вывести который вы сможете только после окончания тарифного плана.<br />Команда проекта Hermes желает вам удачной рабочей недели!</p>', '<p>Уважаемые инвесторы, спешим поделиться ближайшими нововведениями в работе сайта:<br />На грядущей неделе планируем реализовать возможность вывода процентов во время работы тарифного плана.<br />Минимальная сумма на вывод процентов будет составлять 30$. Это значит, что если ваш депозит находится в работе (активирован тарифный план), то в субботу и воскресенье вы сможете выводить свою прибыль от 30$.&nbsp;<br />В понедельник, также как и сейчас, прибыль будет плюсоваться к депозиту, вывести который вы сможете только после окончания тарифного плана.<br />Команда проекта Hermes желает вам удачной рабочей недели!</p>', 'Вывод процентов', '', '', 'Вывод процентов', 43, 'vyvod_procentov', 1415556775, 0),
-(9, 'Отчетность', '<p>Дорогие инвесторы! Не забываем, что для Вас мы ведем отчетность наших Спортивных Ставок!<br />Подробнее:&nbsp;https://vk.com/topic-55020352_31024435?offset=20</p>', '<p>Дорогие инвесторы! Не забываем, что для Вас мы ведем отчетность наших Спортивных Ставок!<br />Подробнее:&nbsp;https://vk.com/topic-55020352_31024435?offset=</p>', 'Отчетность', '', '', 'Отчетность', 44, 'otchetnost', 1416601350, 0);
+(8, 'Вывод процентов', '<p>Уважаемые инвесторы, спешим поделиться ближайшими нововведениями в работе сайта:<br />На грядущей неделе планируем реализовать возможность вывода процентов во время работы тарифного плана.<br />Минимальная сумма на вывод процентов будет составлять 30$. Это значит, что если ваш депозит находится в работе (активирован тарифный план), то в субботу и воскресенье вы сможете выводить свою прибыль от 30$.&nbsp;<br />В понедельник, также как и сейчас, прибыль будет плюсоваться к депозиту, вывести который вы сможете только после окончания тарифного плана.<br />Команда проекта Hermes желает вам удачной рабочей недели!</p>', '<p>Уважаемые инвесторы, спешим поделиться ближайшими нововведениями в работе сайта:<br />На грядущей неделе планируем реализовать возможность вывода процентов во время работы тарифного плана.<br />Минимальная сумма на вывод процентов будет составлять 30$. Это значит, что если ваш депозит находится в работе (активирован тарифный план), то в субботу и воскресенье вы сможете выводить свою прибыль от 30$.&nbsp;<br />В понедельник, также как и сейчас, прибыль будет плюсоваться к депозиту, вывести который вы сможете только после окончания тарифного плана.<br />Команда проекта Hermes желает вам удачной рабочей недели!</p>', 'Вывод процентов', '', '', 'Вывод процентов', 43, 'vyvod_procentov', 1415556775, 0);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `pages`
+-- Table structure for table `pages`
 --
 
 CREATE TABLE IF NOT EXISTS `pages` (
@@ -1155,7 +1128,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
--- Дамп данных таблицы `pages`
+-- Dumping data for table `pages`
 --
 
 INSERT INTO `pages` (`id`, `pid`, `title`, `alias`, `mid`, `hide`, `l_key`, `r_key`, `level`) VALUES
@@ -1173,7 +1146,7 @@ INSERT INTO `pages` (`id`, `pid`, `title`, `alias`, `mid`, `hide`, `l_key`, `r_k
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `page_contents`
+-- Table structure for table `page_contents`
 --
 
 CREATE TABLE IF NOT EXISTS `page_contents` (
@@ -1189,7 +1162,7 @@ CREATE TABLE IF NOT EXISTS `page_contents` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
--- Дамп данных таблицы `page_contents`
+-- Dumping data for table `page_contents`
 --
 
 INSERT INTO `page_contents` (`id`, `page_id`, `h1`, `teaser`, `content`, `keywords`, `description`) VALUES
@@ -1210,7 +1183,7 @@ INSERT INTO `page_contents` (`id`, `page_id`, `h1`, `teaser`, `content`, `keywor
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `payments`
+-- Table structure for table `payments`
 --
 
 CREATE TABLE IF NOT EXISTS `payments` (
@@ -1226,7 +1199,7 @@ CREATE TABLE IF NOT EXISTS `payments` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Дамп данных таблицы `payments`
+-- Dumping data for table `payments`
 --
 
 INSERT INTO `payments` (`id`, `title`, `alias`, `login`, `password`, `created`, `currency`, `signature`) VALUES
@@ -1236,7 +1209,7 @@ INSERT INTO `payments` (`id`, `title`, `alias`, `login`, `password`, `created`, 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `referals`
+-- Table structure for table `referals`
 --
 
 CREATE TABLE IF NOT EXISTS `referals` (
@@ -1252,7 +1225,7 @@ CREATE TABLE IF NOT EXISTS `referals` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=92 ;
 
 --
--- Дамп данных таблицы `referals`
+-- Dumping data for table `referals`
 --
 
 INSERT INTO `referals` (`id`, `pid`, `user_id`, `l_key`, `r_key`, `level`, `path`, `ball`) VALUES
@@ -1337,7 +1310,7 @@ INSERT INTO `referals` (`id`, `pid`, `user_id`, `l_key`, `r_key`, `level`, `path
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `roles`
+-- Table structure for table `roles`
 --
 
 CREATE TABLE IF NOT EXISTS `roles` (
@@ -1349,7 +1322,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Дамп данных таблицы `roles`
+-- Dumping data for table `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`, `description`) VALUES
@@ -1360,7 +1333,7 @@ INSERT INTO `roles` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `roles_users`
+-- Table structure for table `roles_users`
 --
 
 CREATE TABLE IF NOT EXISTS `roles_users` (
@@ -1371,92 +1344,17 @@ CREATE TABLE IF NOT EXISTS `roles_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `roles_users`
+-- Dumping data for table `roles_users`
 --
 
 INSERT INTO `roles_users` (`user_id`, `role_id`) VALUES
 (3, 1),
-(15, 1),
-(16, 1),
-(17, 1),
-(18, 1),
-(20, 1),
-(21, 1),
-(22, 1),
-(23, 1),
-(24, 1),
-(25, 1),
-(26, 1),
-(27, 1),
-(28, 1),
-(29, 1),
-(30, 1),
-(31, 1),
-(32, 1),
-(33, 1),
-(34, 1),
-(35, 1),
-(37, 1),
-(38, 1),
-(40, 1),
-(41, 1),
-(42, 1),
-(43, 1),
-(44, 1),
-(45, 1),
-(46, 1),
-(49, 1),
-(50, 1),
-(51, 1),
-(52, 1),
-(53, 1),
-(54, 1),
-(55, 1),
-(56, 1),
-(57, 1),
-(58, 1),
-(59, 1),
-(62, 1),
-(64, 1),
-(65, 1),
-(66, 1),
-(67, 1),
-(68, 1),
-(69, 1),
-(70, 1),
-(71, 1),
-(72, 1),
-(74, 1),
-(75, 1),
-(76, 1),
-(77, 1),
-(79, 1),
-(80, 1),
-(81, 1),
-(82, 1),
-(83, 1),
-(84, 1),
-(85, 1),
-(86, 1),
-(87, 1),
-(88, 1),
-(89, 1),
-(3, 2),
-(16, 2),
-(17, 2),
-(16, 3),
-(17, 3),
-(20, 3),
-(22, 3),
-(25, 3),
-(30, 3),
-(35, 3),
-(37, 3);
+(3, 2);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `sessions`
+-- Table structure for table `sessions`
 --
 
 CREATE TABLE IF NOT EXISTS `sessions` (
@@ -1468,146 +1366,16 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `sessions`
+-- Dumping data for table `sessions`
 --
 
 INSERT INTO `sessions` (`session_id`, `last_active`, `contents`) VALUES
-('548552351bfc59-80695407', 1418130777, 'Jp8fhgy7GX0vf3giQwyE0PzW9Y1nb11DtQPPu+vgt/vQM/gi/N5mzHvenYFCSe8IHjIUTAcqk9lxLWTWjVBlFbADwgTMFVTlZnI3dlLRT1pVhK+ko5ai3wSFH+8AmZMTcS1O162URzOJpJMXiLa703p2ojSOaiotMcC83D0+v7y/Whpf0h4RHoUZWMYsUN3dm3YaF16V84DRf3lgjLZ/jqb12opbPvwXRGWMytLRG3hOs7L4bD9r9czuL9ug9ck+voY0FbJKKVS/qHYVenc9sqXIoZAG0tdEB44ZMUXDZQECpUzTTUA9Sj4Ic+x0lDCIxmZSoksefyQ9+Avrerwl50JpE1xEwDdiK9g/bSNMGcdjgINEzJPUUEOFYc8PHeCidGx4vVgdlgJfVlDQYYW8nfBvExXOkRga9zQbUSofbHzSFNQpXXjGj7wBrqdpEYypocIT11mVa/ZoKf5YEolyVe4oDuxYtWrrQMTQvuEHTK93JFIc2lYBTporj4Jvx6nWlAY5eSXQrweVKBZgwmEnR3cCs2UR32goDVRECSIMT2StIqovDu0Mbz9G0lcyPAq/Qw29MTWLkbGDJ0AAes4cyHqMckiZ6TMQF+4dNL+Wym3giWCIpdIlIZXAXMSqVrwax9T8+3EoE+y8oywmwcvCV1H4cr1ieM121EOToR1CzpK4WBcbqNvl1gxnITuU7vo4zFPKtlw0498MowCnvpm2drZTusofk+aY8G+7NH8U0LXN0Nx2/FwmwRIYALGuV80DZr+/cdz52JnYdOxL1ZGtFcGHCe9Z4DWPM3K5UDmwrH80n4otT76Pq/5HkhahOOgxijuyK1dSYdNjGUfdNbmbnKdOERByQ/FLyb35pls0K4F9q88XCwPZNhgVh0Eqp/dRpBpFEAaTAinFO8bTfl3kWbtbMOQwYV1wIY0dQySuClzJXn/5CjACC53RqsGBh9kfcUiQt0NsdRl8UMHFVIn2vYRUVAtrb7fglZuty9Wq6TCldTztQV1i8QXodyMTqVIQAbchlAc1rslh/dVhsHndP34sUxP1BCFsuzr0n+vxgZsGlp2UnRBCW54hLK69qQHH22LsBjP0ikNusClvjKYZ70AwVjVxYhSi1JdbAYKOIy8KneOFbURQAnjJMg+GKyVPzmq8FblWzhp/+K5ACABbiWRtZC13dM1gqQ+3crlABeaVcTkLHOor/o67O5NQCw9W8bo5lNZ93Xb7UEUhWAB7p0UkDWVERzD/tVQkja7IiwtiLDtwsS5Ea1qUR7uBZ+yXpsUwtX7H48pyGkedHiELZOS5vlvSawNYNtY9QnegNSFtuyrElEkK7Q84WVhTG6K8pMXtl52FYY5qvbNfhOGyAIt22359DFDzUdk5eS7GvJ92RTVOQ5RqFEZM4IVpV7xl5FucDltFry+DudgZZcb7q/lps8B2N785qcJq/XmGiQ5gt9CJu5mg5UV3VhpBeyNqrZGWrlTADeYkoZAc9KWtOuwtBTszdyGI8v/7lm+bvzUdFMTKRIGyuDZKVH3hzq/gamEh9+bvsdcKyIM/qzB/BtO7VcNFbaM3b/Ck33rKLqXiK2KGU5ElU1hMid2q1ylI2nLBxfUwcvtBbsrQKRYm01lyXDvGs2bBkbFLmR/WMJMNjTwDN8keoXidtStvBJbDkHwWWkZScN+H0ujr0TQDkqoLYB45tV6wS8f9kE/TxkE+OxhvlAIK6mBxRArxP0Jj/nT0nxbvpg=='),
-('54863458f384d3-96716598', 1418081369, 'TaGUVw872RQT9sJd1a7q+gdEx86x3JT0l7JY3mkRSW+3HwafFPcwTngCd91F+iTGEIku815EYRPQqxaC9mcwc7jgzyGFhDd2ULUHDbte2RDmaNWzB3T1Foelp9AG7PwmWq3t9z/0QhJ+wJGUxP3IBY769kLaqEmZW+QOX2j0VCF64D02Ky6v3AOFe3F0K4/IbqYNSwshJV4J50DeBy7YZ/wxEny32rZ0Jw3iB7BxwjClf3+w/OTSNkVksNs9E7eJUG77QqAMNIAz0PwFv6HDVc5r+gsUVNZymm/lusevuWEBBNN6oTJxp/iwJ1NYld49L/F22hablkGRoY//YV7tqUEOmJcLL8UioTpyQE6OfiEZx4KgQsXjRHP7/5ifKyO2JA5n2J9zSy0SJH4jo/+/GmhhVCElEWe5Kotf35CZGxi4hHOlZuStnstdGyeqR8XlHGycXAQQ95u+hxCz4EjIJwI6uWjOujZch0pMY3+A/3Fcs3fyK9WTl0ltdKOI/2K5m0SlYnC/LrJ3ouQBEnfk6A+kSBFH5Fc40StbloOMF+3XUkcZVByR7PyLkydFkU/MWQPWYWg6/jafFDinOxnr9X9iFlMK+esZLS6g+i/iDbwxX3sUbZxatPCBKKL9bDlxHzCb8Nzp9Sf/aU5vpGBg/CAimKr8UcGLeH9xP4Oe8H6SO07Ms/kMDEvThT5xGbogCJA0Rge1/xlo2FDKVhZavNw0ytUGfSPj4UEPAPhHAIpiAiwGhymqSufagWH0b9l59HiCblNekYNOneiPIxy5urHXiZsKtT6wNGJ3woz3qhLkXOSRNgrmFmcyM6Ox62bxMokz3jZClHrpzxjIYemjnkT6bX/Rz5TQkaFiewUH/5dWVxCtLha1oUFxat5dHYBanhVgcfVrXe2uRgxgKQ4D0PtPrOWqVmZW+PmZKeAERZR0VplBW0jwu3TkffxS+TUjU6J6tc4RswqccQblkcyzXscjyE7nsrWWpHFrTbsemcHETqv9I7qey9tKpBYAkuTH/9j8h6LLmjDxdE+JlwK0Ioig4fVpzrPXPt+W1jXkIpgKWb7ULJaa/zqycukdJWB10+BxrR36C12qfbmqAmH9pKx0V//8Zoepts6yaapxPjJnJPN9z3wdORo3Tx6Lj9HbjSgF2KqmDZOeypKTI3k1dZEBcCfuksL4guUxdVvXDkd2/KdQlOqLc2apkskg5tjjPG7MdjlsrA74y0OSR4olDP/a46rNInyUT8NJjv0I/PhgBvyU2v2bYFIoz4dGdgTFKrBEOPq9FYUVJYJQRs8HUS3/dgDoyxCq43s+4l7CXHFQYOZ1rcOkSy2pvqY4VH6TF+csde+G+LoVZcQQ5C8jgcvKVW3ICFmQ6BNdt8NF8v0qR6nloPyauvNu/vsWbHOPLMBLZ2TZNNHjZx9QTDm8tIVhlbdQijIJK0NlPu8n3bfHBLL7toKaJxmwGh/9ImJ2GBla/sFxuvK737zLck4TXxRYomtLf2sbC7aOVtIwWYiGQZeSpgegC+KiEs1YmHi3RUHyyPF6+LC894aifLoXXqxSsm1T3rbL36dgaShUbma8GgFMQ9h9ij7m2eUgaT9YDW6L7nbtKFSGfmO0m6Mq75+2In/qy/3C9u2WsiuKm/43pQ+Gs+cr+SjvOi7quWWsekVG35yHctShGNNMT7ehcnqBI7/y5h1t1+nIJ6k7k8d7mqjXdVB8tyEQNP/xT8IrmLwj//RNy6NCRB62l10iU50N0FtRlC+aJv3rRNxCMoToLlh0N0QqtYgYVr9boN3vKvgw3RS45YzqpaSqzw8ETO0KdVArUiANKQeaX4Uu0sONpgzz4QdLjtG0Jzp+QaBLrQ=='),
-('5486348a0d76f6-88326500', 1418081418, '646vjar480ml1M8heBlI6LlHJNKdUf2//xmVLrEYr4FPHdOQGn+jUG+a2JWgAq1eEeEas6vtuDKsX6z3pMqn6WI2B0GY3g7PkCeAkDl6CpyVjBMjJGEDD0Hl48Jm0MxUqccUidWUm1p4FK3D6L+/cJ48ElScwEjUNNfKkcnmztQ83/nxiP5fOYefGPslJcCboJxaRtYB6j1zWHTEIg=='),
-('5486393d7fda67-29829376', 1418082621, 'baeqsmfaWXWAE83oepYUqT90vQv/K/CljFSYOP5qQjPm60imHL43TAFAMrBxSU1la1KnO/eZ+0/J1INO0yIuB+LmKudG5su8mQqQnULKoXr1aaA5ce3CWDqoLnUu5Hdz4LO4SKs4ANG2cDkp+AiNachuITqNpkIdmoBI+N0yc3V4gsN/zCFIMmfv5nlmygI2GZRRNznGmaTRFD6nLg=='),
-('5486394a026ad9-03019644', 1418082634, 'dE6MA4IHO0AqNTM+yUtY5VPhFWhGy6po3z6hfGhTfIy8hxO3kWQxhVNlb/VpFlAhqLWif3J763ZZuqhuwizbyo3P+C0EvLKwYw0kESwxglfRzy3nqfbE8+aV6jiGzLDLHjqu/JJRdzy0gzjQ5K333WFLk6WGZwezbNMPNuFxe55GhW1x/NRdDMe09LgufViuIT8kA6NDcR5JGsxKWA=='),
-('54863c169b5e53-29878859', 1418083350, 's/w5Z9r56b98N6BvpgzKOtgvr50XCwi/SWeVCXG/gH9guaElSSgIA2f97KchY3Br8ZDMlpCkvxQwQ22s6UQfIxjt1E6h0duvkbhRbbvKA5s7MOqlGcJUVy7a2b+fJuM9pS9SxskYQu/OxRUuwVSMJeM5XOLXth565zScAnPyOBZoRRsypF7DwiMrHLCJ7Hl9u078nsedYWGMgBI8kw=='),
-('54863c203b2413-45062466', 1418083360, '88jLWi7s5Ki61guv9rrlifhV8/MdN8PumW5EZntP5ZmboZNAqoH1amtsXYntQ6/WJJRXbRWx5MH8oDqOfd6H0nbsW3M8nboWSI95hBOIG5dMeyo8krzLDZDI3r32VBxvSHrSoNkLdQUvHiTNkiiEd+x44xkBsmn5D6u8SWdutJJFUkTHVTJJXH+gp3aRsjzq3E7JWe5qTKsXgexNaw=='),
-('54863c22c73ad6-40495045', 1418083362, 'uMAzcFp3XqF8tOuWie7GN2uyrr+Nu7OI+I1mNbbCWfi/vmg89XPYgMYVqUGQBHXpX53LNusQnGmqrHT7ApWYaVUta1+5HI+zGbyGkVCJLKumzs/bArjOv+r4RX2QQN8/QU0ZZT/icObn/QA2agiGABJq34WSGkhJ/bXxlPIwRNAqFJn/a21Xfjj3o8H8uatiEXyX712Xdpf+rxhR3n/6vtA='),
-('54863c22d68c88-90409426', 1418083362, 'meyGKgXrepLUqYmiloh7WJWdQN3H2KZgFMFYg2wV2S32xK5lXR03wrQoeg10jvc08uvXxrHZKWU1KuGbylga4utv5PQ36uQl5DBrPxufxe9A8DarsD8fFgBikHbxAa66y4O/RTynd51WJw34dLhBeP5sRZCwMONE2Xo7uQc7/7wcIe5WaFwtmU/+1tjXvm9CzUzkH4x+Vbrjdhflwg/r1A4V'),
-('54863c22ddc561-79608344', 1418083362, 'NFwnLN+l9kBZ1HgbfnHVEA6YrJjKBaYiLt7YwcDbOl7kiuAe8riv+bnyJgfTgz8DEF902K92GcmQxiqLIH/78K5A/PtBDWoSiIPE+9zOSFWw7NgVFmjajHbnRJOZ7IT3Rtw0We7EjtPHoetTCoaWEcjEFq33KE2jVkKDxrbbdKjLzAaJw848AlQaAsZF7ARLIH8yBmIOCbbh6at34wkHM69OVUHV'),
-('54863c2301e701-68442070', 1418083363, 'ELf3C2RYgL2UyS8DGVDP/iLiz5ilHPk8QwrTOpUupCvv1F+BqJPVs7BpKNtzysHzQN909hX7JR+AXxBOM/sQY+LOMBMwjV+WemUslRTHrYjZqqlu1D/27/EOf4E7Q2qWShIZXELNKRaSK38TLCTAcMLQBkORxz3WpECqIUEi3YwyXBbV74aNbBAIPOEIt255ohJSE6T1bepAp9bzO425X0LaPltjuhvx9OU='),
-('54863c23cc0d93-49409239', 1418083363, 'PovYVBkz4eyc1UFbb7bg9bJrtuZVmzlXVNwbZhF0hAaCxuQvg6de86ubpeMXLvbuex6UgRyMqQIzHaten6oJetVigMDln6IHo/ZOZ0JSPUik+6XqyxUkJl4eGWP+uiYWax+2Fyealw5zWrsMrYsD4LxcK5NcluEHHxAUYpi2w8SQVeILIdUawWAlRQ4TRN46QdsfX2no5/Gb1dVsZk6N2xmk96Yws+HVxmWE/w=='),
-('54863c23dc1af3-98659066', 1418083363, 'jkOr5CL5qiFF5FbEhVnTyomS3kTMvqwAorOIBPlkMoqJBDtVV6vYvpYEHuBKj/ZyDsEyu4wFVqwWUUOMnrlUdd2Gw30dOw+GN1mERW0Kamoal246BW1F/XsZaeRFTzCXenvWb7f9mPU2MteLKt9bfCIiNn1+EAE8o0Y+wg=='),
-('54863c23e00506-89360517', 1418083363, 'eKNp2Aiu0UDlQ/MJ+BrzFJfSgR84yEdgBhJ95/FsiriiYSeaEVaItYha86mCGeL8StZtLR+kQZvsfidsjPm7XozADivWx/8/4kWMbgXtUFfOFBwOGRMlOWnCqWVUUYPCQ3g6a+D+KW9ERxUKc84fTng6mJybaWvMG4UNKG0gOluWhctdkD8oWB4GCP9RiemLVMLOlBHKDSrMAKlcnYQ5TAqiKgkOBRvS'),
-('54863c23e4dd67-03352284', 1418083363, 'MaB+OoEAGjL9h2Etxs7ApR7bTMvSRmmBi6sdc8N1qXf22BgJYjaEEso7kZ0HRTCGTaRjauP3L/xcsi9yTaeCdtTH3O/jrlOEl25Y1ANIoi+hi64vwOKpUCymc4aZNB3JTIy8pd8/Rg5dOFdKukLiNT+WOjG1/Opj9MPPzwJJUzdXSK82ifZPgjS5EU4I1c746fjWwpm3mElfXXEU3gK5SuICpnM='),
-('54863ce9a273f2-78534202', 1418083561, 'ESi+4t+SAxCQ7tdlFSzofGQvfT9Xi9cQPPqXJv0RYelPYt1NXCX9klOX/PBeb9Vatamd+IM/KviCXPdWYe3FcRqFeZoa/rwNiLvsuFdqGP/SxK/VPArULXEtR6TaMgYrLB0Q3wRPxFVpelHbTkD9Hh8Ait5bQ3cjmVLpQL7t0KbiPiSpWMBq6iLvxU3Fboel+J+THvKVoYL1VlRW6g=='),
-('5486433f92ff11-86103510', 1418085183, 'zV8ZBtHUb2c4xH0QAN3elgqQ0ujscm9c0x+NNJpav3b5Vatgdllv62viIEJi0rJyyqEOGElYLe5W6uRpNcHWPTdWWjeTJumZT3FwxslxXp2cHpMJNrjW7cMWVdn508/VYj8tddjm5x2xmOZ3+6OS076lOEPADh0X9NcGxINm3IIFTnfyjNDZ/9GPnDbb8rKOh3Qo79kkM8SAcWD0gQ=='),
-('54864ba45ad938-18591717', 1418087389, '/I/YPiR4iMNVDCWIo3wyzXUNXVM2NR5BGDV1SQ1y3sdBQJMfn/O7k8QlIkoAZ50YUelOpNmf3m1SykuXlUO8zsTYwQjYJ5FhalZfndDzc3dcnhgXp8V8gcHfhfODypsTIh1MCALbKY3MpoMPuNmavNxITl2AxuU9CsH3hqDakreU7SdUGH9YvQpZ5dxw3P1cJK2wrgWLPkNC7eR66NUt1dTYIE3bLhsyhXBNpkEH/XpguLbpO3Ez9TzNlqRXEfFG3D22TTOw2MQMSgHEDSlw3XxMMIrDiRmYi96W/H8Dk/TEL7ETKEJVLtziQX+NHCuwW77Ov3eJ8s83/0wd1jwoxCq82ZdMrCBJkiHCjS2jGNS7GcHm5nWpwVt/PmvN4y7w46pKwKOyEQfq2pz1WOSifP4FP5Inlbo2G238rXNRJUd35vskyjK8+Dvk1aAssq+Llnb5oWE3dO5PrlM+8O2xQiU71wCtKlbzDcxVue1HryRPk4n6NBXzcRAVp9dzryOvQaMpnoaJWRx2VJz0/cLGRk3KcNWXAJxT7/ezgTYoagmj/sFKgZ//SbhYKKE32y/VtNgA4otTp6SWUhSmsG829ke9V6FrwmkS/baUOJ5oqv2NsKciNfjaQvLyfIvgHe8HKdIyN983LcuiThRD2yUz5iJWvpTqt/W+bBwIYn9OVAwQzOeYb2Wvh80gzHONtOIPX4f0NLwFD2Kfy6bFzT/0vlDob5hvg6GWg6RbBk48VFu6Shsx21kR1n++y3zMmRRkP4xlocH81fbgILWwqyuqrnal/rF148DKFEIDrCvySdTG0eWS5r2bmoFenk7bPHpxH6wCqK0BCVKVCYh0kKnzINTkunz50paMT5976sBWz7eKjd4Vnpz+pezwKKpJj0f3e/7oBOG4gkpRWHfwjjw3a8v7J9E2T/agnQleZHa3g+2SegGuPe56FWZmF2zDoarP8mP/8EhWvtTONiFQ5kuynCbJ9tJI062xgY0o1WfGPn63VzBdaVVdMJQXjmiR+RnoGTcsr7p9mrF8BbsseqQLF48IwGe8jL4u3JlU03EoN5bFTZvkwhz/om14B7BG8nJVt35vdnradJc/rsvajc4MmGLacSrlJO+XJbmJNfTOCg1/NJ2wMLtnoY2+7/QPK1gH1VBjn6iZI02Angea7cMmJxKREXbwvr9QyWl29tamzbw7jow7l1u2ihRaKh60AccyMAiWKlwxRpDB7JBkUrLUeZfFoJ7pUZobLGHJ7YEwD0lNS+Mn1NkxDy9wpB8vzn1XO8aaJZTACQltC/LVjmcMYHeg+8Akvg4lIM6B3UMzuFB0LrAvuxi4ozVAoEskPI55A7Xvc6nVwIur6Iwm6GrbI4N/4umbynbxRJ5TFfgCjU+yeB/z8OeC48aJCiNDMInAdzvH/8f2ADg+vLgXemgXUL1Vk0FnWwmtRkkDnKBGI30SeBfyc03RGSjKKtGnT8yIl7p0BU8wmKXmhXpPAxa6awUzUfP6m4P14XbcTS9+KQNwgVwiaNFJrqv/i90YUwtK7Lh3itBX1872BYTMbRNM/EZgEwUXRyPr/rKO0Y5KRxz5V80AQmEniza7wLEZdspDvlb/d9U3AlLr3xGTFVMGl2xkz0fIfyMk6oTIMX80kaWgPm1i4ynrwxqh0RceDrjLeDcd+Q0RcH0CB7Xm8B5RuDlE91HkBb+z5vJ7BS4MZcPfFh8abhcfIW8MrSld'),
-('54864f31e4dde1-34966531', 1418088241, 'm542R52ldQIqq6exO9tKEBvS32j0pS9/LcWlbVKq4xcT0L6OFtgrITDzFuE2w5xq4zdopDuRePsYBsDYHX7AM60GHZ9twtPXdpJknQNB8JX77oRNu2pMaN//KiK8VenL98WmLc/d6eMxv5bwMwSY3WlSl2kzfnNOipvL6A=='),
-('54864f345a2350-87820894', 1418088244, 'BGYtLv71Mpax9VfEO3sMytlt0mf+0UTIH6HlSvNfXdj/5UYY69NwPy4+mnqoP1SedA1f35Je//1DF7WMDVfSCQrqrDZfA3kVruxBVqvPez6GLuFjA0kfsx653CD9LAuyUMhmV/K4XTYG0NO/erSaiC8O9iRP8rXgr59iNWYsN5n0SDX9cNUa4+LO4IzgIW6xqkML31ed5koLVhE2TZDOILdAuOUp'),
-('54864f36d55929-17877821', 1418088246, 'EnCMDnZnv9yWGeSahiAAmqjKMdfFK4egTI+IWXJTDo7lcCKfFx8IPdY8rmQGu9UcXHbS2IDN8A21poils4RX9slkeVP9IyAtqKHKgLTQd6SERtOgTqd615qy5w1vGIIaxRiLmamhfScGWiRtTR4iDgj/lXgVqPGAKLqqWnkGr7KjM/dMmJfWTL9ak1LVuizGPbNzQKgMHmN4kvL8OsrmrO+j'),
-('54864f4aba49c8-52153379', 1418088266, 'MD8yT/Fk0UznUYeHnhcV860rRdXg1oFkfEX4Z+PE9RKjNDGhtuN75Rw0UNjVic/nBxPhpC7TrynIhdlCy9k50lK9kAqxH/f/s8yj+VJpIkPz5gwxHiTHx2OU8WD04nrxR6mcthZUHnUNxJvUz4GUxgog1VSAyR4Yuv+NuBeL4KrOtEp6JVID1nDt+khcTa6x58Gs3SwsDZETPriD3y23PZ4='),
-('54864f4cd098b9-82628353', 1418088268, '3HXiwXcax2zWa2BkGnrXcHRl2tZQOOuT7sjNu8lV6ysllD4U2s8IWvIA3nel9mDfDqmp5iOhJgE6Q3D5TR4osjvDnoUFEbS72mXjx3ROvYHpsnHIq/dtNb9IJ3mltUAUkEywloVNWQpkNQ0gofFvQzRIhwa1fas11INISeG56+Zkqj0Yw0ejoiibmO+9xamE1b7sXP63rDypRAxyjvSEVIPgCvxk+82DD+M='),
-('54864f4eea4f88-29546828', 1418088270, 'fqp6mwfTmxFn5rDdHQSX3qF3anNjf5S6jUm1RAUr00u7P451U0lDCfq/0jIUk+6j+zBLcLC9KA90TWYJxsFRZLGZTtjf8nhxvdOYW56yi3WZ4rBhtLZtDz6MhP6vE1Z8h+Hwc6xkjXxZLJgYEhfzFDAgV06M57ewL+kVtQTGDFNNdqVTWTRwU5A09W4rCZCFoP3KmhM5rogoq7YxQWP3uUB3uczoijTw'),
-('54864f6910b884-71115006', 1418088297, 'f7pVsLGW+395so4lRq6KH2B0pdXecpHGzanouiTw9V6NKdf6swiRY+YuYa+vnuK0PplAfrCKgbi6R1i6ECBhDSk+GqwjiDF2Hy7T+d7CZeRr0G72zvdET6ZArC/HbyjMbtvrOfYoiGihcFQOxlKBhmX8j0WJoo38nru/Y0s5MHKCn6caaJ9fOxD6bJXwtSKGZar1M3kkeWW6jnTX0A=='),
-('54865c006f2781-09692090', 1418091520, 'uflrceeIN7k6UqURMO4oOY1PhhRLqvXpikqqFgNK+UJe+Re8crWlPT9Hs3cGhwAwW+cq5b668fuuw17EdBM73fyQcvA/9PJmK4R1G1nCjnjQ1BC2+1+SoGolkks38JrTLUgtPT4s571y3/WNV7L3FlIQVDymXkjMphngKllP0tPZPUviA9bLqqYX3Q59mioR7sdgFEVgXITQcZ8wuQ=='),
-('548664e0bc1555-21619391', 1418093792, 'jN8Efr+GDkbqc/NneBeUTUN/95oiMLIhxVcg59iq4yn/BleJmTpcGgU+duYlU61N8QmTE2eRVvFQDlB/IsomMslcjcufjohuVD0Fn6lacG0agu4V9KiMAYkQV+IYrTJ6gHz3j/aJq+twmR9u28CwJTtXmYNIdzi/Bo6xFkWLyXOya/PQqhNg9dmUOZe1hBJImMxjJ0lbHu0qkNKC+sLIqiPBsdvAAAbBkjMA4A=='),
-('54866653e1d335-98434488', 1418094163, 'al6nTF0qOkGHR7ZQCWcNZDb3dFPDXiaLg1EwxEUFSmhVSNwU7kDwrvOZgx62hDyIWqA+zPfsH7RxEMHYadc6lloxGO//WPM3cGrxTLY4AYjisvnTQHamowDvCVh9A3qufeW5TurPssp4/FuyH4k8FxeZbNP44jhLyPz46JF22tuMZYJCKWTb0E4SemD2KqReNoj0M+YDaQaOHgmt1A=='),
-('548666f2841598-46083171', 1418094590, 'lCyK7gv+u/2JUFeCwm3IGchVHxjjEPyMbnpHWopMxIaENzm8GtuQvua4dnf0GsKqk/o9FPRnMVJmzzOqrdvTJb2Bqs6wFiIEYeMbVJcXtJXRr7mpa4S+xpkd/glYjgPZeUZ5J/a6IzwRHM1CK3juMYP6zAzyZWO9BfGLa3FQnj/0xJDxUCN822GnLHMc7Etjj/zc0WUwBGbrS6oxpRWTMkty0m7iH9UOuwVLm4hi8svZQWd/nu86MmfMaoFVYlH1K6hGv0PFnhHxwVtcuMgfOjWAHQZmbwy/PhGN2SRrHuAsT8cZeGdyyC9Npe+pD9JHsZKvFDroExZ5K+WeRpJsMl6VeYc8ddLdYx0/2+AJbA=='),
-('5486d93b6011c4-24346864', 1418153902, 'IiaV+40n7t18FRX++vHWvWsUmMX+NP9dekqgCMZThmtPFrKq9kuiHpBelrpA0nRMhQnsPJ/Eh5GHPw1sT5TvG/Uo95Ij8R8mjn8DWMgRAg6GqGzEKYPN8v3XYVtV6my15n+RqvjRr4dYdm3ThaC1Dk0npKqY/EJ7BhhoGZ0ZYBZiynoFrTq2jQb3Igb6ppJAWx8NwKDt1b9lD4CHa1eaRKlpZoyk8Aj/CgqNHmHYUjjg5uctg7VbT+SsMqIM+smoZjFRtwdTq+D3boR0CRdSuHhHfEiaNxON6o3SWKSXQhhzH7FjxdyADtj3T5lELfzw2ihe3iojoy+t4TmqCvzm7QvXCFqd3vlMfshTRqmylZd0ofaOeXqycrl+BDBEhg6fReRxO7aUUmHvSBKwNA/THEYjGVPgpg3JShYP91dW/grmdeIUxo7S/A61REvG5/pyk4EtitFp4AMrYLsG+/y0wZ+sIttddxYZx7p2vq97dZg1fRKQ754TSyQDKTVm7zS0SZYKULXtmZJIwT4ymTCEqltTZ5A/dBhxzmVb9RDbI6oJOmTKbb9+VS6EPJzVKCZs7LRU01fG2U/vIGWpOJSZsnxEW4Y4pU6PGo+SMoSeJKWZbLV+wiGm0XG7KLB2fj+BPVDp3nXs9bUBQ3jnPg/kWS8P2j/4MsUqNeNgRFUQrIdMVMq+7X6wQzDAtXsFqgb8d6ealHKZM5KscPC/GB85McRltcW1jxF0AFhe4Pcew8YUl/t1Bv+hKmTsKgKZIM3MozHYDFfUR1vA+xgQQnzZ29L62yiP+GRddShbh4bmc+eVA08/W//zp6ipyvnh/jrUR6Xlo+h6NZgM8JivkEcTzRF5QqqvMkVnqSRvKTKsYjEfc5ssCmeuXZtj8eHFtu6ftIeCK42dDY2kf1LcoZEx6ERTXy0VDOwkXzMYp3oINpbIWYFj1SG59dRrrlWGFV3UHYH31wkVD93/2zMhIQq1erOMbPYWQMB4H3W/wtJwWm5BYQi5C/fYOrP81hL3F3r0zz6exuhQXuqCPY8gscfPwhDwTNBlGwheFdFIsL2KTbEzReE5coKLD4BEO29IbqZZ0hvJfqkEy55/nXv7WzgRwEYv7tml3/NrVy5C7fOzhvYeVJZLcLGbhszZmZPjcpRIt0x21v9JWqQVLN+1BRPYdni02ZEeGFdzzcmisPsye1yr0L6xn8T3JLyRDpcvQERSEfuPjp8xT6m3atqrQE72cgBJTLTG8FRuzbeXobfJzEyP7lODtZfSKadxzh+L8+Jmw8XKAF7FeLUDpCRq+xUU2uHUlcgfooMN5ZPQzgX2+uOBj6y2ZlaJz29sSivpucvosfk4+DynL+4l8aaxiXO04RddztkXnJIe9eSTd6rPOF1iHnewuyEnF7Lic23aVHHAsrQRWWT5NU+jw1uyVkvxbMgjgXvFb4O+8ZeWnCqO6LIhMwNdjpz1/n97mvGFTQDJxWsEk3MOWd+Lg+iGRU6XUq8LKL1tTI2PZjv6NPXPVRThRPfVXe7Tn6Wsp8M+DuMJIJJHN0lpRfS6kPMZ1LI+Ced8GKjBWRtxdcXg9aZx5FL13m1qNJUir9j47IgLuxb08JC7JhliKNc3Sm64DpPbL4UaRGbUbjgVKA99/JDCZU9GGRC1Q4/xhTCOdLrg4UZdx0WSyGfTlmNyFIz4nIzq0CxLSG2q74gdJI4vav5oEA2W02nEiql1yzdPA5Fksnmb7A=='),
-('54868033f3e540-71644253', 1418100824, '3TwwFOGk7o2fqkXO2x/ANueNJjP3YGUY7lqwT7NjGtm3l6t0+0eBCDvXVePrGvuU4IVRuNyQz2Srj4utDX7P1oy3zsRIiotfPYDSrvXtfRrs4QbIjRzhYBKWYWz3JFQK5Wl4XRRc60oVoF4WpcukMOM2Xfgjy8RzSA+mPm2fIlhGjhmIKiWOO2ZiQkO5HTaLdBLQiW0mm/jPtxH/OKiB7IFWZKWVyin7TPyVAxZ0UHYXTjHsyNnXPOMwze5fRFtNuBTLv/Mv8R7F1pawAhpxhjT9ANn06/wHAlS/e4HxsyDVADH1ZrhsiA3KB0yPs+W41IchRKF6d4IzNCK6sC73WUPwSII0lcnN/I/VGD+5tZ4ZaRu8Wnu/3iygJ14yzpV4TfjCeqEzKUzCy7qPKc+xrPeYdwvasBqLPpi3qFOEd7oY7MtyWnH4RyTRkFTOhDgAFQu8xulVrQG07+yNschdLJr7gZWrxDLl5jwrwmhDiWYNY+e9rvC3+t+dx5QuaN1esLMvnF008EyKJ02D4WwrhE1MdB3zCZ3CntjhWim//rjJYP7hyYfCWS+1uqO7Z4i0CrP6PQ5KmZTzg6H/NoV60PYVtq2f1XtNjWZMvvDC9P4S2bI1XoI8H+VueKJpvUJAA4U1LjBCoQ5y4J7NLdQM3ZY4oDd1IIPoYfgzPxNC4n6fDjODGRxv0giqVWKOBIrP0eKKGI4AhHUNIKoDqZy9fvgEluwleHnX7HTqzRduxwAn9uPgMCIeXXfsWd0v+Z62GfEpNyISeOoqhLQvipxp6FpPeANLWTzkSxNm8E8g3Og3cCMNWF4J+eFxgljdXnfpPMDMcnTJVJpra0zF+ZCz9l4DAf1tkTV/Wc8YtG1n5RGpcBNc3Js8sX5rSbupjWg5zninagGcV6Z4+b74KkuDC6fXy9Yrbp9ZKQIh7+wBoMjP41u+Ep/1D5eYfvOzxvhl/+DnVnrX5lv4sAp/az7e+iWwwQNzoW2/dnL6N+RKackeia8C/G3RPzLVyYWoTHyjwaFsHIrm3YgLxlvtdd0fGoE/RQt+IXQAo6hhXtq9XdeXbE2M5ogHozkVlbbAyv+VPBjGYFgSTbAzq1+uSZqLHTzsE1Jds/QQ2AfHWypcT9NDfaxeP/XYqCz2oeLZYOZzCq6IbY7kZjg1gnmwccWEjRGbl5fiA94wzqpE0ry33iddjmZtgZGjj2fvCpAGtfu/Ti4hcXjeU88xuc1xaLY+Xr96SWWkGz7qmmrLp4TpvR8Z46I5wsvsTMQsvTszLh1ejzIUOzJkB3jDaLLkkV6SjIdOHGW/ohE/Q85TJJ+Vn9Xt8m8iZ17es/Oh4c1PQ06zXE1yCDpDkzG3g0Q7F9wRje8xi93EEwFQMGFlv3XcS4CIEfac/ZF7S+9mm18XuhySmLZ+wlgUOd18f7c8hVIGATcSCLgh7vieN8RvekKKlGOaqJBpT0MavTL2QgG96G6qtBsqFCvRP/Ir7dyFyetd8XZO1F5r/iMJ5DFuaIIATtVERCvJZWN/weRWcrKtBtWn/afXLdFT/KPy0yPNdRMQ9Qd6LkAHnsWCLyquc47EtNHpwcGDwXvunxwbUL4x6BaGkCfi1p/DD3m9WQ7iBJBVWX3NEuqt6j1nbBiQ0JIWlOzl09MRjlkDT/D9us7qbOHAKBRZAun8nhpSB48xSJYEK8TcwzIxvvN9RwSmeKhGRsdziEb+VFiGuNHiozvjr6hJw/XaFvw='),
-('5486812c0a53a3-04699282', 1418101036, 'iQyGODlbkkrKr+jqLCzAQ/JrQzdwKeRmMzx0/O1qYOpHB+H+y7krK7a+xECH0gks2biscTl5mZNUo5oB4qjaD+qq7WM+gfdgBNuqZcICMV3gHMgkfGtCc9urlc8B0KGAyoXCYvi3Xwx0DpLAU8s6AyaCkvfWinP4kWYwwjkLFkI9U2ICe++rfio4w66+jvHcwld0EemBx8oejA8tOQ=='),
-('54868f5910e859-24435221', 1418104665, 'c5ZVlmfoZFVmbg2C+OKJ3VmbdfxPJewAH/gLb4HaVOXYKPvh/eLuKkO7/ryy3d/aQAyYiv5HOARCCQCr1DAyQkUqtbp8EKtv7lu0HDNcCVowxrkejzK1bst0tKuCULhvHbSybeGPBKxxMfYp26+WR8sZg0oGTMi84Y5vE7oxVRNEsYpkxZ+fgOg5y/RQfGzDU5dEgOju3dJ1Cu70yg=='),
-('54869278396af6-65766173', 1418105464, 'y/3/lj3nWDux4mQQJ2yg1WpeOCG2E2scIAX6D3nra1hCennOo5n7iGrBMjjiygtSSOg4EFVodpEMZSTzOXccKRG8IkQcmYoQf1+BF7tYLh47hL07d7Rciv87lln6UIGLybixBpvsJslPLoVxb0rnOkSrlNwrcQhqW/fJFJshpLmtlYY/mAQ5+JPeNackiww2JVIZTlDC8lOnZ8jjSA=='),
-('54869a1ab51217-97564076', 1418107418, 'TW1DY9PEeZVeC3VkFdkDih7MdxD2OpCn16GVVwf7IjiWTRdze5+pZaRQ0EQqLE8dSIRcu0L6EYkD+8FJzbPUe7tgMF5Sws4b3ZXrh/x7xUt3V6hkn1rCkxQDnuDGawBD3qkF+G1w91115DQITH2gvOZOO3fFjFmhPeqMcA=='),
-('5486a0fe09c571-62238688', 1418109190, 'i9bEC7XQVaNVWy5QUoUVOn0akIKbOCeYFVm+gPGR6Qnby/6rVerW/oIAoI9+aVzfUqIuR2eVzZ7EDrT3iSJJh++cAQeoecGA20uq7QQeqjFjJZniM1w8jIIZcKCkssoiCtpl98RxfF8rDVyiubUxBuegNqw7HuHF0IUh9PHPNpqFaU/qxbfWvbqNewW8giewweQ4woWapCtPRDgSg8vpddSyXluNVt3lzuuUJQ=='),
-('5486a1fa6a8576-98361777', 1418109434, 'qyJ8IFAkEjCmbLloauZGocPvxUiXfAiPo+5CDh4oUypDx0rVO9wtEUb3d2IhGdQpO0xZmfxC5ICgdrjmQt3kzn7FRRyW0T4NS828k+3QpGZFHkQf1pOkcriWdlJ5oOzUN7DjlVzajwnmLnxGpge3a+/edknz+jT5UM0YPw=='),
-('5486a20f9c2309-01318349', 1418109455, 'X1Vs4aGN/m2W878XLFDD7aBIx2vHXFTLNMmmsyPGYlMGBQz1qP5EqAeg+9N/nKBpYqo7J8DUV64Z0cTHMeYIbVr/8U5R8+ctgqLPQaZh2exs5gWCblfw/PMe/w49cfW7MnPbnnO6tSgG6P0WshDgiWrvM+WTFhanDlQfCA=='),
-('5486a350b0c660-58447008', 1418109776, 'sIPOueZoO7x9PTtrzXDboV6Siqm5VMsWlJzCdAm/aYU1H1AyHoAhwwsGyCJwhLIGS23gwYB3cOwnaHgposj02HI1Bnc0JFxWuL9yy8FwY8MWda6h3OkN/Vz5688LSm1Lq1XfbYkAAEYUyQJFA3OOKo1f+bfqQn8V7CpZ7g=='),
-('5486a350d08748-87049732', 1418109776, 'twvaJbCHc/3jeo7/T9SOIBbj7OdLKVgrNKPJPH0q5ZWRFEnoOZcGPH58uIGmgxhfaQR1FSdNNFoVRa6roeLxBe9/vdUOGHaHlXvB+YgsQJcpjVTsl1Wy4G+zKD9QaR0V5Jzuy+txpljzsxJSHQLX8O67MEwjOU8ZAxYfcQ=='),
-('5486b2b5279d73-78897592', 1418114399, 'c9uz04Wrwghl0vQz5X/8LkFkiio7K4qqompWUpg55McRD1IBOViKEF+paZXSsPtHuY6qK9AWgE74EeHxi/9L9Boe5Y5vi6LYuSo3XjiywbsL7QoWQMHyKMpDxmERBNEb29leZ7Idwj+MGX1lV5bsIGk7ChP3Q3kximH5uhtlp/HOsIjL6OEu4VaVJ/8bfeTWFzcV+bMmln09/7RwPKVPjRCvWgrorQCDc9b7wqMdafOLOfM4FlGyBz2gXqov2vbTWXI82eHwaTmKv353i7mEcxm2OKG1cCrI6myOH7mS3qgco+FeCzJphliWj7+X4lvHJu4y18Lz2TNZpPSoGiHDCsIE8qAddoQ9szCvYKI+uK/Kp1YEfQ/B5+etbw+NUaNccS01HtAyWC38aa6SqXPBcbPKrTxkOfmWG8QOR04gvUc9qaUPFelxpzhRH/vlROba1n75brBBlRelrqvnwJA/krZcGh50SFqtFmL9GKK9ySeyo62nO+aXas/FsHizotsEiquNQPzF+lcoPV4pwXSJRCgo7HGDt7DcZuoYaqyeD9Bkiw63dJPypOiirtC8K51i8dBzOeZmCNzAx8O5ypL1pAjOtaFb9Dl1/1GnSIblaCoVeDxC6pi/TLBuNFCV0/OcqB40KEBBndl7kye6VfbizZexfKAekxsc+aP1xukoEslV2uwqZkOZ02MOgpfA8AvDHHDP88K0/rh6JA84rlmkHVa2rTgzMQYAIdiSxl3QCemlawkw+Vq4g8WoQ+PEeP4rIDV49P9+HCKqWQDhnuUbEABbfscQGVxqcWAyxb/ekD9XKnImGRQBN7Ue5rwAehHCvVbzZ0Va06Grh77Ja2uq/4xe8AY2tUU42GKT8Dl0qllh6OOAbk9WL8JM11Vjkdk0fcZf32l/q1Fw/OZ/JuyOlnG6o4ynHMHtXRVckPgzclBT/S1kj7EWU8xCuqpu+jdNZB+K4hifQPf77Kv3Q6aWDTHh5Fy3+37NYtbFQ88jcpABemMzhkfREH+eRPr2opiemncFew+KtqCyiEaJfzFc6wloT5+9CYp3jYQoFmt80OKfYsDG/G5J0+qY5j9i97m31EteDN7hPl9jBV8Y8WwPqwtCZDlLs/H4oz7w9lYze3eiotxJPMP9we6ujAY7wWvcHGDoA/GG6QmlK4ddNz8nTdvfeEgqfV6ZvxR4XmJFYEY2pQMpliaRfF1U9yBBcJ2Y/mINIaV4STC+dpw9W5xY79zS3jo/tGQouqRWlVMYhSqgd50JnG8EWCICiPtCWYXDJbLEmjRsKD9wETwZlk+kPoDpZBqQAO9FElBgPBTNlj/1x/u3GVGhO3zjg6FVvl3ruPaz7N+1UoThzYK9XqnfE9W2YP0OjrUIfnKcHE4LmuCaIeEcYYEdSsNJYTn1UUNiZVMSnKdsABH4uH6/fdDPS4vyIsadRA+S+a54kaazwNyQTV/oCoe3tZ5m4Zu6/McMng9kBaUOPUHoZqHXn1ICK3N+PnlB2VeuJ7upKQFjdB5dDGkw'),
-('5486b42beb7125-84974079', 1418114091, '0/oNZCYBVhT/aoZWgevXY8Qq5A0MppSUgj89RwzCkm121vY62BDGBN8m3gfCVJn0TW4Epf0t5EvVBBIuAhDY7CFOHxb5uvvpC1AG07K8HkZT6ErRjRF8NW+P7WmQNYP68KrG4qPt8fP5RhzFtuTLb10xtOtN/sYXIj2brIa4JS8wgb+RkePJ56jK8WV4W+Om1onl4UbEqAua0pX/EQ=='),
-('5486bc57e71cd4-17306099', 1418116183, 'YYRafgQIhV2qUC16s721NrH3h0RB/sQoIKjUj6VE7d/m7BRptWGEX1HGywdoEj+YnZySjJC+Ga9+5F2+z8O3swhsit37h05iase9+P9FKk0MC4luG6hbmzMCxO6pRpAJF90UBTEi87K5sRuGSZ7REG5uWKvuVCjB1/asdeqfeq2mIKp+y/vncuTUryhM+5JIWggWly21czGDrhBUZQ=='),
-('5486bd574f8e86-76848996', 1418116439, '00daXcS0j+UXrh1HDsJcSXwZNZurD6Gxme2ZcEunKd9Ea37aAM+5yuRs+ea/UvSYcOGOUwyVDDZxBBWNN8fT/FoYynv1f8WgRfehLSOGPte9p9nRSNDV4+8lNnpz1Wea/vjUuSer6tiHcy5fTh6Ph83dzqlkpqj15sdlwVjdXxJnDgAO9S0U8w8TxGt7oCFkkKdNzc98hJOMwjCHkA=='),
-('5486c5a9701dd1-64221538', 1418118569, 'ZWtjEfAFanRd7AQOStUihbqTD68cVzV3S0/1GCjH7mZnvvzlshLCXNqexVcP9JQvpoL/u1pVk4PDUIrBlqbECMB5VbEe8hN007fcMWyj7a+RtqgSzZlpIdBUE+fr03XwlbgtvghWX5tq8HH1ADkxXp5masTVRe/OJGE/45aWEgDvU2jCSqNnj2T+XWjgUSYd5q3INAc2LDJj4HVPKg=='),
-('5486d80dd76776-50352017', 1418123277, '8JsBLcM8XCpohqQALhr9KfHxnU+w2dFr9ik/C2XJVC7pVKP4P7V70tIDKjFvZoLdmZhq9+5enBbATsKHcpz99NSlfbrEknpJMX+fz6MG/VNIOURT/bYDgK7Tt2rehIhbxIflnHEWfpauxUrw7Fxh168FvymPXj5xTXmurM4ArFkb2G50yUVCTcpC2grfYg/cMSEaqwcCCu6xT6pk5g=='),
-('5486d83937cc49-19929675', 1418123321, 'tpXvZeKXPXXWR5Fj4sZhPLuD0ibTBFV1IpMPFZtGzXumQV2iTjZsYdIlXmU0nd3Ii97TYW/kGfb/E2GPELc+ZFI+qY8TYI+RE2PBm7wiYUjuqqInQKJepT/ZOZNehcc9qNED2jDkAgqu/XL6jBMTdL4JDQ31+28AjlKex/tyWOCDWpLfvbE9wxb03uGFTbnDQ/93vCZYrKukgZqLFA=='),
-('54874fb8c21794-69663538', 1418153912, 'CGfkHTbMe4t1G9PlC/9Xm3pWE+qnoDdnar9ZkbBuCx0U94ZaF0sPB1OztlbS/5FFO72BM0QHKYSxlD2T2qnk4Fq/krsMAjfbLIi1nunFmslVTZJXyfdP6NTJ+fHC6DNMVS9tnnW+9deBO+GZGj69+o/bFyERf/60nStSZdMMzZd9u4LHucqgvnWtovLPAjOlSrMB2mTu89rjzKT9rA=='),
-('548757f5e051c3-94829899', 1418156022, 'mkHermzOjJWK07xl88zJVMC67fX9QfI9S9r5RMw+N9IRwJvIw9rwciI/NAHIYhxaIXlr5PyNQYaCK4EuofbSwrscDgrv2KRmDBmW+jaZRHovsAemVTOtrIfE4XV9EclH6JBiDZpg1uNjqLJgVzPxGMyOYC0e2pJPmVozn1WxHeSphRtT7eiP0UY8XmMtDWFnTsZES1aA3JOnxTu2BtORhY2MrcaANBj7oMCqe8PRd78E1eScvlfGNzJkpDKkDy/4ht+iwvRT4SDgi5XBpTwOTsqAkj+FfiHDPH/SH0672Zp44ZXr3rdH85B74TNgRHHvTExDT3eDNuPm/k72lZiMGfWaJe3J5frjmOSfgoTHgU57SVQgxh4QqlJytAwmzbs='),
-('548758c1d51282-52906777', 1418156236, 'UJZUgQdAus3U0+tR/6EaXka36QPB6NHxi996nqQYwUCh+zfaaSG/9tizG4rjhYUvpwgy9REVQa5inuLqIa6tpnFXJ0JFCFzL2Jxt51wH6YmBdXUG7ivjUIhBLWfLLk0pa4eI+rQDWo+ONR3MAtKXO9EW/9kkiV/kf++h9pFF0w/PYLAD7sNNO7TVTJnGM92jgz9V5DlEtrdzODl5onml3JZO'),
-('54876190aac695-83047434', 1418158486, 'RyNa0Eq5exw4wWgJEjE47k6gqvBlKC9s5Zr6pxOd+XMPzTzkTH9cTm/c32JVFqYvWPzbuOuzYxngyyv1YhR/8hYOCyIs+7lGxWDwKufscvJDzDuAexyZG+9W71dOkHS+/z5Pj4AJGxFklFidpNwXeLioqyaUu8Mi/0P7RZ72Vx0F2vy+4hF8wz60T7HmDt4Z0qu+3Bz7hV/e4itOWqMnmJ+isKwxxs0pGD987IAfIZLFSdizFJxwv3AP39q4QKOYpUW84rTyPlWMPA2tEv/U8hG0iUi6L5ULv4V+Ch+QMibXzO3xd6E8iAS1XNPrGJxjKMv33lEjIow2KAonaZZ7iPqbgfDIM2jvOHT/Cdi0hel2OnQWZH7e/wPt0BUt46w74MVS6JeYVO5fCH5XfPMWv0SPxxQyywpXMD9macgWAvuuQ6cN6D74abaUSgaxjfpxEdFv2+piFz5V2cnoJmB3nklwMAaSYmTb1/3RYoPh/RWlpcaBldFy6lzNyhXj+xOfvGaghHtyRaZ5TsGy0vK6xQ8SI+3zA91MHEUtm1Y3oUBVbWmQq6kwPX61sVICuEpMNNYy44nhFrZHaebLIcLYQ6nCXB71KCJ/H5xR4gj7f76UFIGykKgYgZfPWX+wnyI6gt0+a45Ab+4VZyoZX+frxOnsz0EiQGbXtKskVKBpDQLIs3UVZ8WWBblhNSJldm10nMxOLJzslH0B5WMBDlSQ2lAFFwdR4ykq0g9UYMydNxoTEE7ofoMUWmMFQWsuFz0kKtI9++st1g6dlRDkvlZVZ/OpAk6ud5QJE35kesuQeaTSSUp2luFDqtovfrS8ILdyHmzj6HtbwV5HEkfjPzoCQDKGLMAg6mVGcf3Bg5a4Sto/LB/tk4IOuHZFBVUgT5Fei3bvUH4oJ6iEneWvbaOA/egMfM8jcZ/h54TNKCEjlY/5Plv2IKEaKoa0JRVHgJI/FtVMhiszISxw/QTw/SDvrlrp9JeZNWGvPLqxpvGVRpYtkamKN0BOy991JCuCIHGnawkV+BucFybd6ILAJQn/nRW/zaHTpiVrNZKe0uGPWxfyXAC5uGDRFhUSPxzxme0fH9T6Db/ePvL+lm09/yjreZFaLZTNRyCgZhDI5TAY1lrqkltjqt8UCfo6FZ2j13VuTwflyVdfg+MnPeIscybv0MlaE9kZK+eydRVQcfcHmRMbXCGpAWr4bFh56sjGLpBzeE/M7Hd+idHCyDAHHr2QxGnioSYTFDSjkG0SvHvP+SRGsjLLA3147VfjDorfyXNB9KHVltqCwDW35oY64MYVSdm2wqEQFpFFvqTjtYok0oEBvbU51iLGF7vIrdKtDhPZvBKk4vwtsAcmazowbL0b1ME+1mzBweARfcRkH0QEuuIsOlBmpaBpNMCNoNE+iIwTK9Sw1Nlf6lm2UMOGLf1A5kPQ65f+g9w09TrFYzZ6w0tuKTM8faf3hw3tKSMRu0aNrk+D0slE1gpKFenBb4z2PUCavkWmQkdEzvmQ3LtbnkZA2KSwEaKyaA19dEbDM0TddUpafmsayg7ry3nFccPaNxtQmHOuT55bVr35tzmrL9usMsemvmPcRv4HoUyHj2S8RUDgeWZxqdt0ybcs8Em106lVRuYfEbSHFbEg5bi7Ba9a2305YCG5Z+RTqXg4OOpKjRSwcHWBI/oCLUnpqMwsrZtjBztzy7rDBqdo+HafVukFn+OLBg=='),
-('548761e3a8beb1-72863332', 1418158563, 'exNC2OUhcRZfuD7YuGmaP841WwbKX1NThGeH5XQASUKjj1g0Uj0a8MOFD0/Zvn/y6rtZUvzgCkJN5VG5k7QnhddgDhOerSzTEgL07DNe6nBnT0bZ9cjxeKwnrbqTHK1BfA43CDeMPDOQ502DxZBWw16kkywayfMPSIbUIBVLaxURlQNgCBCig9hD9cEjUX7hzhOsS9Du8ahEQV0RkA=='),
-('54876301778b04-26751025', 1418158849, '1ESI5rcTdFfgIqk5FGqF0xtHsZUORVZBvnwec/OGYbtUsBXIgeSvLXT4V5RfMyUcBk/RGicUKuIx0CFBp9VWxp/Ki9UnjGUk+t4HZ4DXeOo+mpDSx5AscNZ88L9uI3g4RQgFtw8dSQU3oSe3zg+dhT/BE2oXAHjioi6SgnGDHC6L9cr6K88M0GGbrBpuqL4tCC6mLasp6Q4TVcjzNOQ6kVH9kAYi'),
-('5487633213ce80-02575110', 1418158898, 'MzF9qxVfl9zpfY/Rc3TrItQfmaK7S7DstFXxFNeAihMKhrYlqv7ON+XZ7D99P9ILg8NsQEu7gXc2oGqzUDP/Zfb7xgSFXLL3LZIJ9U1y9mA/3B5N6Xz48UUQUfHGxMmdknqIrb54ZAhBfk6Ze6GFTGGlQDU5JX61kujjy8bi1yo0y4lhlD4mUy6XNeK8JiTiPkPFddzzPsDnpwG9TlM23R9V'),
-('548763404ef150-32810469', 1418158914, 'J1vP47AtvsgQoQuXMnBLqYEbWHIMr7wg8/yREmWO5/a+OkdauI8k18l+u3nGXLTWN0qBYCVRRykEQ8m7pgj4r5JRAS0+qvuZ8rPt93A4QvIK4A46taR5FM9VPvxofE9yj3LOJuwUo2Nn4vTvQH8zVpUR//GRicRQJ5AqsJajRV/FjFMXjP84vamcGlaiZ8rUphL5zs65i+lbkjfMfTjtBt4='),
-('54876376e25378-47982841', 1418158966, 'lkkyoRgPy3BrntLvWHHxOLhFof2aKqn3TbQle1nImaRvyG947ZbakZ7nlrovfAV334gUkebal1kRZem3XMYfzCZwkMl9/GIM3UnSoVVJSKWshbfEPgPyVy/YkJp/UsbtM5y+FhMlEDVIFNTeJppdJwoRoJnykNZWZPVPHBLV8YqALvEmD4ZbmHCMM24lZ0cYexHw2xDXJuEZ5+Zsb3UKLMEAS3g6ZGce'),
-('5487638e3cd9d0-44471302', 1418158990, '00ryfapMyxjupZ0ePD2dqNQ3hKr2mnYrpfJPiup2/6/ocLFsOkGztuEQmzIEF/NgtjUaOHMUihbeBSqzx6UE1VAWwFePhSYAM9a+pVN9TEWCICXSyza84pBQR8z0hQTp5FJyBGV0ycoFJkliGZVdyfPrBUyckV2Qz0AAPbUX+FcGagoBQ+CLs8MduJlYwyefhf1B26LGvLYqjChPMNgOgFdAmMM='),
-('5487638eac4d25-90629197', 1418158990, 'srcYcCDUL4FWj/iedPNI9hy7iWBMsp+DR37kuhrCVvIudQmGmNPrIaYCNPxdInAPDZkOymd/WST21AYY36OMcjELKlkZMnz9x5GBhyIqz9zkXTZJadMwgfhLdTmQb4TPE9wG2mHTaUTPGJGeKYx8SHK1Rwm3LRz7hlnbDh4c9rJNgjHDyq4TURGsrLeqLUjUSXqCQ2Us9LIl55mY38QO4n+K'),
-('548763e5e158c2-97385421', 1418159077, 'JP6wpMuDy9/crJ0fSdB/VODIcu9z9IxSp/cfXjy029PdrCjx9NxhUV6kkSpMS6SJSw3AZzWFyIEhjwKmSXw89kF9457JKEhje7pYBzHVZKs9pzLpVNPLRzxT04LACDzcHuiIF/3X+fGzICwq5X8Ey8lSeJH9HUz25ARo88MwbsfaLx004TuapLQEtUAzTcN1pvc6dTsfHY/P/KE1vD/HvE8WQKZYipn6uqtjcg=='),
-('548763fe952821-19354390', 1418159102, 'Lx4ZZrXdxUO2uW8I0iDVZA4yAtv1CbFcQngcblb55JTTdX930xxfWW0VhOBEjkQqEh8bWaZwOUZptOcxbxeJpZQvBvC2kvoixzkh53elbU52YxO2w5JYLAUncCLTIifM+LzzNF/WVemTLRvgc5iujvpbKFFhWMTOGvX+bp57eHwckTKT5tfAjDIUOcYEMnyDwM9V1Wj41ScCfz/uzyUs0o18GHOzWcyeEg8='),
-('54876bc0e09008-24454326', 1418161088, 'qlxa/Iipe2KGJje9tbpcUNC9XroNTD9yMTpg5cFFPIOSqVmKZxcYvaclU2fMR6aPnng4J2UkXkJAVTO/bIjGGNpRABtkXt7y1QoViNLD9iNJWl72krHtYw6aKnOWmeiJcUz3qcNqoNqacGV6pWvk9XetQC+HdRrEWhUPu68szZrv4gevO3HvGGaibdwcSR0aRve+FfLJ51avck+0Wg=='),
-('54876dccc8ddf9-65409342', 1418161612, 'WI3kccgarwsiK85faz0jnCd+bgrzU/XklHJMkPWSe/q/x0vVRYrrhwFJpNOE93zWC4iJkD8sR1fJtg7mD1sGiU/90FToGqZ2QmqhTz5lYJ6l7ptqL+sVGCcstpE8xqRcc854TyszyGaYjlFgrbSC/m0W5tX3+a4KJ54H6Xt2lIzwnVY8NlmeOrcV8arFlizWiCPBp+c4ysfcPcwk7w=='),
-('5487862d23a438-17563928', 1418167853, 'oLGHpFO9UWtellj25CF9cqiYf7DUdS3CAzYl8kpc8ymG6xsx+4WaG4OCU4KFigaCjBmQDRmFOL+hXQqjDwzXnZPmCaNgMtZfjCagSD4urz8jKyG9tWjxSkrs5TNgpUwiPPqmbMuBe2/Bxa2tpLs6OSHwHk64XHGGSraNRfRm0ANbDaIwc+esBf8HqN1gQ60trhCT4DnEwu57+Wg08A=='),
-('54878f2fca5d95-12639692', 1418170159, 'D99D3uSvGtvfjFZfcyM+rbmanGq43TiMnsZFmC+0lcoJgWB+V3nxbc5WjOt95EKgpl0SX91cvdZGYoXlXDkcEHyFyKPloETmvJffrNR24bqcKNBUZZxf0Za+W4+FObXGVDHC3DrKF0dMGacBfJgZpnoOIPVbiwRrhnMKNZfDfq+EgtLShVmbuEag5BeszpdhwUOp1wUc+7g9r8XrQg=='),
-('5487943f46b071-00932511', 1418171455, 'rp3Nb5UcgsOgHpdg06gD5CEGuYwdUniDkP+oAGd0VuPncnG+tf5MeKidIfk3IJdg9bii+u36wCbNrcfg2DX1/Fnxqq/nYsKgs/j4v27hESWwtRItfuu9IWne/AdgOQVeKquvHaEWNkkuVxt3c2LCeQGWhzDyi3HrJPKRAKRWcrpjudcj9nWjXuHwDZca841N8q0dhGr00otyXEsSyA=='),
-('548794c1097215-78617302', 1418171585, '37DLVe2qPD47cOwXUUT/e//QQClNa5oQAu+OqsJ4IZqszlQZyd5DZocFDccGDd3zuGs3sBIySjdzlZBqstIMQzm8BqfQYlW5p1SI654oq4ezHOXGbVBwl/AUNqDwze+VrvTmQSLP2WFYT3H9IuLjARPl9DZ+bvZJh2iLIhPfy5esi8f2JR2yukIi334bK2OwMOpELuRrshN/C308oZ4D9RCQIYFK60tD7V6kdA=='),
-('5487965a699405-29206808', 1418171994, 'wH2k2wd005xhc7nY8eQcr0qBG3MlfKoqAah5rrJOyJKqfJf7TDvs9tkg2hSJ0WBC+rDl4OWasIW8g3k8JNpiDY+njbYPNXB+Z8Aa9Wkvb1akxqCvKi8wz83N24uL2Zp9eYz4nXOwE836TmuyNkx6kylvuNtyIUFw5uj0Em7vUJWtVJm9fMB8M0dZ6haISUWicM+w1Hic4+Bd20dr4g=='),
-('5487b42374d3e3-97533648', 1418179619, 't++PSeizXrNrutJLCmLI4bRF2c19HBWZ6rpbSmlRmUbRKCP+gW5PzqS81/jIrePy6cy4uFaDXhSaCLzkUpou2S7pYsYBhBYPtlLiSLGyqeX7+40psRMCi+YiwZgfBmeBFBHTSlexCoZCiHoTzjmL2fq8aejAIP8o7/hfHGkpJBn8q3xqZwB/mOanTUi9wG3WVBYzF3LdaoOl0fObmA=='),
-('5487b7563f3ff6-42537993', 1418180438, 'ICV1SGQnjt3+GfxZROpmF/6OIYudKjlc0epxFz64Lt6CHvZB/vRBFh0w0dxP8oIFLAy+HfQ8S7oCTspPRfqMRx24Oi5TIHCp8UCOwcDuLnjqHU3IG9QbXjc2w3UGGmJvWrCPbr5sW7UQwnSlYJALF8LHO8hloGbKmIZcNkfh6WVQDo6rOgjHmKLHqQD3JmSwT6bCnYHqPUmh8X19nQ=='),
-('5487b91ab00575-03991785', 1418180890, 'DwctlrcMCmLkP0C9xXqbC36zAofv7Jt7OiLm83kiAGDRPOKo5u3YYiMDSJpO3OR9VRSSaETr552tl8x+7VETE2BNVRsgsx7up1SdgyeDeUtNjwHk0RM4e6gfuc96nsyk+QmbhslalBMqNLio99ZXzKNaStvvSSKuvBoIWiC40sb5ZRxZKqj2NBhGVbnjjbJbxTQ/92sscQ8EEm6l0nPFWtU4'),
-('5487bb62dcbe72-71653457', 1418181474, 'b56PZKpL28WxDxLZG48UBGzaP3lVMaEwmnuDk/mXPdv12nRFRAMeRcws7tODS92sEFAI1wrrG54RY4VwEW8Z72uOdIHbC7G/xk6zSMGRVZAHgCPR0PNRXzNHEfh+jF6ZkKRIng3cBdpceKqb/pHxKDGUO8sJ5JR0cvBWjslkZuVZ9n27StVbARweZD6kBONAOauP8TJoErg22MtGgw=='),
-('5487c0b9c4ed03-02624008', 1418182841, '/FZQeCNhw2DgpX/PLX+HT7oq7qQbvKL1O0CQ1pgEirdjrQkCZuQ+XUIWdI1VHCb0I6/1CkesedWRfberpmK6mdGG+awKMss/qwFX5gp1iGxZZJUV+RsooAwG0EDwT5rxV53HZvog62rN8td+NAAWEB/jU1DEF6RT+0LVHeaqpPKA2RY2QGP9fuBjtIyjA9d5gWWjFVpcZJWS39nabEHh9BE9/0omKyH1xalq2096okf//CJziL6UEPlY7M8p5kQSVhexnW5QEzrCwkjY1I/BDnIXlvUOMNW0abroNrWueQAT/OE3EAFvNxnqNT7R4TPdqYtNqfycM2BL3AfJ5nVxbtQnG5tInLVJXiC4sskGAv6ushgoZJju6L+qImx2FbdG+mkh7xfxzw7HFOTj2hbnlKmw1zIVnbp3ofJrII1C0jB5G+bWMouzNUaUeQ3i31/388I7HpHktfNHymXTHWKw/wKy4QeKyIqXCdYSxZYJMXEAw9SYGRpgvJzXg4LddMoPr3fbaLhdelVKV1yTW87SohtdChM/52G3fG4cpJ+M1TIdbXCio2FOZSenAB6B2xLUxfzf/5UrMClZ1kqL2cJogimyShn3roTxQiw40NidfGOLvNRLrfPHn969U3YeBGsBBHbS9B9Wt08+gG6J+xjGpTk1705r0hV12OfgJ6QQTkc4InhJ0ib2oDWCJQehHTjfA+46a+zlT4v2HvzcwprCijgxxBC2ct0FMtRhy/49rihJk2VGgN9lymPxfKokfQ5W72njQbigpW84RFBjcZ6S/iQL6gJUBRyMRtEBxj6cyGgJO16PNyq6jfh3KkI2B6MeLSHwsYIC3W2JV+Z1MuuHG4SNc8DSGPBUFTNUXn+gOAK5wo7oIdni5wu4RGvntQBzELcrrOaTBn1KL1rpba5CjgBT5iBjPIgM+BYaYg7t3PV898Cy/Vyxo2pkr0NrqtMLAyGmWV7LHmlKDNc0Xn4hXqjJIUiE03/CN6xPdRwN8xa/NOloo3UIaQIwa4cIZBIH78KpogcWstwDgSwAumGG4BhuydI4pylo2dCq7NOcX5GpWvWxXiz7XLPKD4UE0RG/rRMV3M11k/pezTJQrjlVjNE28l82A//j4MC8H32P7zXECT3+GkzGTyKjCFWWyeCFfMj7pTELDKzUYLKnswvnoYvogDChYilGrM9igxJ3SD+aO7vA2Awlc8RH52GPdppbuf90r9m8x+iuJELt2ZZ2lAz5J9CNYEcVKiGV4J9YxXIeU5kcn1sK71RzBA5C2hbNHmlu3VRQX03aa+lmkEeZztWu9rixV82QPnyQbWxYqmQdZhLrjh/EBiQcUqbOao2+sd9sNdjWHm6abwr/Ouuomr6kSd6uCG2bk6xL6KKFOjt0Y40am6/3SHXVHMgwCRygYIo8N66hRr5jL+GTjMFHt7dBtPnGJCfslOlpCT5agwFu5DZzJfTeGQjc1ZZRhdhtwdnDKLSHjYumx2/RV6aeVowA44E9e+xjfuiJcnnYGEgtzLcbwWRsQx0zoI9182scIaMiGVxnkHqnGt/gKSCCnSmVsreMc5nRmXlimRWrTw2uQxZHRltX10tQ99nyBsLkB0o09ewOZitrRxh/0g7fS4EqDga/qyQdDSBn39rXqFJxgUKQAFeiDhFsafIL5mvX4b0lsVMkAR9EsOn1GuqSfFW+PUPTZtyiyCJ5zYu+LLvJ1iRERTsSF2fzu0pcViavltsseHppMMU6pVlOWNc870mpoEH9qWHOSObdglmz9eR5bRWtPsUO8VOBT8wZPh37vPKsSW4SpBSehaG88L1wyb9bXl8beXZucnfDDd0='),
-('5487c162306163-42266690', 1418183010, 'CFe0u3OV2qTJ9OpE3iLbjx9FVAgSzgZPzq33u1SHBSlquKciIpOqwxp8JiBq5sAVo9VSzY8yIkQmIq1CF24/HaqcAn1EpsUuJDRzTWZXcQO+AcZHmnPc3OrJlEl1pd54HmMzuNBkzY+9iXaCxh2Y329fdkFbqsi8AeVwmMUTO8OXT9CsH0wy6+1RukqiJBZb+05ZE9rD3Has7KsiKg=='),
-('5487c178ca7161-01304740', 1418183032, 'a0cSFwRLcypS8qEV0USbwpI04Xzw6K8QMhjKPapKtFTF33SHfp986eV23fH0aEiYXTGF+IQRoQ9QdAU+h6suX9s3ggiOFldWta45bhP1mLuaPCLxFA8H2Z/kvA+92ZhjZxCfwe0M6aIrDhvDFQNg328ZQMzTw7pRo790eNfOepZ8wZHUuHoyOM+ULEbGfSqYcFhK5LkFSvtYtQ4dLAd3K+B633jmY5JTbRiuweGmHpNUF1B9qbjhLvlwp7WeMQVkszudKDVgIa+48aF5pOrH7gwLG388GmSzAd1Rpon6nViSiA9EGCtFNoH8KSfKqsJCsNbDNKhiyOqewuxEoCqaDwGEw+oaYOaSQd8LiiuewUS58omDefOvVYdF6oeS7D2tRSSW84EYFlcB3amZnEANqV4IGch3MyAqQzDUULHBJJdrHjYMU+4qn6fNISMbu/njD5njtvLLbl9vP9fchnOyA4kkYNdDozFqufDkxja49uCpHZuqO2JsVfjUJ1RmW+CR3bJHxOtNFkO2q8/lcENxk95MTLWQW9wURt6bk5RwJdbjmbLt+WNQAi35M3Ets6ALAIr4VhqVNV/V9VclPT/gq3BcyeFxluQTF0GRN9rsha+ir1BcKI3qT0mp1cnqAVpA8KDIq0Q/Ia9jKVQmznlUEIRfsTIYuwThbDEHP3qytWmVf8R1p2YTtBga2SuPYp9Z0Nlhed4kppmLgXslUjDfgXjwtTHYmvCJAEFX1ZgXJmLb+2yxw/HCIRzkUVktKF3ELg9WwdZBDOo4emCV38zqm95cUyYKxvut3xlNx77/C0wJ+ywK4NpIWeJkw0DIoxNfUNPh2ctx1g8ndakoxzSGze3xOAn+kCpKgTPDIDu9UwfBkM+oRV34el75+nB2ziEfWFA3ODMlLpwtTJjAxsRfMpM14kuJfTnZzL8o4s41ccx9m2Q4Nh5rBF5FSt3BzlZtLAoa/hzB8nFJkPKFA5xFn+7OR8l4ejRjBnEbbxcMRxRPQRcJCF5LPN59iseSvPHk30b50xmYwyyqG6kIDTD2D5XveFAe9D/SobQ7eLhaBiMPYGaELHt6IRficapMiQYwSjzDE6WrBoQdTY6YKKaZ/flDA6kdPIwh47ftl3gD5mRe8c8D9tkjofWFbVunEzgDd39q+v89j7I5KnpbmPZRfPTk3HuLZ0QfL+Y90IlGEwo8B6/LQPZDhRlLZn3A8WZqN8A2BhCfRjK7SCbL2RE/k2EtW5hdagkq0Bpcex53o+qlOHJ2EmvmjJo5m8OCZYp9F6y97WXSzAJo6/W44jvADCNj42T1j/BLQzDHE8azDqU8y/iO/b6LZUElf+WO815+FM/e2FjrJLLzsz2bIGLkQSDyKb0TqruPJbGbzSRvkSAwvPo0jXRSP7rjW2GpbAQku2l3zKGJ4Z/TOfPG5wDHg4kZxn/xqz9z95DpV4irVggqmudxPkR8L4B98jSZs1fOrUWwlYcZQqBG7VI2ciNet549BKEx3gBm3feLmuzCqmhbWM73rn7AixBJ7jT5Zl2ZEQyAIHmfjpfVCqAOf2wAvyyi4qMQAdh0+WqExTSyCb8/mAINNjC1KGiZ4oL6muvRfvuooY+xqd3a3K81J+b0Yv9AjhslaY7hBqRt6/QUjPETBMNAyhlMqb8ltvXnmPYv0i8dMqHwBS/HCeYtUqenNEUAE1oT13Nvjst92JhJLs3qtalohSJieE1moNjsO4NX/hPHWGlJ0L4PaH0rBSY94dnjg7TerGjEyYJOKVapsj6ixAbcuUf7YWZF+SzYLckvW8SMlvpyShDMdK8zHPuZhExsddDYhhTePiXQ'),
-('5487c6cdb7f834-78498809', 1418184397, 'LPiTEqTEXWt4moRbloT3Ia+kUjEgmLvKPm7xLtdR/d7X8fjCrI7B0GkzSOjLmvwsjxeZRakn4YcxCyLJvmYWx8cH4lFaybKHIOoZq4RTCcOidTbMJWcER1GhtsJOeeQ+soG5K9oHe+epbVSn8j7JFBpNdfgfXRg3mcx3JucfhBbzmfeql5yChWync5020UJwElCFfMW8FJWu8JA2pCMdO33vjCG6nuv5Od2C/+c='),
-('5487cedc8e8df5-52081904', 1418186460, 'axzAu6ZPZ+7H3GHAFzwApneioLC7jG+I2Uccji0ZifYp+8ssShOBiUDCEcEUNkKvGZ1rhyYi2ZI0X4YotIQj//hJHeSD4HSPMafTie0FkuQi2LAkSHUQqj48ovbfEBws+vRGj6QIVUcsQbZIvHk6iN1SorsJxQd7HiLFtJwigJXB1aYqz3V5lmasXNrNZEciHx38vvZwhRdEw9H2Hg=='),
-('5487dca9004c83-14812202', 1418189993, 'bDRN+hwa+RNgGQWKvfewU93v5snkL68WNmkBgxwu7Z7y6wIH+WSJJ3PUfQHY+tIpM8u3nuwQ904s0V9dd0AJ/WKGSO+gUpjA//d2nUIDYw5fB7H6wUedVGbCmrkvTfvMFD+YqDPtRepumP4f8ztvTSV0UFcZADMyuU410MYgjccc9XX5Xt0LESiVzWxfv5ceGomao1AWmJKoQFUA9A=='),
-('5487e3dcd89638-26187870', 1418191836, 'dree55UrDYnPWgPuEilnJxSPlilwGAZKhO2GLlOupkOcbZ+xuuczJriGTgnwX4Vdpkxo14Vh3S4nnJ8CfnH9x/AtxD/Fo3/f34enQsQRQz+PBHFTkYoFSvH6hspWhFhifBjaI/si8dO4/gSPdvu3te3t1llkBl3cTaNaUQ=='),
-('5487ea429a8cd3-85348734', 1418193474, 'pJWqrcK09az4MTWQR2Q1yOvY/pNCk5cifjjO/vujnPGyo132HWwwLW2jslnrFV3ZeHv6Gn6JhsIOayX0ZkdLkj1rMZYoUlf/MoQxEMsov5whKopMxqFNrBCAnqHlEB0c/HceKGrT1229S0jlDOYJYWUamiabgufRiEjh81F9Uk9bVDk0zXoQqE4HOKJSekjdnUqAI0awINu/V7/oeQ=='),
-('5487eba8830157-58431415', 1418193832, 'Q+5S9tJIdyPMueDG1el37NQsFhq31Ypb1Z+6K+b08eAFLLDBRiguKhgGwODEXn9iXWVfrKsLXm9AR3ISuvDrAdv5RM6WHihhyhqKBfkgDe5C04CoTrsnI4jurFUoXO/SlShrGBccXgjPgkZ4t2pB/jzU9sMIwDC+1N1rjxSCE4iDGLxF3piLUA1ePwWh6LF7w9EWEhsge54vKXppvA=='),
-('5487ee560aa4e2-03009654', 1418194518, 't08GF2f2JPGIdA2l4Nq2g73MWdpvdscwlSg0Xiz5bnNURatPaHw232dQMsg89t+Y0GiqRv7Sf8lXX9qC0kUupfMo4UQ/23lJU4zwPFANiUXBZYbkbbr/0BHVPQJZiGSWdgiw+WHWoBkSaW2kHdIeDyEiTvvTGWNf5TKLqw=='),
-('5487ee5698f179-33316232', 1418194518, 'Ee3/3esFE/XV+G+hvmBCysDx6QF10+uD+gf267FtgBtKBJXsTEpFOPy7h4uuaiFnc0KbYkxgjprfhBjPMTqDQ2rtDiRjcWMFh7xyqwq6EkGv1AMX83UlkZJk7EG/XJnKmhN1R5aEVC1efcyhribhnMaTCSYkpso0seH2x4LHlKqSYkcSHrs8j5uTRvS/hvzzzqUtYDXmLsLq//Unxg=='),
-('5487efd981ef14-46688351', 1418194905, '/wKdzcT/LZ92sR+hFZ+GkXWCBpwsjHFz2xp73B/9vX8QzDH40HEGkWdzCqwLc7afMhLnbbXnz/DlN+ZbjzCHM+BvlljgKVQBYNkqX3dMfaieeplv25m87NMQ0mfoyixuoVra7uUtiSiFXGukpSbaGqA7Aro6phARYPihLw=='),
-('5487f8ede776d9-96494699', 1418197229, 'GXFvtmbdMDFDPdGn4bEOsWC2q9tYvZwk6a6N62VHgWesRKabNKsyva4pZobkOlkEwakGfRUFcXQTXaVMuzxZtKRkw1OA0Hkwi5SGVth6qrHmQ8mcUeb0LDFBwmhtNhXaS5Nfz528b/uBvpn25l9pul9HBz0hQ0LO1qnmFg=='),
-('5487ff1b1b7b23-11577654', 1418198838, 'anN9lMOQ+FWixrG5qcXG+fmnfZiCCl/TJmKvNd1yh82Ido+gYcTU+o0IVQT5aVJ+EqgA2i0TmuceUy+TTPK/nYbxce7dbBUse6ERr6uDIiD0OydSGVavLSslzKGUNP5G8fl/hWa2GmK9GvPBR3YtkT5VAzfJ9ZcIvJ1mJ7zevlU6gelgzLEDhNRse9VI+JAj7t81ariMVvzNMab/EGDwZea0edq3sg7w'),
-('5487ff1b76bf60-66710161', 1418198811, 't7JJOs/J8mv1xZALOBVDFXdzoOYBZ6HlArZ5wWGHT1UgEvPkxc8toEkWbQEubFYsV7Ehn6n9ACsYgtBTcUa5YD9zGLBv0jpZje8ctYtXEt/vI+JexcQbockrIq3Zuiec+pKycbwohDa8DOKbb3l3aWKXf1wykU5USQWgdg=='),
-('548803c0b65d29-34456244', 1418200015, 'ygOpi5j+J01qASu0NkYMpVb+62oG16LR57q3uC2qjXq9uA33DuKj4vvPEhgo51WREDFOUjjOLCo8jkyPiX59YrWt/MhLtWAM2wOQHC6vRLetWpU3bMzeSZIoVE2Xq5By1LD+d1rUzmyhb9BgiCodA+qPCxpVRNFCzfS/z+vrMrVwqvCgxoaIZ0MbzbUAAyE3a4QohIPEcZKfRcpPPlVR7iusvlzRhEsd25p+4g=='),
-('548808b9acb6e6-10649122', 1418201273, 'Z3zFPF4zgf5CtrwzHoz7KGCwRr3ff4/UEpCUGp/l+kJjpw9A7TqXedWdbIi9aaNzDIX10TQj//4ibt/iY8WLZaLiQntAR1ab/ThvF8XlK4hBqfwHGTBiv6MZE94S6v9YSEoolsbvvNNRA5nCxievtQ2uwJQPshcu3NGdFQ=='),
-('548808ba979773-01115264', 1418201274, 'oymKak3PKHASmmdSmrX8C0Z/Qv/EZjhp6FUwz3g3Uls5qVnU/ld6f5fDx01QD0ELwNVukP/ZkHLIYtlnE3TBYV6VYOKlBv2rWCZYrTG+npflwfDW/gKx+KE4ZTMqW2nQTDoWpaoo4+j9Y/esT8rMc9xmozrWYZMi9XKMrg=='),
-('548808bb3ce0b4-75022894', 1418201275, '92+MgvUTWxpomXzMymggi+a5Hy6i7jzXOK1hJJMZPWlaADFalEotJnObk8SxyRPEU50/a1O2pDH7SrqWUoIvhTyvIExQ5E2DBvRhA9PixfaQRygPQF1B3jQg+IZ3wCWsRMUKmhUFzxHHvQXYfNjFElcCrL3+3AN1EGgp7211Ia4YIYriTmMNAYLgE0tPoT0NlaCeHwv3tVqTjnNIYA=='),
-('54880af1b877c7-15050858', 1418201866, 'jV1woGv7mqZgRsGoXeKYjm5XxvLmOI/R6d3dYs36Sdio3DzYkP+PBCU040HyNXrOJgfirBP/FDTgnWR3knkIx+NJOkvecKhlJvlM5fORL6jMDD4+JhkRqAhhACDhK/ZfU4iqE8B96TkMfUsGNwNQANpCmMrIFZFfyITNXsQA60t8QDU/0UHC8U5utDiGu13QicTxYL+zEOFpqrbCzNOLX9WhqdYIJXnjmcBu'),
-('54880d45d6d3a0-81034746', 1418202437, 'bTgQwY4k1IJA+/p4zNcyny5bPNoj/j0qA+FoikqZEI1kh5ObJIg12qbk0UGR0Ol3L47nhaJY9NtKEshDTCEfLuEMGHNfd0sFQu1PrzHHADPio1lsFw+12tO4EJU0MnEax/pkzGzXUBevzHHjddzMstzBZQq9jit7Ob3SLARRLu5dK4bKhJ1tiocaONFu9paHHFEA41BcqJyKzWQUjw=='),
-('5488166a5320d0-41922022', 1418204778, 'pBXVKUr/gFXPEXh7M1jx61H8L6spB1Sd6BVSs1g4FF2QzvXSbKrYixhNvkygp5NnoOxbrZ3y99e80ghwBp/t5sviToGl/04pPH9mmBsD89bnTga8or04nqkcAFIh414mcfdX5dUXt/qk7Csq8CFCZkCBSp06cnvFMEctM2yoNnIIcDqStNRWVEJyGRbtl5Hfpg9sPKV0oBhtfmkMgA=='),
-('548470de1b5671-77986549', 1418147128, 'nvDBidKXPXPIt30aYK9XntxQtg45Z3hBmygIE/iwwY2qJv6lxp/zopK5kXzV1m/ZEAr4jTx9j1MXtVs+MPAm5rILAKA2UYQDTwIWs36Fd7zGMwTluQV/H8GZvqHeepiOOyJfCvK/OG/QePa6fS2pArG8cKRw33YfB8IPNHowrK8Hd1QGfSFRSeGiAMtfJpIW4El9AumBcfWo/K2DiYYGDT1ioQf3MeZS7BB0pexhZ2JZ3MySshljMN4NWRNfCEcp5E7YTnXv7f55A8C0LaM0OU9ou7Z6u25bzujXlqfxf7H1AELjbodX6aUn6hAsBrmMabJUtl/+Xehelrm0eRJPig7ockm86AhIzUPJgNDVT87nKUUWyPXZgsVMjofgBmg+cjtsyNWO2LVVO5I/Ar3P1NjKTZbOF8rZkB+I4OJzFe7UioLCdaFnwiQLDKu2u7o5kzIn8GpPf7/lp4iXerZ1p+893njhgR3S5aphKKgGGemXAMkxgeGkL50NWs4yzkIOxXNXyWlpqf4Uc6+NDVhukjHrImW/T7didVPxgtXvswu5hHvV1TdL4d0ZCksXpUBNoaWo8qyV4uujfHf0wbtLE4wZ1pwKci2IFXEpiObU2EAU2EXbZf+4fe7gVGlwjWUfSE5ieDUOb8Pk4eHHi0gkuxFD2U4Cok185SYf0ZbfaJDbJtOEe5XqI5Sg6+BI6tM+oRDeKSx13QhC/j264uWLxEykTK9v9hC83cKFI8ZWtzyAxl+jQ99sK1pSYLCM5a4FOqS0KP488k8aTlycTSaKZQHe9t0+66AiAvgUnPv39K53iIoMV6EQUQ97MQakIaQEVtmpetpAtUvPiXpdzCjFdZmUFq/w4LnDPL0/+0OJdEaq970ZmlhNclcig5u9I5tP0Yt8XzJPmbmUEzniRLcS/Oy1HvX0QWykY9y4Q/2X8c+x0tOwMJwds36WzhZ6Mtg0UB29sAzAKBEc3xqqKOh8nXxxLPZVejnCMllmXxloZeImkyHSenIilzWCEa++e9+DKocLHMau+kmg4szjC2prKmZjGXtr2UUkyWISkU1UHX4K5N2DXa5PMghbKbTeVr8XmKJYoq+bvXvKK9yNwck7Wz6zSon/i9QKjW+XnhVlp4uw0E3odZBk81z9xkGj02Tz/+/Ysyog5HkMAFLj71hOf1gkXpwjQ7Dcb66H5nKuzh7IoZXAJW0DHD2kcmENNxYIZfSs8ubNvh+gtaRPtLiE3PR14raNjfJeVl3V9u+/ZBIX110wpE+biqVIOEOkpLIkC+T3rhEHuaAA5Wh7oT7iz5fES/Z1J53Vmk8DD3SApz1BDojN8zEl1K3B7cXPFcmLOq16m+NHGjBC/XvS9QVATTqVhSJCtT3bGDD3SYyD7hh0JLMNXW+xymOGuRy2nzJhenj3bi/ktK+j8kG666GS2G8fsuLNZLPGepgQjHPVkoe0wiAqZJOMvepjaJaeqKepU6ZzUF1hufzj9IoJ8HuaRL5fpFT6gvvQRi+RA7m+lF2tPatjT5xwXaIqW+jepKS7+EBZmtl2J4YyE9rpUJyfe6AO3zDo+Ix5ciUsApxso64jlzulJeFW/UANIsb+pnWcb0kUwcMHCfZriee+hsP2keURXiPFO71Z/JW/u5dsc3NIlkkCLg=='),
-('5487135d127157-80011154', 1418138469, 'zIzXJ8HJEzRrhTlQ96Wy3R3Frmb7x37Xpf7oSlr/fH74MKIiD/tREWUd3mg45JpU5CUs7VD9K4NCEtYUh2dCPmpHNc6izTOH2ffgog2HIC44/Yz3++E9oF+XOnAnuPS2DpSi9FOFHY/KzuM7Ko8bgsqU85Dk4qO3r1RiKvWL3ppPFIJC3lNY0K9HxnFAH5517yLnAXN9FD2U67s5XdSkSO17fuGaqjy4dm6eK1qAgjQkM3jBrbzf2nbapR2Gjy+iqVCi/Hk6HTGlk3oAbSy/LEAcWdo0cTm0hKdWP5NHcyDzX6zhScO+PmqiE0Y9/WGKFiaJ3eL6X1X6SM27nqn6ZCTHdXKzGE4dsql3T8IRaa5UF6/xlEuFMo2grG0atfs5CeScrAEh0lmfuf+UrUhV0MJFFyoqsSsrSJAN//+HdtyW+6sysRa44AXSfsOo+5hP+pJ5VEbyJYe1GFWB8Yaaj5ya8Sl7hviuCpuOJaH13f3ifI4KPwxraNv8IvlytSLGrCAwurb4/KWSC/ZQewPMUxfEA6m/S6pcX7yjzFHXe5ssYRFsE6V/+ej1aJjVkSC8HSxgynzXrNxCeozGNKqGRg7LttvkwkYDfWBauebkxc4M7BHSttFsWK4Edk26lnQy8f6Ip9OL4bvC97caBhNRst8aeFOqMZzG/t7hZVqKBk2iUadHxQ+O2EBLdwA9J5Zi6fk4EzTI/Wg0g8hbOQY2iBpGBitaKnfDyvuzpe9JsT8MZ5bKFfiGUi6Ld3Bj99RAUXkq++bgKIiiw1oQTtHsn51B8lMoh1j/le1klwJz7WeCQ2WAg8NHI9nKTXnSYlrWK3DmgQkdk9f9bTdaJtApdfDi0WZ1VqkeqVHEJrNx1BGBMbXTPiqreEtaVBqprs6ft9AUfhZ4xFEPtaxK0SjiVHZ96vsCfEaFYIUFodw9RDr1SlqoKvq1xl5z4NnLsFumuINLDxMP6ulCE4GQnfMOIbgV86xzN73v57A5vJmd3EZzhwfkE6k/iET8xSjcJGZh1CF1FFm4jiRF8It3+y5mqfP/MJtIdW5uPa+uxQK1nfYgm4f50Je4S8zIZKIrTQ69WIN+WTsPSDdr1GeGxCf2u6W2KxljUILQc4adsb9IOBlQFYo/zJX+86Fw4Vq96Vwra6PrvktOI5YSsfsyNgXUUuZQ4cyO/+ZaNsps0gKsAoOk0o22szVsd04jQrcLbHXzRZe172xdMOmf9gdCOB6JuVcZgkbnzuvJPXCCd6vayEYtKxUB8OSeZTeHaT2YGfTSgalhYZalOIc6dGr5jj6AnnFRdRi6/u6hwltLmmOuF8M33R6H/a5IA9uckaNdRugu5giAfNoy1hNYchaGVbh69c7DsEVE5NTJwSLJdeP4ZAPFBMDwoNCUKAE7P0pEZcZW81c+ItVTPHLa799f1dasCPGVIXRQUa81Ten9p2fnCG/Dx8zfJHwOJGuAoPw+hvFxnX9MTWmw8cEFagSC5swDMlMfvdHjo4WOth4='),
-('5487138c40ed49-90880627', 1418138508, '5XEr9IInWsB0UZBuLrLvOaLRes/6d0d1rF04eFcTdRUDPhqI0H/2FWBV1ezE4NXrCJI41BXsPstqxKi//RLCddUzQd8W5Yv+FiDidajgRA3zSvrchh6MySLLqjTHTH6aUmfE2Ypj6YLmloaPyJbcRPTBsqvpSF7RiJPfmoDBjsNG/eGmWq3BOSrplBvQAMnaLLMTt/U3QFUw49bnNwWCfjse'),
-('54871422f25560-25643252', 1418138659, 'jBrejcyDCStcRiNnSYpVK6uzkJ5lnWq19aW8YpziNCGyFRw2pj1C5O6yxHPL84zfhcQf49IsdqEJJuvgN9TTq7vJzYRRa8QW4W6TtMs+Ue2Y29fooPKszUiWLqwhgL9K7GK1zgxcR9etUctUm0rPtff8OmxNNhdXHiCV52vAnuR81+oJa+GN/W6PFRI9TMayC1vKNscKxhJuoWJaWg=='),
-('548714f4b96e12-51968691', 1418138868, 'Vl1hGS70s5E9MoGFSbwdB70PP0AzCNKUX8EHrt/FkKoa9PNf7YCqcQxzTl8EH85H7BuWTvp6FMux8ilZggCOFRZXXyrKUXuC7B94Q5go4n5oQgzBUP7Tqrj9zlgrKVogEtAi1Q5MgppIKdd7J+LikkMWuuZfj4SyiM37lvqIWY6Ebru8iiWH03a3XyNuAdHc3OPDGfG92l6cSHW+AA=='),
-('548716a2463206-82553082', 1418139299, 'fWI8JxUqe16DWyVWIjFvCv0E9ytTOknr2+S+zzQ246RnuaBHDrRHsgav6r19WS619+sEoDe3M3xRd/aDh+jas68XvrCK7mtL2fH03wqoPEh41khIiXxcHRllAOf8aiGhjUtYh8/W8BuY3zKJpIU7WG2FU1ykGV/IHKUCTblT4wbkK4pWINHif0OCVkpGNOvThgWI2nIV31p4rAhIpZOUGvExvvYGyOkSD3wGUE8spdvYmKlUnGRTCGy70O3mc40v/uTC4aoXbDZYFabmEQJ6zfSMsBbhNWdA1df59FFWX2qbGsX3KLQqtkAvUx2ZkIElcwNZMH7sEzeIwV1OKupc6SpvF/Vj9bWjo3iHPdBz8X9T3JOqFClUueXFeT/7RX1TxIZxmg=='),
-('54871853b912a5-04874260', 1418139731, 'bHNgJQ52qRQxfD0dhci7e5//nsAajLNEm/dVFecXcKkkNWW1ZiLPb/gLiYNdAyA3VJCHumuKYKpU2D0fB4ZR8Zf4oC6OsDN2FjrAmWBsNseYsEWNWtiAW7cWlYHEoUv0J0V+bsLF7SUugLmV+YK9UfecKol3YE2ROSJSLA=='),
-('5487261ed9d103-66810661', 1418143262, 'g1FKTutSOvurTBtIcX45FsxkhwmK/boYgvNLV51dK4lfIl8ASRBgCKPQosRbQbDQqm0lcnRnLI548KFbmO+uARLL8XkJOqguNf7oO8gHjetTCYL2FQ4dkXRYMpUI1ORtnTtEGxtbPUw6SFC9FkPIu4UX8ZzjMZrFZ8O/ehWK+x8qO5fCegejWPe2HL/5LY3ltEag1YqsAKNvaQPIKg=='),
-('548726c8ad8705-36404503', 1418143432, '8x4yQIGh/dfnwhPV0QNHuG2jWg8GNNDsmzGD+IYMQe/JNq7En5Y/z5LMurBhI743WKusMsNwIyMz0UQyvStYDklNHVo8ZavQSuO/Mp2rfyuElkkPXRclJPYJWhRHP5RLPQpeQAaxbPloHtfnwPc1P43X+GCi0uoajzpwUw=='),
-('548726cebd1a23-16618475', 1418143438, 'wiSwWIcynwR5eQBFiMo26m3pStdtLmMbLBoHN0U0UUmYKiRJi7GdNP6oWV34bHGhn7qHw48QCvFTt4c2fHZ0t4aa7Wq0gV9YzKAYDKPbyCqmB0xtmat5u+APgeAqX461VHm83GNOrJ62NRQ7DxpnlUX+JzWpnP5T84r497xz27GNjMGnGLyP0SbVcJBOfHPQEalsd+f8FNzM5XrazaZNMuQei79XeZDI'),
-('54872763be5c76-55198394', 1418143587, 'wqOx2W9ZWepOrQOvHfU/vy6IgU300RxO4kzN36a7964VkmtwXn1mfSyTvYIzZbokFbZuF5DkH898pqmIoxoEqPKQsP18koZaJqVfjzjzVbH/kvZ3IyCqEbz4utMvkkQT6JCXHittqGmeC87J3HSnBzQzLlgl622mzWoof3+5ygL51bmSRnDisy3/jFZp0Mi7GilDWwWxZDxhZCeFRjKh68v01W0UMVTAUNyplg=='),
-('548728b059ee79-11286548', 1418143920, 'baBnSK8uEtBeryloKM7jj6mUwCTKK0lUKwYZyO+ZbdWgmRE3Q0HqeyX/+nnDBVTtC4GjjaRSnvDg1aiB0LAP/n0whswIJXIMxLVkSAcIUmu+pQWvhFWisS1kN3NwHf3ZYYF/FWlcx+5srL3VGiRXkp1gWkJh5cbEekSmPQ=='),
-('548728b2dd0f69-76884584', 1418143922, 'kU0VhDobZj2NOBxfy/CvVRM9l4sCanMgDSfu7pINAF2GgTnJXfxrjs72Th7Eh3XMc36SYcLOg1RvaikmC64Z31VyaeOlkpHiwkINAXAXlmwRFwxP3niwvJnyGRr496x1b0a8o+HRCfmcNepHf6dVclKbx1pXDYImB+xYFQ=='),
-('548728b374c107-11324130', 1418143923, 'brxfWyPZ/nSES175WByx/q7OGXn/9+oiVwxEz0vdsB0riP+BVFhgDKmIHHwd5+r+7ZoxzyTE6JUceigLbeZAQyE49pM64w8mPiyMQUFfl9Zqx6yDRRaSyHfGUn1lmwy1Hyzejp4w7P8kQyRquIgtRjohDatnY9jKuEieQO3ENlEM46qv3I7xd4k2PuT3M8qCWfEupsUwMx4vmPdXJg=='),
-('54872fd0cd3d76-35866793', 1418145744, 'rvXcdY87K+RNtD6vRMVrjVi+t65vd2LLO77uqJ+EgU6hcLEJtYWlMg8mpeX320whEOeN6jmfaUAY4DGHh9wcOta9ZFBtwjYunfAJys+2Rh9T/81qhVLAbRVvggExAlCm/Jn5e5td+h/fpvte5oRzUFYO4NYnrfFH/xF2ak43fh0313MHNYX2tPGCb5yAx4xIXmQwhTdeDVYGOGEdXQ=='),
-('54873004de1ca0-92037894', 1418145796, 'qCfIEEvASD9Po27IOc1eLMF/qd8qJd+bnXH1z/7kYtZtu1eglvK8tgYIQ7AF26FUPnBqJKTKqD0sd1b8on/x189yaZhykKVKl0F2kVW/2crwX2peLX4upb4KEegvGE1I516lmtxgcq1et6nDktz6mOPpfIkuL4+YwKEK40jBdV8+PkyTLIvGliSlI3wKDqtljPyeQoVnAikKajnm5w=='),
-('548738e3baa818-07351235', 1418148090, 'QZrBzfde/1PR6mfQlfJoCgihVwt+Ej0FZBsdLCSaukT09mShIZB80li1bhD4aW9UAzw6Vp4L9L+aSCEWOenOhIn1zoQZ7b8OKNkQpdclbTCeg3G1mfLHBvKKTVBWcO1uvEfOlvJHh3cq79AYC3feD8ruUlxfwUgjedKSNB3CwwUkkQ7qVMrD/B47E4U4AwuPn61k71E6Rs6c7eOyV3Rl8npvq8G7nlsR47P07015XSHMvTT7/kaqZid8keFlb8Fi80IH29pXmlu9xhWp9JjiH451uA1a8fPB4MdUBnDF+XzZ5vUtM9o0fJWZgxEsDkiGajtbMeFB9pAzhlP4vOQY2LRUG+ttX3zpKhkjL0vB'),
-('54873969d46cb5-45623245', 1418148205, 'xTaCVYZxm0BozjKdZ372wWek00gRx8/Puvw/GFtdHnesv8uxtRH9i2HNN5nkUEDOAOPQRIEWERb4UIXjuSriRBwWXV4ZC9OV3XtEGmluqfzP46ZTVOElIL3mazbgBhNV7s1oU5APUXAJ1Sbiv8hAsGFKiiCCU19dlr/q31qbm7nCabodkDzQaaSIS+ZtvB1HDxcfBLFfE0REOpDG/Dk9LlNHeN6JGd0YOmSkBvonL0qwy9IEim3J7l5gZIiBagkv1zw2Lt4wbp8CIROybeXtwezv94h56FdF0P0tZ6+shHohoCxDSb9zjak2c0uEe0y7oddfd46bU2CnGDSrveFOleeM2g2gMF4MeKbREDPJFqZS6RqmAIq1U7U='),
-('54873e0a807844-71209514', 1418149386, 'O5vHy3eA1ZamcTOpns1CcA7FxYgsq338gSRcuh/QjpXzXP+Rcb4KaGLKex2vDKQHE62O+8k16MVzEEoW9/YyPS/iKOjWpCEa2tiMuV99PALknkksyIKF+RtSeAt80S6tI71MfWy4nDqSfO8+QWZlKIeoykk0SzcBSjT7OBliKv9HUfd0WRtGd2haCimXjxr2JwLCBiagcNKpX0fv/g=='),
-('54873f3999cab3-23157051', 1418149689, 'AIfrvq1w7uU/iomaFW9bUqv1As26Qhpb3CF4174xYxDiV+j1qe5VuNs3zyuHFZ0S+vqxGZ+6sIeQj4+kB2lgvhG9IOXC7WdTWm1Y6CsKuBUcLU3WkzWZyqeoPXNCfBpLVzwOBFWcfwkHsQvpkea//JqwyaiL9bq+Yl4EzvCqlJPppS5nPE5T0wJpp6UPb+uWP1h0HqP6+oG8xlxodg=='),
-('54874d1b569413-88821530', 1418153243, 'iSGZbZCxvML2ONGfosX3L7GRX7pck1cEOVqpYqQ6D3XaXepTHfaCQ9OVN4wqeXkNCOn1HQ435kqRjIY0MoIKywiHSgK6gqF2hMJqisQgUmlYDD/asM+8qlCF/AyAUzPDUgiA2jOphr7GejS6dlTL9ntsSAU3it1GoyhnmCUMCRS+aINVdQ3ua1/125yv6rL2lCIDb3Es46ApcixMWErMaHoLSFaMjfzMZcGmLj40MiG5DZg2asoqvBCy1rnH1T4uCMI+MEHXBKsFnS66CFUZcDAErc4jyspdOAtkhG1EuOvn3MldjYt8AfsR0r2o2QBcc6UoW5n1vFnxwUX0dvu5jrrHA0wk7b0tvEB3x6M53cZMHcfvr8L7V2rwIyyhl0E='),
-('54870c85f33402-10813060', 1418136710, 'b+TGM8L0KJNWc+9yKlsICnSYyTJbNjsGs/v/9hZXM1OuFpwIkKFtJHX1oQpBLS68pEFDKPHDHkv3S+CIAA48DHE6FYgf/5TSnxd1BdxTOb+hE8nP6/4U5MW4tBndUoWYrNnlxucGc6AONRdRqUBpm5ipjVODRnVSm1DAAg=='),
-('54870c881267b4-49652109', 1418136712, '6/PM8BWiDsmbvU7fwuiw4h15T3/nu4dO9GFWBW9A3hKAL7bPPHPQR8W75mC352KodEP7QJSaHGetFOD3bhppK0Yf/wqdL6ZY1+DHTDyjPM7+o198IwVFkXsIal/VMgwC8tjdNo7yQS2TBdJVoj8zg67V6LYY9dNvKMS93ngPtSI7eZ2YQ2W50TtLPFimUayA5FWSKJlCF97hjOzyrLkeKboXO1ecy76s2rgo+/0mNz5zMthaMhkMb9e21+brTDItw9XdJv0P1lm2aupQIvHyK7uVoikqznFxJ9qJEPbR'),
-('54870c6969ccb4-43471390', 1418136681, 'LW/Md7CbsH/gMU62wKoGu5caj8tqNQuWWcoq1aa5Jd2WP2RqLGIxTHKF/rw4zo9jBXhLQGlxK7QBJB8/F4zV6xFQNj1ep2PJWpBZeNdvqvyF5nVvKTSPvEKsVR5w/9ZkUWlQLCFRrPxrAckg9h+A+lZbsE+swgSXrGjVEA5d+I+XM6P0Aq/aimrfqRgnLni3xkspfX7SO64kfdlDeA=='),
-('54870a9a91f523-64404864', 1418136218, 'x1v1pVDib9QI0viDGMUueVluJC8HV/2kxoxrEdb8HXb6dfwN0rFq0sAsJIXf1068oQ0c8Sgh/hU38XgoTropc9WXXAxh7rmClOc9ADaWszlR3oubQ6oIwk1qd+Hf+IhPvfA/53XZTDmuILw49OUc+9KW75RvvjujhpysKqEeH/e41Hccvv4x8bLEHijzYzH45GLMuZXWlXPw3O5RkQ=='),
-('54870928cf55c0-80774405', 1418135848, 'dDCkLrLop/n3w3WWmhMxYzF3m0+Le0jEcimGvcQi0sxPrqN1f9EJ6IPM4Ba735xCvz9EreVzDgud//3C14b5fsdQwbhTEJfc+bbaizJ00JRbU5UG9AP3qCcEZEbLVpRP/KeakDi9UeNHe71AfCUy+obDvfY6RGQJYL0yoZ2bwiRsI4v6g3yIhMAZ4Un+sNURfhuJVNJ/InuUJMe59IZMglebo8a8JRIq12zKXquumLYnHi50DyruiG0FxLZOOeXFSuYp1QyIGLap+Y3HP7LvhAtjnstY0793Xxdv3i+b5Ex2uSIhf0ropoFR5xWxfRPRNCBYjieXuTVquiTbkr9y6YFUQE8N++h77nqxqXhsrDgeZ0T3dP5BMjM+mKxTsnoMytFytCb7lddR5k/UQP+AkZnNWXhItpDYjAX8j1YWF9x11a9B5x+2ypMl8zNyPhN72aB6eq1Jv3xYrAd3rx60JR1mrhfQLh9lsM2d3KlbT3gqIrDS8ESsByGBl20Y/rclcLkVaaUqnw8Ur/7ihSBu5ax89p9q146j5MzytDfnm/E/4FOZFUhM+jFeVEZgwspqgbe/ELkmscO3s3CqkrA22hPf5qFckpPdfAw9bOG+F6v8KgXk32WyhaeFQ+JqwAO+3D9cq0vYBHP4wzV0H9+SeB9jJe53zwfxBn+WwOAZ8ly4JfODlm694Gm2G7vEpYjH7LK57Gy6iscSL2mF3QGA3+1MwSvE/eK+d8dLuBVSHTMr5Qvof6tRPiP0Gi21lWxJ1c6LfZeebPEGjxKTrmj9FYswG4kmwO5NnMArEQggCY6wDfsvHys8OrEXTf3OVNu654dN+S3rulZzj01APz11/3vHakhJR1vljsaYjvZoiYmVd/Mbif2jQtgEUjV/ui35TTuJpL190UOnHnqDwqNZLcQwIVN0HUaLGLdXBO1sGCgtCK5bFkIGalpWS4MqraUcRecnaePH7WQsZ3+Vs8e3K59h/2fDVyb2czKVeTrjNJvQBrJabmiOVccVAGtG3+/vcspJzITP1yQQQVrymUQ9zuZEz6PEKWeLaRRdgk2CRj26/0N1UoIjOx518ch+psUYAHBWblzqEADx7Wl0P5BwMjZNLLfo4wtICmA8ywPSUYkrc5cexjWhlQxBY0tmAiX10kH5cua0j07CRptKtdClYuJyHOmSn205XwAVxA8+HI2T1Mq2aqQzkqH+F/RNzCVqlgxRjOw0sMz3wtYK8KUH44gkEnUg7StzrnOukQzjfffKZl1hpidmwymkfkIpYEugWm0E/NYEVI0mXqDFZKHh2qNDdXKNJ80ukD/Zqy3qWXQzCtMbgyUL4qoPPp0GONGexmr/ANc9MzxoWVjCk85AIpRq/opQoF5RnVnvGvjVuWwPhKaMMjuJKeDGpHUeR8/eAmwQSVIOzDMb777c6O+Y2w8Cf97AeVNQ/G3lSscP4ZggTiJeb0GcWxCDCLwVEOVzld39E95SJYRR/i87GpCoPc2vDgP8wUe4PQQ0zmLjQs2bzSPBEiqrA5Izj+bogdpAyU1mQyMibiN/4dkGxFHG5nywwu0VyoMZI6cQGiG0XIb4UPgw036Mi0aPfpU3fx77cnla9QstYfi+tzsUviIOP30n6OT2caC23nSMjchoUxoTm9qszKiVh7dAv12JoqVKuscXuASrZuFftcJJ41d5uiBkooSaq74G4rrqx3swGUG70a6pB8gl3vlYVqdlDqJwV3fR45EivJBTp7Y27FrBctrmPANSCPohVqyKewQ7/Ulpe9agjxR8+CPbwhAhFGp1cwk9G14W'),
-('5486f8cac221e1-37749822', 1418131658, '+1KjNqhUVzOzsvEQjqG6gwT5DRELLpUMARbMikq9h0CH/SyHNG8Ti/RCi+3pOOx10P29ZgVO+jLCFxWDsA0sllU6lRdIggmhT9bA+JVPVqZXxSseMLKRNyVb8Et6Lc1tclWYJS5KE8tFdfbuV3c/O5puzKJJ1fB+FiVOOg=='),
-('5486f8cd48c844-10542856', 1418131661, 'W34kfl3kY3mfI8KYTzABViGCRBb9HKk2kW8WdHdCZrMSoQ5k9jZKYNFY1Gr5hM3Tvu/9RpJ2gVGlcATUnsw+lw9v3dNw+fZgWdBEq2crb1ov7s+4NlOOmtmBMo4vlI58vTSJUaEWhNa9/tSYXBvlhOzo0JtUfIsG0kWOF51Nnu36Wl82nAP5sDZb7YB2ibFeBZyoRJTQtBrTY6+UDg==');
-INSERT INTO `sessions` (`session_id`, `last_active`, `contents`) VALUES
-('54870895b60105-19635157', 1418135701, 'HuzIZw2PUhAdiZMQ4CttoIxZBtUOYPLrCOmIhT4mFAQWvjSghy0KVhexZLG1yAvE76ZYWw6lJ+NsYI21yspBmDoY8k9GMsO49Rv6EykijpMYtJTNyQZ7ndMXFvThqYUowvOepa0nY1/v9zvybhj/VWrDAdsDxRiq5lSzIYlxvy7sMiurLant4fTOxihS0JcMmgC/q88NGsO+Y3uk3U1BroVCLSSN0sOT7vssjADS04ZQpw55Qaur6GXfjv6Fw/RrlKctmKklDc3rP9JvDZwOlFYrJDLPrvUQKvu1Xk6I36htRRCZzos4XGnWYWPl//ALSvlYbPXW7tYNamMtgzDVwxtO3pjnOR3lIIRRVN+PFSFz3BHpBg7uuAEffz0uUaS1AyzqHasEOJg4Fmj70QMCpdXJnLBjGYa1MebWSMnxRi9GdbtNvbmX7vL7s3R/UFJ2+5eg9WDso3BkV5N266su7UghaJlrYnLJEsnX8LUq3z6Vdw8l40wRUgMbn7a0plTtr/3ZEph00iSmYn7RyT2U+lV1TYQfWOzJSwHBz7NCV6JXJEcNTujF+A5QIvE3W9fiuQRlpGGnviglv4cEWN1LSY9PIcKpYsuSSP7zJDm+8x+CIBTXEKle+r1oTw9MKuVGD05t2xoauW11CcKA2iFD34IuFXvCs2n/3EumebHtuX7fx9cUyzM9xQbXrYDVKA3biKQJCvaWKySBo/nOQDFRxlc/L6vIDvH6f5pyRytJi43J/hrb6NvnoPukLBwRlBSW43vv5Lzx2JOCk8MJAH5hn9jNfhZ91BPJBrLun2AwGqwsZeCBI0248p2NS2RGSLD/v23oUOCljcuHemm0RTJffzCsimVdgvYwC2+VcObzQ5K33Au9IZHbXgthCOL2jaoUCvToJ+OpYAD383ueBWaLExUX4vK9D3KEluB06rDOLGVTIurPv8wOwYS8l+09lxtNTzhmkpSYByEMgCpVo3BnCUGVq6r9dCVbLNnOtcoEFo8tIT85YPW5L+LF885U5BRzAOJjkQefCmJems5MwYeWvdYmL8j9nxYEusfh50EnHkCjI/URNJn8Do4vCWKQ0gcp/R88bka/sT0x8o9t8O3tSq/Gxy66kgAcOmC95F8OAJFk/4QplxnbV89cbmY7sjYX9iUl6fcU1F8yrF+E32VU3VTE+aJUAjMrglJX++X46qr3UZRvvfKlRWHLtvNvOKt/0mQHCU4A1bOrLWVcmzmjHToYeb/NNJIYzTxJwwAgvysTod6+SDQkrE9qovD9uJWzpRFuC65r0mnZF/zoelRFSleDgCubBBAVVHb8OeCF5kkjDgy7gjYeUJ3h/piVRoaQMAgZu1Y3NgNqm4RO5WVXfxhg15A+8rKJmm1hT4GYEHS+90JcFrCB2ZiasMCbMbxON+QIKk/3LjWZ4pHKeV4j01Zvqv0gq7VYQO/x2MiZfgk4sG4KW7V1a/0NKBVxqckhhhKAu1R10DFTwl9+66RUvN7ZdSmrU2xBzWCTxRecpkXv0TT1Vp6M2Bly8dt/tukG2UyhLrQp5QV6mr06TrKkAdqHh3rGOEF6cMCLsjmSAOX/AP7JunvbW7BPx7d6IyEXFlgpNEgPspkXE8ls27DOIuXc18VK8LqymhfYZTPjJZ9AS7Wk6LBc7J6Jl/z6GJcGrxJ0HbJqly30lXSUL3GoqkdSnTXZ3j01UunLn6xSXE0PA16oMItaXC1NpN+xwXbJv3OukOHSPZUq/ozTxUSgzBeFbidUYTnCB3okdZXRmw=='),
-('548707af9f0ef6-60135271', 1418135471, 'FtAuHQKJ7rezd3HpxP32c6WwxuQmoVozqcrTohreU8Hmd6gkL56pBrBu2AphlcDioRcN8toSUVIvjCO62sEoOM5iSL0OzmR7D3JotGHqx7mjp4BIIysMzq+5oGc9uL2jU7umlGohT40Yy7x9WZLSAXQ8sCsJZ9aUdx96qA31jJqDq8a8R+LDkID8Xz0dWAAY5vz7n1P4N8Ug0A0s18LvGGf2vjM2+kzMxw=='),
-('5486f87de5a2f3-63974508', 1418131657, 'YmMdlNlpIfALcFqZJlMIXx8Ct6IOt2BZNh/h0hK6vQuF9lwwUBT5Nm3UhKBrW06Yb8O3c507eKOPA8NRv2F1q4i7m0E9rQFjFjeVD8jkMtFmRVVekaWLynP27uBHlg9es4hibsXPdyu40Oebx8512JigZPxTewuSCMT2bHSzAavmZQLi2xDg6Plj0LX75AF+6hEUgdsWJcJ/euRndCIyJOB4'),
-('5486dda231f542-26446475', 1418124719, 'ypEzJxUNREUKOmeNAcGqDMgYsIl9iBpXhzSCsZ1ZyWRbf2cKWfCbpRrblShS/kl8OO2R1aIYPwXOLCjVIDYkiOlP9hBx+/Gv0sQf3dYyjEswlMqHGYi2ukg6Uzi+Z/UbdCYEizpktc3s1F2b+AdTKWF1hDbQ6dWvSM5z65GigkQ+0I3DOWG0dZ7a66U0mkwijsrKA+kX9aJROXJeMw=='),
-('5486e496701ae9-03706544', 1418126486, 'hA44UdUV+gegpAAgcR+cn8NAUPZ00+90n8/V6AmyD+3lGRyX64NHE/53K3TA97LrhwBuIbX7P8bpjl1ZIb2pLF+QDJEx+5JIRmk5+o1KITFjaOqDgSHd9xh/dmz6sVi46+REvt2sRRwGmzi4xgXPN1zX0VCPnPMAtNrK4xI/CdvWA/oBl3G6+cHAHJFPpDMMYw7WlXZQuZm24E6KDQ=='),
-('5486e70b876130-46101129', 1418127115, 'GbC/kINC5Ix3CbPWcNkWfmC1olFKA2kdIaDsE4dJ+3/nF0DLcBhs00hkaHMRFXPMc6hyf2T7iKQSkjXSMjEKogNb5H3DUWEA+KvIJRZBIK7EQtna2NDjUrj7vCgDL5Sz1pYvc3YYkLs1xXbzieY5v+XnUsq8VWTIOeQsfsp9/P9mWzU7/k0FIKSxiBtNTNU7AAZZAWCaGWY3VM99pQ=='),
-('5486e8ce5f19a6-71905027', 1418127566, 'OeQaVVdlYrZbvsTvkeBJODfsKzto6SgiHS/8rnmiDV5RF5pkeGJRR2vT5/pW1fcSRfIb8PxxWdP8BhOcAvUIC9UoVU0QTZK37YkbJAZ6wOqx4Zmu/CowIgkET6MIxH6ziS2+MgCrXmgdT0NbHQ7ig1y8py2dghvIswxiBhCATvbJ4lF9D3J68rhzd9SXAXmur0wOAwnTadoig9k8Bg=='),
-('5486e916d37574-70366012', 1418127639, 'AcPUWXLGUZAFpzJ79+ZILiPGq2kDZ7DwoxiafD4UcYjG6+N8JTZktlv2SBMvAn/XinLj8kCaOavUA7sk2dbqv0U9Q70cnSniuCC8FjCpC4w9KRRtJnuxPiR4uESSAMXbX5q//ppSxAG81x4SQzrb0iSTFiz5KjyyQEVp9rO9ED6RiON7Zrb21aV4nfaA/NzQxEg1aKktW7GrAzWo93yzgkAlGgfAYabMxOlT4oHwrGegDKHczsOLagMZKEnvdtldi/b/dlUrk6GzCRMAt6Il2ehXKLDhUddFt5+diGFCbNwWauEfS/zgSJi9mmDM33pdKoCNoDULHLVAbKvEDC/wVG60W0IxlnIpa86ewh1kon6IwniRKA=='),
-('5486f808a94a17-09825047', 1418131464, 'Vl/E2Rs4PZoPDf+iGOsWX1WRaiFvIJiT1rm6E68UC/wHByplZDu0nP3P7k27fMoO4p1nrEASR2NKDUeMEJQBDYsEnmLd1DEaX1GAuJzi36vlXqPO0iP/6+N/w96k0TCBUO4xjgE1zEip8R+z9fbPkhyR7n50UKOhoKyf+PLV9sZE484ElFL56WPBYTiET8pAXLI7zKA0neX7mO+McE3EjaKOaRzaVvGORIr++I1GCtLoiBWWmHzC4lAH03KiKIaV3lBQZ7WXwquNFcBng+YyJ4osGHDUmxOganGnQbU35tiGQJQ/3a4yUkAXYajTHznA2heWmy/SQqQq6Dm0iAE96gDfoHyzEZ9hPqSyNcEmQPTEzqKAs4u2UKv8ljouQ1jvnnyW+kQICtSCMHm4f4qON1DeI7HSbtO1fUGbcILDbWBi4uiNwA4Z1IsTGZKbmwn+GBkZkA01suQbtVIv6D/KJEMRu28SSDzfwiiFRiFuTFkrtjflTTQ7m4QF+9ST60ZVjl9KeoqS5239UmO6uC6K3koMUmBBWFFhzxZPIhGHtCP1nNAqDfj27GHnX9c/LmDbWJOnBvzKaX23EJYAh0wv0NxJmgRaPUjYtsz9ZSBtUKSG7olzUUBzRiAJ3nS9h9rwfCJdOIlG3myLhyQBB2i5IWrmhu3ML2QpbTKijjCmvy/3/2j8XpmTY0KeUATw1pyPiAfVrEjBiwiXVWnmjOAxyns7jnYbT/ES7NNXMWNECTQWS9SjHmc96c6ZD8ICjs7n2yvxAIiyZGMVrdvaw94VhbAMVxd4pgzbNio0QfHTbkzMJ409QayIWu0LAl982D+4oNJfA2wfEo6+iwHK22cuQ1/O7a0Z2H9cZkaQabufYYjMBX8kIpkE8f0lC41LQs4ogAtOGUGxsuZCS51pFx9QpG5kklg6sLTD1+lhEML6GyGnRSUtorgii1RvKurCU25mm5GfVzvTkTbveT6Ipq1qFXoLJgtTx0bvUVop6FjBKzz9Gq4ojEi6x8NZ02/RxhxhMyPnspHph+fudfPMdgHYTSS6d5YvgQTzknr7OR2d5KnIoqvToqvoSiOuSxzaD2QGonBVoTRQc2EDSoHQ1ELSE1IUlJjpITAwFFZY5OjIdq2tIYd2riCeuO8BeSMUodJJ8KHNLmnr/yVihnUqMUMSWUXdRluFPDfyDjZj7jRnOAqsEaiOVCHxodqB1sMPiVzpNxoARxgf2DabeJrsrr4YErFsq1Ne62V3ojug7EjvSRHQlMzf6q8VJY/QeCsVEiSmfIJB+lXN7ceRDpnfp4pnJ2zNrdu7L3vE6piMSwA3WYu/GXF2ANSyrTC+REAz6HtbV8FONqlOaHyFyAbH3IpsVKW4VLt57HiZWBbW9G+jW/AtCkvveDn6OfC7qBIVY1DcLnqDFzm5vw9wO5kkgOind0+aFspal5FmhZrH3+XVLaOYh44uKeoMpPrYM/1WFhw94rvDAFuQFSBuEj0pfmFJlVd1Jb0uT8b4UcdM7Q/ZSiwaJ26dOIVJJJkvfZ01IZTKbCoatcjeSWDBFpeGVpCcWANHBZCzDGfU3nGeHC3kX+8rXNxiAXDugutC9G8hZ59bHsPDMM8N/pICN/MLwWlNxCrB4B9Ynhh68+TV325YYf0DecE6WyIJuMg4oK5Agprivu1Cwt3rTLL70mavWUGMmTO+TCRwLAwPWh8bmTQEoDtSi1rUOubYdXnPyjHhqxi39FsjhqdnOF+U4mIg3igPs0LFMHcr');
+('5489663deda603-20309874', 1418290750, 'ZrgRbC8TDg3wk1X2MeAwkgWZSnZdSNaHr49Qyp5wyk6OYYRnC805XBELfwXaRp6/dDy88AuoYHnV9r4LgzwRER3LiMqWEN6PjcZCHe3BsHuMtQpA+z6ndw98LDisRf6Qs3axniD2+WDoUmwKahyUf+SLDqs4dwTWP6xpSVlW8aEvQJrC8uThi55tyY9+FWNnnULJRc9pJ7Cx12zDOA==');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `site`
+-- Table structure for table `site`
 --
 
 CREATE TABLE IF NOT EXISTS `site` (
@@ -1624,7 +1392,7 @@ CREATE TABLE IF NOT EXISTS `site` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Дамп данных таблицы `site`
+-- Dumping data for table `site`
 --
 
 INSERT INTO `site` (`id`, `name`, `logo`, `slogan`, `brief`, `content`, `keywords`, `description`, `skin`) VALUES
@@ -1633,7 +1401,7 @@ INSERT INTO `site` (`id`, `name`, `logo`, `slogan`, `brief`, `content`, `keyword
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `slider`
+-- Table structure for table `slider`
 --
 
 CREATE TABLE IF NOT EXISTS `slider` (
@@ -1648,7 +1416,7 @@ CREATE TABLE IF NOT EXISTS `slider` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
--- Дамп данных таблицы `slider`
+-- Dumping data for table `slider`
 --
 
 INSERT INTO `slider` (`id`, `group`, `url`, `title`, `description`, `image2`, `image_id`) VALUES
@@ -1658,7 +1426,7 @@ INSERT INTO `slider` (`id`, `group`, `url`, `title`, `description`, `image2`, `i
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `stop_list`
+-- Table structure for table `stop_list`
 --
 
 CREATE TABLE IF NOT EXISTS `stop_list` (
@@ -1673,7 +1441,7 @@ CREATE TABLE IF NOT EXISTS `stop_list` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `subshrieb`
+-- Table structure for table `subshrieb`
 --
 
 CREATE TABLE IF NOT EXISTS `subshrieb` (
@@ -1685,7 +1453,7 @@ CREATE TABLE IF NOT EXISTS `subshrieb` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 --
--- Дамп данных таблицы `subshrieb`
+-- Dumping data for table `subshrieb`
 --
 
 INSERT INTO `subshrieb` (`id`, `user_id`, `email`, `phone`) VALUES
@@ -1709,7 +1477,7 @@ INSERT INTO `subshrieb` (`id`, `user_id`, `email`, `phone`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `tarifs`
+-- Table structure for table `tarifs`
 --
 
 CREATE TABLE IF NOT EXISTS `tarifs` (
@@ -1731,7 +1499,7 @@ CREATE TABLE IF NOT EXISTS `tarifs` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Дамп данных таблицы `tarifs`
+-- Dumping data for table `tarifs`
 --
 
 INSERT INTO `tarifs` (`id`, `code`, `percent`, `frost`, `from_value`, `from_currency_id`, `to_value`, `to_currency_id`, `content`, `description`, `title`, `keywords`, `h1`, `created`) VALUES
@@ -1742,7 +1510,7 @@ INSERT INTO `tarifs` (`id`, `code`, `percent`, `frost`, `from_value`, `from_curr
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -1764,87 +1532,16 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=91 ;
 
 --
--- Дамп данных таблицы `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `login`, `email`, `phone`, `name`, `address`, `password`, `created`, `logins`, `last_login`, `active_time`, `vk`, `skype`) VALUES
-(3, 'admin', 'pxpn46@gmail.com', 'Админ', 'Админ', '', '671728946c25115dfb7ac934d2dae387b5f45da2fad065fadb960ecbec597948', 1378369661, 145, 1417953759, NULL, '', 'igor17851'),
-(15, 'k1785', 'k1785@rambler.ru', '9374353527', 'кульков Игорь Владимирович', NULL, '1557db317c0ba52df83d42e7563c1c623bb5bf28baffb27f6f39f1f29f894608', 1414849167, 14, 1415030213, NULL, 'https://vk.com/k1785', 'igor17851'),
-(16, '123bod321', 'bgor14@mail.ru', '+380502000350', 'Горкуша Богдан', NULL, '0929a526666fe6b1ba53dde758e657f6e41d0f129f4e7ac29a38614a6b905c12', 1414849188, 52, 1417965790, NULL, 'https://vk.com/id65060091', ''),
-(17, 'pxpn', 'pxpn46@yandex.ru', '+79875145669', 'Квасов Павел Евгеньевич', NULL, 'cf38176feb343deda5fee7fc265b3a2e21164efc4068058a696e0245efaf9733', 1414849280, 65, 1418049566, NULL, 'http://vk.com/charlesbronson', 'thrash_man1ac'),
-(18, 'agaron', 'thisissoup1@gmail.com', '+79675103836', 'Оганисян Агарон Овикович ', NULL, '23daabaa208879014b5feee3014c0ca6f135b91e8d2208e6b9f0fc790a1a7811', 1414850938, 32, 1418061890, NULL, 'vk.com/agaron98', 'aharon981'),
-(20, 'ulitk', 'rivivel@yandex.ru', '+79524857119', 'Круглик Ирина Анатольевна', NULL, '0a693e4ae94c094c5e0945e15cd624c74da7d785275c4d1d367b4a9b95202203', 1414851176, 19, 1417429231, NULL, 'http://m.vk.com/id167826459', ''),
-(21, 'folga123', 'folga123@yandex.ru', '+79118397551', 'Федотова Ольга Викторовна', NULL, '40ad65c089e208d79de9c5fef8d1c372ced8a1f4346ffc1cee51eb253252c8f5', 1414851362, 37, 1418123579, NULL, 'https://vk.com/folga123', 'folga_123'),
-(22, 'pvapva2007', 'pvapva2007@inbox.ru', '+79126982524', 'Котляров Вадим Юрьевич', NULL, '2b0c2231ffcc1efa3e708eb55a6eb5ec63a5edb2730df09602faaea8713eae4f', 1414852821, 53, 1418183032, NULL, 'http://vk.com/id105809295', 'asticar044'),
-(23, '727121', 'bgor1414@mail.ru', '+3805020331414', 'Богдан Горкуша Петрович', NULL, 'e8f7458ebe9ab0ada9c38884d25c223b4aa70794883442eeb8327e803d042731', 1414853330, 0, NULL, NULL, 'https://vk.com/id65060091', ''),
-(24, 'Popovichevs', 'Qsergey91@gmail.com', '+79033773863', 'Поповичев Сергей Валерьевич', NULL, '0413a59568f735fb62f78a1f7c4c6dfc59af559795a149e24e042f8372786a1e', 1414853593, 31, 1418182841, NULL, 'https://vk.com/popovichevsergey', 'Happyserega91'),
-(25, 'buxaric', 'duet1122@yandex.ru', '+79524807643', 'Круглик Марина Николаевна', NULL, '31b06adde8ddff06c0badb6ff3e4ac7dce2b7a194d563bebfb29f14ec5280236', 1414854808, 17, 1417075508, NULL, '', ''),
-(26, 'SvetlanaLazarevich', 'YuliaGerasimovich@yandex.ru', '+375447498434', 'Лазаревич Светлана Николаевна', NULL, 'a204a69ebe7944c6bcc774dd8970a139e3a0060db3059cfd449e5c1af3f03827', 1414855904, 12, 1417448354, NULL, 'http://www.odnoklassniki.ru/#/', 'cvetik_131'),
-(27, 'dimishe', 'dmorozov87@list.ru', '+79101340460', 'Морозов Дмитрий Вадимович', NULL, '2e0a87e444f9d750ba66e5ad9eaa7321255d5cc8fdce333085a268f66472b8f6', 1414858191, 17, 1418059774, NULL, 'https://vk.com/inv2014', ''),
-(28, 'Erohin', 'metalgroza@gmail.com', '+79237548969', 'Алексеенко Павел Владимирович', NULL, 'eb406323b956ce7f68f38f728afe9dad2fdf4f1e43bed3380ffd3418b09f7b2c', 1414858461, 7, 1417427766, NULL, 'https://vk.com/pavel_alex90', ''),
-(29, 'test', 'bukraine777@gmail.com', '+380502000350', 'Богдан', NULL, 'e8f7458ebe9ab0ada9c38884d25c223b4aa70794883442eeb8327e803d042731', 1414860050, 1, 1414860070, NULL, '', ''),
-(30, 'men_slava2009', 'men_slava2009@mail.ru', '+380632804060', 'Меняйлов Вячеслав Викторович', NULL, '6623f597eef56da77aaef46f52e89746fbce58ddb9259a6a3d11e85150d1f6b6', 1414861623, 3, 1414921523, NULL, 'http://vk.com/men_slava2009', 'men_slava2009'),
-(31, 'pxpn46', 'yadirect58@yandex.ru', '+798751455669', 'Шмелев Андрей Станиславович', NULL, 'cf38176feb343deda5fee7fc265b3a2e21164efc4068058a696e0245efaf9733', 1414866906, 34, 1418063580, NULL, '', ''),
-(32, 'pxpn4669', 'pavel@status-club.ru', '+79875145669', 'Квасова Елена Владимировна', NULL, '15b919f7cd96f8578b3bb810f08c74b87df19dde6ec371ddccf3ff2610f3682e', 1414868571, 13, 1417789413, NULL, '', ''),
-(33, 'DimaKLG', 'gda050819888@yandex.ru', '+79533247509', 'Гуркин Дмитрий Андреевич', NULL, '239fcbac68a3a0c6164c263a1156903dfb4f357ae88a0e3426f0ea6ac037d9fb', 1414911559, 33, 1417440072, NULL, 'https://vk.com/karasev111', ''),
-(34, 'Hyperion', 'stan_dnb@mail.ru', '+79045584054', 'Есипов Станислав Викеньевич', NULL, '68cb9b0bb4d2c838a378e0c5646c6f4139dbcb1bc8bca47515c8a9082deb2318', 1414911968, 58, 1418158480, NULL, 'http://vk.com/stanislav.esipov', 'stan_dnb2011'),
-(35, 'master', 'inves007@gmail.com', '+79295789948', 'Alekz Rentier', NULL, 'b336e0b4df61a3c46752c2c2bc347ea5eb6f8f26703d09ef2dce52e524644914', 1414925467, 1, 1414925515, NULL, 'http://e-rentier.ru/', 'alekz.kap'),
-(37, 'runes93', 'runes93@list.ru', '+79528184631', 'Несинов Даниил Андреевич', NULL, 'a46e70545fdd90f5f1da090bf780c67fcf1373f29fe6db016fdd41eb4b352104', 1414954951, 24, 1417976377, NULL, '', ''),
-(38, 'vlad_vestor', 'aggeev1996@gmail.com', '+79138699163', 'Агеев Владислав Валерьевич', NULL, '1f71bfd048952b0de6bd477fa70aca6af36c6aa074293844ad94532efa08dadb', 1415007234, 1, 1415007420, NULL, 'https://vk.com/id150716856', 'vlad400z'),
-(40, 'skeyt', 'FuriousinLife@mail.ru', '+79290888446', 'жалдыбин Владимир Сергеевич', NULL, '2574f8efd0881c920d946e91c98ea0c22cc4dfddd1773201df4480d4e4c6b212', 1415112687, 11, 1416833839, NULL, 'https://vk.com/id268128192', 'brondic1'),
-(41, 'bazar', 'urbaz86@yandex.ru', '+79298442344', 'Базарницкий Юрий Борисович', NULL, '4b9ba74d87647775edf3113ead018e16aaa9e7df36fc17119fa784f3fd14ab0f', 1415114437, 27, 1417598808, NULL, '', ''),
-(42, 'bukhan', 'bukhan.nefo@rambler.ru', '+7 904 2379684', 'Буханов Илья Олегович', NULL, '5cec17e2bad580b1e9264ba7d275f4960b3796f7d45b91779bc15325f961c51f', 1415138576, 15, 1416430054, NULL, '', ''),
-(43, 'Mariya', 'MAKAPOBA-M@yandex.ru', '+79104223533', 'Макарова Мария', NULL, 'c7867799db1e611f37d0d3f8bb8945413e9980add7eb29a77cfd10eec88b0ece', 1415218518, 54, 1418131464, NULL, 'https://m.vk.com/id193188073', ''),
-(44, 'Strong', 'SergeyOmetov@yandex.ru', '380662763203', 'Сергей Омётов', NULL, 'bc85365f8079f087cdb9b099fd941c3316bb8142c6bb84458e916e41903345c8', 1415397224, 1, 1415397284, NULL, 'https://vk.com/ometovs', 'lamersmustdie02'),
-(45, 'iuniqueorn', 'xum3abodmedia@gmail.com', '+79222211122', 'Александр Петров', NULL, 'f89fa38874034fb66fbfcf5997b4dcf62ddfe19bed279efa2351b3fae972b4cb', 1415400004, 28, 1417452988, NULL, '', ''),
-(46, 'ZharovaS', 'zsvet22@gmail.com', '89817315491', 'Жарова Светлана Михайловна', NULL, '275fc40b48b80c27ede4235155c27d1431ed19c43a2a3d24cd14b76baa44c620', 1415439962, 15, 1417385831, NULL, 'https://vk.com/zharovas', 'zharik777'),
-(49, 'maxbaks', 'donttellme@yandex.ru', '+79629085141', 'Максим Кудянов', NULL, '98cd4a52eb36f77eb716e94d2c72c81e98d7ced306581d048e8d6f671fb33db2', 1415464551, 1, 1415464613, NULL, 'https://vk.com/dontellme', 'donttellme.donttellme'),
-(50, 'nasper', 'sddatik113@mail.ru', '+380932351201', 'Stanisla Proxor', NULL, '5c74cf563df5988fae696a2c200a39ed08e2a70c532decfa1258233a28ffb8b8', 1415565300, 22, 1418047757, NULL, '', ''),
-(51, 'tuz2012', 'bulkinalex1@gmail.com', '+79273456789', 'Alexandr Bulkin', NULL, '72bf019c8500eff1f1b6ec33c96bae43ef31428e45e977e8c050e2e50baa7c41', 1415578992, 14, 1417344850, NULL, '', ''),
-(52, 'artemtzelishev93', 'artemtzelishev93@yandex.ru', '+79122356208', 'Целищев Артем Андреевич', NULL, 'a61e5a08946937160f01c826fd7aec84904007d032bb6598831b576971496297', 1415605685, 0, NULL, NULL, 'http://vk.com/artemtzelishev95', 'Artemmikro12'),
-(53, 'arhivarius', 'monitorinvest.info@gmail.com', '+79069457778', 'MonitorInvest', NULL, '6bde96e986be3fb3dd3a765c50ea0bdf589291c9bb2dc80c82da6537d226b764', 1415606270, 7, 1416732844, NULL, 'http://vk.com/id46311539', 'Arhivarius72'),
-(54, 'BitKonan', 'dapsi0404@gmail.com', '+789865343342', 'BitKonan', NULL, 'e079cd98f35ea38e89e92dad090fab610db033876c5b0390a6e35009c5083948', 1415610081, 1, 1415610112, NULL, 'BitKonan', 'BitKonan'),
-(55, 'HYIPru', 'support@hy-ip.ru', '3594621378', 'Galina', NULL, '73fbacf9f89d57178f45be8923075a9ab41adb5fb572b8da049378fcedf27177', 1415612891, 0, NULL, NULL, '', 'hy-ip.ru'),
-(56, 'myinvestblog', 'myinvestblog.ru@gmail.com', '+80637500203', 'myinvestblog.ru', NULL, '581cf2ab6188c402b19ec10694d47cf4ebf3630388157e4f9293e5024e8839c4', 1415617472, 7, 1417619119, NULL, '', 'myinvestblogru.myinvestblogru'),
-(57, 'rostislav2', 'ivan20140@mail.ru', '79518134847', 'Ростислав', NULL, '012778ae2f5ce37b3648881e99db3f312ec8c8873119a15eb0aa08289df24a26', 1415618289, 2, 1415951084, NULL, '', 'rostislav9459'),
-(58, 'MoskVa', 'MoskVa246@gmail.com', '+79083309362', 'Москалев Валентин Владимирович', NULL, '36bbe2817ccda6f485a15301f4f0eb749d160f31d742fb7a52c3796075628cc7', 1415621946, 13, 1418116181, NULL, '', ''),
-(59, 'INVESTELS', 'investels@ymail.com', '-', 'INVESTELS', NULL, '880ddfbc8a386a26c59bcfc98449e823ea44e5975a2c73ed7a3acc6a6c21b013', 1415622382, 10, 1418138461, NULL, '', ''),
-(60, 'zenobia607', 'nhlubi@ymail.com', '27728278967', 'Nokuthula Hlubi', NULL, '10e8a27a9507c31d3b49885365447404d41f91b957209fee6ef5eda9ba9e5f3a', 1415624741, 0, NULL, NULL, '', ''),
-(61, 'hyiphotlister', 'hyiphotlister1@gmail.com', '9338562525', 'hyiphotlister.com', NULL, '02c57e512c116d5f122aa113fd3038edbe6758ed44a97f6d2491a1e2b2d7716e', 1415624836, 0, NULL, NULL, '', 'hyiphotlister'),
-(62, 'torrek', 'goffits@gmail.com', '2222222222', 'Alex Torrek', NULL, 'd66bdd47e71d656d80c62a82d11eb37231f8a0f4570cf9a80a49c73e476eec42', 1415629102, 5, 1416334290, NULL, '', ''),
-(63, 'skyhyip', 'skyhyip.com@gmail.com', '9338562525', 'skyhyip', NULL, '02c57e512c116d5f122aa113fd3038edbe6758ed44a97f6d2491a1e2b2d7716e', 1415633575, 0, NULL, NULL, '8956233265', 'skyhyip'),
-(64, 'hyipinv', 'projects@hyipinv.com', '+79118599634', 'Дмитрий Иванов', NULL, '8d95d080dbbb106adaa6641f82a8580c019bee4ce7a77d2952cdbddc254af4b8', 1415636879, 18, 1417891151, NULL, '', ''),
-(65, 'payrating', 'pay_rating@icloud.com', '+74951112223', 'Василий Савельев', NULL, '2bd2533f2f3fb2f5664b8a448d8b778c3835c58f27d16f8983f5b7fc1f23154c', 1415638131, 2, 1415761336, NULL, '', 'pay-rating'),
-(66, 'hyipcruiser', 'hyipcruiser@gmail.com', '+380636153042', 'Vitaly deVit', NULL, 'db31bc5ca737010bbac8752baff17e607937bbe0712ee9c59e66c71005f57c65', 1415638420, 21, 1417980122, NULL, '', ''),
-(67, 'HYIPexplorerBiz', 'admin@hyipexplorer.biz', '+45758667464', 'HYIPexplorer.biz', NULL, '43a5079595875d2cb945c8f39e8eb5c974b2f4d35c83a4df8f3ac66b85080ff5', 1415647112, 1, 1415647434, NULL, '', ''),
-(68, 'rsdb', 'romansydelyov@gmail.com', '+380955152872', 'Cиделёв роман Анатольевич', NULL, 'ff2be20ab63079650970cd35d6aae9dd7085e04dcbc7d6eaa0450f897f0b57d7', 1415651603, 1, 1415651975, NULL, '', ''),
-(69, 'monhyip', 'admin@monhyip.net', '+79261001671', 'monhyip.net', NULL, '5ef6bcbbe89149d12cff2c260db88ae18052440b5ca96a8ec6179c172936426e', 1415724427, 41, 1418135848, NULL, '', 'wic_immortal'),
-(70, 'samrav', 'sam_rav@tut.by', '+375292642818', 'климович евгений николаевич', NULL, 'ae097f2d2fb98eb680282a0ca32b3aa54bc64123413eab21627b6ca54264002e', 1415800612, 1, 1415803875, NULL, '', ''),
-(71, 'newbie', 'azegence@gmail.com', '+7900000000000''', 'Умберто де <b>Факагинез</b>''', NULL, '34c4a1a80b7259bf2d0f05029071143774beeb94ab5b3c99f8858ed9e8860705', 1415832473, 4, 1417289637, NULL, 'V<b>k</b>''', 'S<b>k</b>ype?'''),
-(72, 'demoninvest', 'demon_evm@mail.ru', '+79214470238', 'Ваганов Дмитрий Иванович', NULL, '1ffc7e1a4b35805b43591998173e1650db6a39b9fa6a2df4dd0bbc9ede1ad9fa', 1415834460, 1, 1415834587, NULL, '', ''),
-(73, 'Lerusia', 'gudlera@mail.ru', '+79263087835', 'Гудкова Валерия Сергеевна', NULL, '6037cfbc8f4708641ab281f265117d07ffc22f0df3c08de5db1a5c69312c0f7e', 1415861806, 0, NULL, NULL, '', ''),
-(74, 'Malcasto', 'malcasto@mail.ru', '+79271234567', 'Бойко Максим', NULL, '77624aa7a6a7499e0a264f6227c5483a61bd8956f987794926e1ca925d12cd9e', 1415889300, 0, NULL, NULL, '', ''),
-(75, 'miroha', 'lovinvest777@gmail.com', '+79117203005', 'Ловягина Елена Юрьевна', NULL, '6ccbd962abcc733d8b32fadef15adcdb77f68ba838d597cf79f2cfc1797cfa74', 1415891741, 4, 1416309917, NULL, '', ''),
-(76, 'poyasopt', 'poyasopt@mail.ru', '+79205764838', 'прядкин алексей васильевич', NULL, '88cd215d3395856bde6e1664f22b1fdb05eec0d36de5f019fd9d8e04d442bea2', 1415913563, 1, 1415913793, NULL, '', ''),
-(77, 'yurze', 'goldinside@mail.ru', '+380505855768', 'Удовенко Юрий Витальевтич', NULL, '1f0876e6d51200bf976fd183d2a63bd9bb2a986aeb34962df9358a28f5a0fbf7', 1415958742, 1, 1415959412, NULL, '', ''),
-(78, 'Maximus', 'Max_success@ukr.net', '+380962475735', 'Сыжко Максим Владимирович', NULL, 'e6c648f2ede1146366594d4039dc86ed188fac9044631c70225ada41f8a6db44', 1415964642, 0, NULL, NULL, 'https://vk.com/business_2015', 'Maxim.Syzhko'),
-(79, 'GNN2411', 'gladysh@bk.ru', '+79186308436', 'Гладыш Николай Николаевич', NULL, '8fef82a4677c4d94403e11b73a6056d85a8fa646d84382ee9fbfa2ae62d415fb', 1416330485, 9, 1417691883, NULL, '', 'GNN2411'),
-(80, 'grex34314007', 'grex34314007@mail.ru', '79510611805', 'Alex Fokin', NULL, '840f763224a5bf55707958becec873226b56b26c9e4f9f31549934295167346d', 1416689207, 1, 1416689271, NULL, 'https://vk.com/id89362386', 'grex34314007'),
-(81, 'DENIS1986', 'inzer.86@list.ru', '+7912 114-04-02', 'Кожевин Денис Юрьевич', NULL, 'c269743f81549a052086c0f4b9ed89a8860e6addf37a9581edbb1316ec01aad5', 1416735679, 1, 1416735770, NULL, 'https://vk.com/id195753965', ''),
-(82, 'biryuc', 'biryuc7@yandex.ru', '+79878031281', 'Бирюков Илья Игоревич ', NULL, 'efc2532d6db78d815a3f1de592a70378bf06ccf34ed9780d27ada1aa132abece', 1416744069, 2, 1417440602, NULL, '', ''),
-(83, 'sahka777', 'sahkacoolboy@yandex.ru', '+79524043978', 'Шубин Александр Леонидович', NULL, 'fa2756741a069496fe193940ccfc1176036bd732016dca6e60af15f086e0a772', 1416745258, 1, 1416745357, NULL, '', ''),
-(84, 'Rishat', 'Vain.kenjegaliev@mail.ru', '+79267079603', 'Кенжегалиев Решат Салаватовичь', NULL, 'b559fc0e6547537558a73aeb44f60a38e8716aa5d93cde6403691a64e72463a2', 1416768561, 0, NULL, NULL, '', ''),
-(85, 'Artabzv', 'artabzv@gmail.com', '+79151144704', 'Абузяров Артур Рафикович', NULL, 'a98d1ffc21a3c9e446e36040e589d0f5ffc3aac93bf82964f64c4c6934a854da', 1416778596, 1, 1416778719, NULL, 'http://vk.com/arthur_rafikovich', ''),
-(86, 'sakhno2272', 'sakhno2272@gmail.com', '+380509581455', 'Сахно Дмитрий', NULL, 'dbf8a5a4ff386aa8e824e853c38b2e8580728a97d5a1453655e43d94844aa183', 1416810475, 1, 1416810561, NULL, '', ''),
-(87, 'aglaed', 'aglaed.leo@gmail.com', '+375336278194', 'Леончиков Юрий Владимирович', NULL, '09d658667473c96c82d5eeffd9d5f31a74b4e19edd61113becc4e314395bf91c', 1416839521, 8, 1418087332, NULL, 'https://vk.com/id246898029', ''),
-(88, 'Sergey2576', 'kouryntsev@gmail.com', '+79274469784', 'Курынцев Сергей Александрович', NULL, 'df9b5624b64b60ae7d11b89ac7d1d983f2a574737246c0895d60301abc801b8b', 1417264661, 7, 1418135701, NULL, '', ''),
-(89, 'iuniqueorn123', 'xum3abod@me.com', '+79222221122', 'Александр Петров', NULL, 'f89fa38874034fb66fbfcf5997b4dcf62ddfe19bed279efa2351b3fae972b4cb', 1417451943, 4, 1417904978, NULL, '', ''),
-(90, 'ariadna56', 'sofaira888@gmail.com', '+79141249740', 'Irina Sofronova', NULL, 'eea4828f4e06ac371a344d5eb718b70da13ceda119b4f2620500fa6b4020a2a1', 1417492510, 0, NULL, NULL, '', 'ariadna5648');
+(3, 'admin', 'pxpn46@gmail.com', 'Админ', 'Админ', '', 'f486c1db9dbf14cc72cb6ab4fb449ac6a4820c2b167f43a48dd24d667d5c2e2a', 1378369661, 147, 1418291280, NULL, '', 'igor17851');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `user_tokens`
+-- Table structure for table `user_tokens`
 --
 
 CREATE TABLE IF NOT EXISTS `user_tokens` (
@@ -1859,81 +1556,28 @@ CREATE TABLE IF NOT EXISTS `user_tokens` (
   UNIQUE KEY `uniq_token` (`token`),
   KEY `fk_user_id` (`user_id`),
   KEY `expires` (`expires`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=217 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=216 ;
 
 --
--- Дамп данных таблицы `user_tokens`
---
-
-INSERT INTO `user_tokens` (`id`, `password`, `user_id`, `user_agent`, `token`, `created`, `expires`) VALUES
-(157, '', 34, '93730c3def6cd22fa1eff0a3cca6042db7676444', 'a7b78d0b22082566e000b259bf19cb4787540bc8', 1416423213, 1417632813),
-(158, '', 59, '66070f41605f0983ee59ef0c65e7ee2adc112780', 'd38817c889d356cb5631cd70d95afd2fd87f4dc4', 1416433175, 1417642775),
-(159, '', 34, '93730c3def6cd22fa1eff0a3cca6042db7676444', '346cc4519c2ca6768b2849ef5a1e113a8d76ab77', 1416474209, 1417683809),
-(161, '', 18, '0f098e5c89db562ef0a00835ce029b7534bf21a1', 'a4813976a3c469ac65575889b0738c26cb771a7d', 1416488252, 1417697852),
-(162, '', 34, 'c1c6dd8b166399a88fc83728d5dc0863f28f2e7e', '461ff6845e78f0a2081642f4079dcb972306cb23', 1416512031, 1417721631),
-(163, '', 34, '26eeaee2fbb75281163582feaff5b21951266a40', 'f97822c5e10c7182d01ee6e267ccd36a96306558', 1416572415, 1417782015),
-(164, '', 69, '77229754c2ec32423dcfa96e1554be16e0fee47f', '179973a72ef97d910f1e754a480378ec1d958380', 1416572843, 1417782443),
-(165, '', 79, '86a1ecf8546bb9f2b1bca696e044c981322b0232', '08ab4fb2220fbca9ea310605bb0de737f1c0b88b', 1416667689, 1417877289),
-(167, '', 34, '93730c3def6cd22fa1eff0a3cca6042db7676444', '399c85fc9a0f9e35cf634653880c372c1e4b25ee', 1416690936, 1417900536),
-(170, '', 82, 'f2a58d1cac5a09525a126fb38c9b0317113638ca', 'a98fb41415bd101d758e23c7e5e2c8de70172f59', 1416744349, 1417953949),
-(172, '', 83, '93730c3def6cd22fa1eff0a3cca6042db7676444', '08a9f4f8fbad089f354771b6ba9980b919ad8648', 1416745357, 1417954957),
-(173, '', 22, '3b184df3fa083759403b96dea233814b6a986fce', 'c56f384887b4853fadcaa90ba14c094508588388', 1416766913, 1417976513),
-(176, '', 85, 'db336e2fc85f34e4c19ad6126b7ba1f411238d7c', '3014be7a70294bebb6d00f42025f43c9db9dc819', 1416778719, 1417988319),
-(178, '', 18, '0f098e5c89db562ef0a00835ce029b7534bf21a1', 'badc23e1fee88e4772430dc3938fde3355f4ab20', 1416837129, 1418046729),
-(179, '', 69, 'c76b809b6a23d2a5ee7ad0f06513d344bbadf3a9', 'd940c902b83d85f93d503a684b4f80b7a8f3477a', 1416837182, 1418046782),
-(181, '', 87, 'c1c6dd8b166399a88fc83728d5dc0863f28f2e7e', '4720385cba375c8106e613cf40e85b9cbd98b3a4', 1416839608, 1418049208),
-(182, '', 64, '250ebb709e903545ec0796cd20593f9784d9b862', '30093911b9e1317aa7d34a9d2fac3ff774ffe319', 1416850910, 1418060510),
-(183, '', 34, 'd9c9239ed336001c614234916fcbbc5fdbfec926', 'cf4717c2af3ee0f780150692d1738f7f671c00cb', 1416854535, 1418064135),
-(184, '', 22, '3b184df3fa083759403b96dea233814b6a986fce', 'c9075694eb7baa1a7fcf11e53f59b3b273bf98f3', 1416887074, 1418096674),
-(185, '', 34, 'd9c9239ed336001c614234916fcbbc5fdbfec926', 'b6bc376330ba621e0eb4ca55fa242d6cac94a525', 1416925156, 1418134756),
-(187, '', 28, 'bead9788ebabde204ac316f4d464b9cb7a705249', '9569b82ea9d41aa4955096be3d8027c3febe23eb', 1416929859, 1418139459),
-(188, '', 34, 'd9c9239ed336001c614234916fcbbc5fdbfec926', '1c4a89d948960c3cc25a28f7167624da7af314f3', 1416939391, 1418148991),
-(189, '', 34, '4ea2a5214862dc7adef737d6717bddeda92eef83', '153377dad6d5f8e5d19d73994fe01de8b601ce63', 1417025572, 1418235172),
-(190, '', 34, 'd9c9239ed336001c614234916fcbbc5fdbfec926', '9395d70878486c8b5d04823c2b89a9acc60e5cef', 1417086433, 1418296033),
-(191, '', 34, 'd9c9239ed336001c614234916fcbbc5fdbfec926', '945618c0f19d4a6f72cfd8f59b6e26685c307ce7', 1417109636, 1418319236),
-(192, '', 69, '365f804eeb8b851c6716a39e0e40d475463681c1', 'fd3eb53b800d041ab52ea419564d92cb07880294', 1417163897, 1418373497),
-(193, '', 34, 'a13969475fce0d6ee136d7332f1397883b8615ef', '75c7b3a50ff00b4834087aa518805dc14f12c1d8', 1417187311, 1418396911),
-(194, '', 34, 'd9c9239ed336001c614234916fcbbc5fdbfec926', '8404f834ed80a61e2241b7c8ec567745923eadd6', 1417200489, 1418410089),
-(195, '', 34, 'd9c9239ed336001c614234916fcbbc5fdbfec926', '271beaac79d73faa349b309d014c607bd1099ee1', 1417263551, 1418473151),
-(198, '', 71, 'd7089bd14eb017adb794ca08c2e819473bf37a9b', '5e253e19b72e3d319c0b3623bb057419da2834cb', 1417289637, 1418499237),
-(199, '', 34, 'd462b1c08984fdef594dc2024dd20d85bf5810fb', '894e0b6db490f12ec1061e40aa655f47726c694f', 1417309233, 1418518833),
-(200, '', 34, '64b385308853ae068b3b71caf53eac0530df55d7', '3b29058e2e326ac7384bc0d0145e63d9229edd24', 1417378924, 1418588524),
-(201, '', 24, '49c7df6bf2a2ae7d6361b3a950b657958ecf78d4', '7b15a9a3af1550fe2153fe99338928179d0bf308', 1417424825, 1418634425),
-(202, '', 34, 'd462b1c08984fdef594dc2024dd20d85bf5810fb', 'a1a3205a0f00b6595c540ebecd5575b14049805b', 1417441780, 1418651380),
-(203, '', 34, 'd462b1c08984fdef594dc2024dd20d85bf5810fb', 'cec34880603bcd6c35843fcedaa8112e13efb2a7', 1417443731, 1418653331),
-(204, '', 41, '16e5468845978643acb5fb6b1c57694008e29cc0', '1bcbe96ee2239d36a35b16403d4d643339c38c87', 1417447598, 1418657198),
-(206, 'zxzxira888', 90, '64b385308853ae068b3b71caf53eac0530df55d7', '675a08e62b4a9c55b593aad3785850c8f060d8be', 1417492510, 1417751710),
-(207, '', 34, '308fdd4bf44599456a349a6a53674ebb1833220b', '2ea614785e5164bf80144fd183c48f84c1dca57a', 1417546717, 1418756317),
-(208, '', 41, '49c7df6bf2a2ae7d6361b3a950b657958ecf78d4', '8a7ccf7deadd206d7d211fe3b9009af6f6e4d809', 1417598808, 1418808408),
-(209, '', 34, 'd462b1c08984fdef594dc2024dd20d85bf5810fb', '153237863508b5aa148436a8132ad764f80ace28', 1417625306, 1418834906),
-(210, '', 34, '308fdd4bf44599456a349a6a53674ebb1833220b', '5e9963c3dfd6065371bdd9868282ebb3fbd7557a', 1417860533, 1419070132),
-(211, '', 34, '308fdd4bf44599456a349a6a53674ebb1833220b', '9cdd01bfb4ebbcee311aebf77b990ae55a978d9c', 1417875048, 1419084648),
-(212, '', 34, 'd462b1c08984fdef594dc2024dd20d85bf5810fb', '02f1ac55287e93c1cbf2e6af068fa304d3d631f6', 1417897583, 1419107183),
-(213, '', 37, '64b385308853ae068b3b71caf53eac0530df55d7', 'de9fd462be4f3750ea236eb8df64ee37ce6b3f2a', 1417902245, 1419111845),
-(214, '', 34, 'd462b1c08984fdef594dc2024dd20d85bf5810fb', '9fbf739c98e33828e99f9480c93861497a12bf6f', 1418042338, 1419251938),
-(215, '', 34, '308fdd4bf44599456a349a6a53674ebb1833220b', 'd08afa887696d2e04af24f9de96085fb78bfeb38', 1418081368, 1419290968),
-(216, '', 43, '9699c679231655b83c2ffd5cdbc0fc9fed87c9aa', 'dad46c6960da4a708fe948303b41db4d94c8f540', 1418131464, 1419341064);
-
---
--- Ограничения внешнего ключа сохраненных таблиц
+-- Constraints for dumped tables
 --
 
 --
--- Ограничения внешнего ключа таблицы `cards_users`
+-- Constraints for table `cards_users`
 --
 ALTER TABLE `cards_users`
   ADD CONSTRAINT `cards_users_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `cards_users_ibfk_2` FOREIGN KEY (`card_id`) REFERENCES `cards` (`id`) ON DELETE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `roles_users`
+-- Constraints for table `roles_users`
 --
 ALTER TABLE `roles_users`
   ADD CONSTRAINT `roles_users_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `roles_users_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `user_tokens`
+-- Constraints for table `user_tokens`
 --
 ALTER TABLE `user_tokens`
   ADD CONSTRAINT `user_tokens_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;

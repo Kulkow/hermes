@@ -10,10 +10,10 @@ class Site
             RewriteRule ^(.*)$ https://my.server.com/$1 [R,L]
         */
         
-        if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "") {
+        /*if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "") {
             $redirect = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             Controller::redirect($redirect, 301);
-        }
+        }*/
     }
     
     public static function url($uri = '', $query = NULL, $protocol = NULL, $use_get = FALSE)
